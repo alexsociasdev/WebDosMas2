@@ -154,8 +154,13 @@ export default async function HomePage() {
 
               <div className="flex flex-col justify-center gap-6">
                 <article className="mx-auto inline-flex h-56 w-56 items-center justify-center rounded-full border-2 border-brand-purple/40 bg-gradient-to-br from-brand-yellow via-[#ffe06b] to-brand-purple/20 text-center shadow-soft">
-                  <p className="px-6 text-3xl font-extrabold leading-9 text-base-black">
-                    + de 70 años ({startYear} – {currentYear})
+                  <p className="px-6 text-center text-base-black">
+                    <span className="block text-lg font-bold leading-5">más de</span>
+                    <span className="block text-6xl font-extrabold leading-none">70</span>
+                    <span className="block text-lg font-bold leading-5">años</span>
+                    <span className="mt-2 block text-sm font-semibold leading-5">
+                      ({startYear} – {currentYear})
+                    </span>
                   </p>
                 </article>
 
