@@ -8,6 +8,7 @@ import { PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/reveal";
 import { JsonLd } from "@/components/seo/json-ld";
 import { rscContent } from "@/content/site-content";
+import { getDictionary, getServerLocale } from "@/lib/i18n-server";
 import { pageMetadata } from "@/lib/metadata";
 import { breadcrumbSchema } from "@/lib/seo-schema";
 import { rscInitiatives } from "@/rsc/data";
@@ -17,24 +18,28 @@ export const metadata = pageMetadata("RSC", "Responsabilidad Social Corporativa"
   keywords: ["RSC", "sostenibilidad", "responsabilidad social", "Dosmas Grup"]
 });
 
-export default function RscPage() {
+export default async function RscPage() {
+  const locale = await getServerLocale();
+  const t = getDictionary(locale);
+  const text = t.pages.rsc;
+
   return (
     <>
       <JsonLd
         id="breadcrumb-rsc"
         data={breadcrumbSchema([
-          { name: "Inicio", path: "/" },
-          { name: "RSC", path: "/rsc" }
+          { name: t.common.home, path: "/" },
+          { name: text.pageTitle, path: "/rsc" }
         ])}
       />
 
-      <PageHero title="RSC" subtitle="Responsabilidad Social Corporativa" image="/images/brand/portada.webp" />
+      <PageHero title={text.pageTitle} subtitle={text.pageSubtitle} image="/images/brand/portada.webp" />
 
       <section className="bg-white py-20">
         <Container className="space-y-10">
           <Reveal>
-            <Breadcrumb items={[{ label: "Inicio", href: "/" }, { label: "RSC" }]} />
-            <SectionHeading eyebrow="Compromiso" title={rscContent.title} />
+            <Breadcrumb items={[{ label: t.common.home, href: "/" }, { label: text.pageTitle }]} />
+            <SectionHeading eyebrow={text.eyebrow} title={rscContent.title} />
             <div className="mt-6 space-y-5 text-base leading-8 text-base-dark">
               {rscContent.paragraphs.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
@@ -45,10 +50,10 @@ export default function RscPage() {
           <Reveal>
             <StatsStrip
               stats={[
-                { label: "Programas activos", value: "12" },
-                { label: "Horas de formación anual", value: "2.400" },
-                { label: "Acciones solidarias", value: "18" },
-                { label: "Entidades colaboradoras", value: "26" }
+                { label: text.activePrograms, value: "12" },
+                { label: text.annualTrainingHours, value: "2.400" },
+                { label: text.solidarityActions, value: "18" },
+                { label: text.partnerEntities, value: "26" }
               ]}
             />
           </Reveal>
@@ -72,15 +77,15 @@ export default function RscPage() {
 
           <Reveal>
             <article className="rounded-2xl border border-base-mid bg-base-light p-8">
-              <h3 className="text-2xl font-semibold text-base-black">¿Quiere colaborar con nuestra estrategia RSC?</h3>
+              <h3 className="text-2xl font-semibold text-base-black">{text.collaborateTitle}</h3>
               <p className="mt-3 text-base leading-8 text-base-dark">
-                En Dosmas Grup mantenemos una agenda abierta de colaboración con entidades sociales, educativas y deportivas.
+                {text.collaborateBody}
               </p>
               <Link
                 href="/contacto"
                 className="mt-6 inline-flex rounded-full bg-brand-yellow px-5 py-3 text-sm font-semibold text-base-black transition hover:bg-brand-yellow/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple"
               >
-                Contactar con RSC
+                {text.collaborateCta}
               </Link>
             </article>
           </Reveal>

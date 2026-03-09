@@ -157,12 +157,12 @@ export const trustSection = {
     "Y porque en Dosmas Grup creemos firmemente en nuestro compromiso: “WE ALWAYS COMPLY!” ¡Siempre cumplimos!"
   ],
   youtubeLabel: "ENLACE DE YOUTUBE",
-  youtubeUrl: "https://www.youtube.com/embed/aqz-KE-bpKQ"
+  youtubeUrl: "https://www.youtube.com/embed/J6mzhScLlzY?start=8"
 } as const;
 
 export const dossierLink = {
   title: "DOSSIER CORPORATIVO",
-  text: "Esto seria un banner que nos conduce al dossier de empresa. Este se encuentra en este enlace:",
+  text: "Acceda al dossier corporativo de Dosmas Grup.",
   href: "https://qrco.de/bcQVeg"
 } as const;
 

@@ -9,6 +9,7 @@ import { SectionHeading } from "@/components/marketing/section-heading";
 import { PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/reveal";
 import { JsonLd } from "@/components/seo/json-ld";
+import { getDictionary, getServerLocale } from "@/lib/i18n-server";
 import { pageMetadata } from "@/lib/metadata";
 import { articleSchema, breadcrumbSchema, projectSchema } from "@/lib/seo-schema";
 import { postsData } from "@/posts/data";
@@ -40,6 +41,8 @@ export async function generateMetadata({ params }: ProjectDetailPageProps) {
 export default async function ProyectoDetailPage({ params }: ProjectDetailPageProps) {
   const { slug } = await params;
   const project = projectsBySlug[slug];
+  const locale = await getServerLocale();
+  const t = getDictionary(locale);
 
   if (!project) {
     notFound();
@@ -67,8 +70,8 @@ export default async function ProyectoDetailPage({ params }: ProjectDetailPagePr
       <JsonLd
         id={`breadcrumb-proyecto-${slug}`}
         data={breadcrumbSchema([
-          { name: "Inicio", path: "/" },
-          { name: "Proyectos", path: "/proyectos" },
+          { name: t.common.home, path: "/" },
+          { name: t.common.projects, path: "/proyectos" },
           { name: project.title, path: `/proyectos/${project.slug}` }
         ])}
       />
@@ -101,8 +104,8 @@ export default async function ProyectoDetailPage({ params }: ProjectDetailPagePr
           <Reveal>
             <Breadcrumb
               items={[
-                { label: "Inicio", href: "/" },
-                { label: "Proyectos", href: "/proyectos" },
+                { label: t.common.home, href: "/" },
+                { label: t.common.projects, href: "/proyectos" },
                 { label: project.title }
               ]}
             />
@@ -134,34 +137,34 @@ export default async function ProyectoDetailPage({ params }: ProjectDetailPagePr
               </div>
 
               <article className="rounded-2xl border border-base-mid bg-white p-6 shadow-soft">
-                <h3 className="text-xl font-semibold text-base-black">Caso de estudio</h3>
+                <h3 className="text-xl font-semibold text-base-black">{t.pages.projects.caseStudy}</h3>
                 <dl className="mt-4 space-y-4 text-sm leading-7 text-base-dark">
                   <div>
-                    <dt className="font-semibold text-base-black">Reto</dt>
+                    <dt className="font-semibold text-base-black">{t.pages.projects.challenge}</dt>
                     <dd>{project.caseStudy.reto}</dd>
                   </div>
                   <div>
-                    <dt className="font-semibold text-base-black">Solución</dt>
+                    <dt className="font-semibold text-base-black">{t.pages.projects.solution}</dt>
                     <dd>{project.caseStudy.solucion}</dd>
                   </div>
                   <div>
-                    <dt className="font-semibold text-base-black">Ejecución</dt>
+                    <dt className="font-semibold text-base-black">{t.pages.projects.execution}</dt>
                     <dd>{project.caseStudy.ejecucion}</dd>
                   </div>
                   <div>
-                    <dt className="font-semibold text-base-black">Resultado</dt>
+                    <dt className="font-semibold text-base-black">{t.pages.projects.result}</dt>
                     <dd>{project.caseStudy.resultado}</dd>
                   </div>
                 </dl>
               </article>
 
               <div className="rounded-2xl border border-base-mid bg-base-light p-6">
-                <p className="text-sm text-base-dark">¿Necesita un proyecto similar?</p>
+                <p className="text-sm text-base-dark">{t.pages.projects.needSimilarProject}</p>
                 <Link
                   href="/solicite-presupuesto"
                   className="mt-3 inline-flex rounded-full bg-brand-yellow px-5 py-2 text-sm font-semibold text-base-black transition hover:bg-brand-yellow/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple"
                 >
-                  Solicitar presupuesto
+                  {t.common.requestQuote}
                 </Link>
               </div>
             </div>
@@ -180,10 +183,10 @@ export default async function ProyectoDetailPage({ params }: ProjectDetailPagePr
       <section className="bg-white py-20">
         <Container className="grid gap-6 lg:grid-cols-2">
           <Reveal>
-            <RelatedLinks title="Servicios relacionados" items={relatedServices} />
+            <RelatedLinks title={t.common.relatedServices} items={relatedServices} />
           </Reveal>
           <Reveal>
-            <RelatedLinks title="Noticias relacionadas" items={relatedPosts} />
+            <RelatedLinks title={t.common.relatedNews} items={relatedPosts} />
           </Reveal>
         </Container>
       </section>

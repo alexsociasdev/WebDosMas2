@@ -9,6 +9,7 @@ import { AnalyticsLoader } from "@/components/analytics-loader";
 import { JsonLd } from "@/components/seo/json-ld";
 import { organizationSchema, websiteSchema } from "@/lib/seo-schema";
 import { FloatingCta } from "@/components/floating-cta";
+import { getDictionary, getServerLocale } from "@/lib/i18n-server";
 
 const brandFont = localFont({
   src: [
@@ -28,26 +29,29 @@ const brandFont = localFont({
 
 export const metadata: Metadata = defaultMetadata;
 
-export default function RootLayout({
+export default async function RootLayout({
   children
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getServerLocale();
+  const t = getDictionary(locale);
+
   return (
-    <html lang="es">
+    <html lang={t.lang}>
       <body className={`${brandFont.className} antialiased`}>
         <JsonLd id="schema-org" data={[organizationSchema(), websiteSchema()]} />
         <a
           href="#contenido-principal"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[80] focus:rounded-md focus:bg-brand-yellow focus:px-3 focus:py-2 focus:text-sm focus:font-semibold"
         >
-          Saltar al contenido
+          {t.skipToContent}
         </a>
-        <SiteHeader />
+        <SiteHeader locale={locale} />
         <main id="contenido-principal">{children}</main>
-        <SiteFooter />
-        <FloatingCta />
-        <CookieBanner />
+        <SiteFooter locale={locale} />
+        <FloatingCta locale={locale} />
+        <CookieBanner locale={locale} />
         <AnalyticsLoader />
       </body>
     </html>

@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { getDictionary, type Locale } from "@/lib/i18n";
 
 type ContactState = {
   name: string;
@@ -20,7 +21,13 @@ const initialState: ContactState = {
   website: ""
 };
 
-export function ContactForm() {
+type ContactFormProps = {
+  locale: Locale;
+};
+
+export function ContactForm({ locale }: ContactFormProps) {
+  const t = getDictionary(locale);
+  const formText = t.forms.contact;
   const [form, setForm] = useState<ContactState>(initialState);
   const [startedAt] = useState<number>(() => Date.now());
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
@@ -55,10 +62,10 @@ export function ContactForm() {
     <form onSubmit={onSubmit} className="space-y-5 rounded-2xl border border-base-mid bg-white p-6 shadow-soft">
       <div className="grid gap-4 md:grid-cols-2">
         <label className="space-y-2 text-sm font-medium text-base-dark">
-          Nombre y apellidos
+          {formText.fullName}
           <input
             required
-            aria-label="Nombre y apellidos"
+            aria-label={formText.fullName}
             value={form.name}
             onChange={(event) => setForm((prev) => ({ ...prev, name: event.target.value }))}
             className="w-full rounded-lg border border-base-mid bg-white px-3 py-2 text-base-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
@@ -66,10 +73,10 @@ export function ContactForm() {
         </label>
 
         <label className="space-y-2 text-sm font-medium text-base-dark">
-          Teléfono
+          {formText.phone}
           <input
             required
-            aria-label="Teléfono"
+            aria-label={formText.phone}
             value={form.phone}
             onChange={(event) => setForm((prev) => ({ ...prev, phone: event.target.value }))}
             className="w-full rounded-lg border border-base-mid bg-white px-3 py-2 text-base-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
@@ -78,11 +85,11 @@ export function ContactForm() {
       </div>
 
       <label className="space-y-2 text-sm font-medium text-base-dark">
-        Correo electrónico
+        {formText.email}
         <input
           required
           type="email"
-          aria-label="Correo electrónico"
+          aria-label={formText.email}
           value={form.email}
           onChange={(event) => setForm((prev) => ({ ...prev, email: event.target.value }))}
           className="w-full rounded-lg border border-base-mid bg-white px-3 py-2 text-base-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
@@ -90,10 +97,10 @@ export function ContactForm() {
       </label>
 
       <label className="space-y-2 text-sm font-medium text-base-dark">
-        Mensaje
+        {formText.message}
         <textarea
           required
-          aria-label="Mensaje"
+          aria-label={formText.message}
           rows={6}
           value={form.message}
           onChange={(event) => setForm((prev) => ({ ...prev, message: event.target.value }))}
@@ -108,17 +115,17 @@ export function ContactForm() {
           onChange={(event) =>
             setForm((prev) => ({ ...prev, privacyAccepted: event.target.checked }))
           }
-          aria-label="Aceptación política de privacidad"
+          aria-label={formText.privacyAcceptance}
           required
           className="mt-1"
         />
         <span>
-          Acepto el tratamiento de datos personales de acuerdo con la Política de privacidad.
+          {formText.privacyAcceptance}
         </span>
       </label>
 
       <label className="hidden" aria-hidden="true">
-        No rellenar
+        {formText.honeypot}
         <input
           tabIndex={-1}
           autoComplete="off"
@@ -132,14 +139,14 @@ export function ContactForm() {
         type="submit"
         className="rounded-full bg-brand-yellow px-6 py-3 text-sm font-semibold text-base-black transition hover:bg-brand-yellow/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple disabled:cursor-not-allowed disabled:opacity-70"
       >
-        {status === "submitting" ? "Enviando..." : "Enviar"}
+        {status === "submitting" ? formText.sending : formText.submit}
       </button>
 
       {status === "success" ? (
-        <p className="text-sm font-medium text-green-700">Formulario enviado correctamente.</p>
+        <p className="text-sm font-medium text-green-700">{formText.success}</p>
       ) : null}
       {status === "error" ? (
-        <p className="text-sm font-medium text-red-700">No se ha podido enviar el formulario.</p>
+        <p className="text-sm font-medium text-red-700">{formText.error}</p>
       ) : null}
     </form>
   );

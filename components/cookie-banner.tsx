@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { getDictionary, type Locale } from "@/lib/i18n";
 
 type CookiePreferences = {
   necessary: boolean;
@@ -16,7 +17,12 @@ function savePreferences(preferences: CookiePreferences) {
   window.dispatchEvent(new Event("dosmas-cookie-updated"));
 }
 
-export function CookieBanner() {
+type CookieBannerProps = {
+  locale: Locale;
+};
+
+export function CookieBanner({ locale }: CookieBannerProps) {
+  const t = getDictionary(locale);
   const [isVisible, setIsVisible] = useState(false);
   const [analytics, setAnalytics] = useState(false);
   const [preferences, setPreferences] = useState(false);
@@ -56,38 +62,38 @@ export function CookieBanner() {
   return (
     <aside
       className="fixed inset-x-0 bottom-0 z-[60] border-t border-base-mid bg-white/98 shadow-soft backdrop-blur"
-      aria-label="Consentimiento de cookies"
+      aria-label={t.cookieBanner.ariaLabel}
     >
       <div className="mx-auto grid max-w-7xl gap-5 px-6 py-6 lg:grid-cols-[1.2fr_1fr] lg:px-10">
         <div>
-          <h2 className="text-base font-semibold text-base-black">Política de cookies</h2>
+          <h2 className="text-base font-semibold text-base-black">{t.cookieBanner.title}</h2>
           <p className="mt-2 text-sm leading-6 text-base-dark">
-            Utilizamos cookies necesarias y opcionales. Solo activamos Google Analytics con tu consentimiento.
+            {t.cookieBanner.description}
           </p>
         </div>
 
         <div className="space-y-4">
           <div className="space-y-3 rounded-lg border border-base-mid bg-base-light p-4 text-sm text-base-dark">
             <label className="flex items-center justify-between gap-4">
-              <span>Cookies necesarias</span>
-              <input type="checkbox" checked readOnly aria-label="Cookies necesarias activadas" />
+              <span>{t.cookieBanner.necessaryCookies}</span>
+              <input type="checkbox" checked readOnly aria-label={t.cookieBanner.necessaryAria} />
             </label>
             <label className="flex items-center justify-between gap-4">
-              <span>Analytics</span>
+              <span>{t.cookieBanner.analytics}</span>
               <input
                 type="checkbox"
                 checked={analytics}
                 onChange={(event) => setAnalytics(event.target.checked)}
-                aria-label="Activar analytics"
+                aria-label={t.cookieBanner.analyticsAria}
               />
             </label>
             <label className="flex items-center justify-between gap-4">
-              <span>Preferencias</span>
+              <span>{t.cookieBanner.preferences}</span>
               <input
                 type="checkbox"
                 checked={preferences}
                 onChange={(event) => setPreferences(event.target.checked)}
-                aria-label="Activar cookies de preferencias"
+                aria-label={t.cookieBanner.preferencesAria}
               />
             </label>
           </div>
@@ -98,21 +104,21 @@ export function CookieBanner() {
               onClick={() => setAndClose(false, false)}
               className="rounded-full border border-base-mid px-4 py-2 text-sm font-semibold text-base-black transition hover:border-base-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
             >
-              Rechazar opcionales
+              {t.cookieBanner.rejectOptional}
             </button>
             <button
               type="button"
               onClick={() => setAndClose(analytics, preferences)}
               className="rounded-full border border-base-mid px-4 py-2 text-sm font-semibold text-base-black transition hover:border-brand-purple focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
             >
-              Guardar preferencias
+              {t.cookieBanner.savePreferences}
             </button>
             <button
               type="button"
               onClick={() => setAndClose(true, true)}
               className="rounded-full bg-brand-yellow px-4 py-2 text-sm font-semibold text-base-black transition hover:bg-brand-yellow/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple"
             >
-              Aceptar todo
+              {t.cookieBanner.acceptAll}
             </button>
           </div>
         </div>

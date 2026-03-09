@@ -16,9 +16,9 @@ export function FeaturePanels({ items }: FeaturePanelsProps) {
       {items.map((item) => (
         <article
           key={item.title}
-          className="group rounded-2xl border border-base-mid bg-white p-7 transition hover:-translate-y-1 hover:shadow-soft"
+          className="group rounded-2xl border border-base-mid bg-white p-7 transition hover:-translate-y-1 hover:border-brand-yellow/70 hover:shadow-soft"
         >
-          <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl border border-brand-purple/30 bg-brand-purple/10 text-base-black">
+          <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl border border-brand-purple/40 bg-gradient-to-br from-brand-yellow/35 to-brand-purple/20 text-base-black">
             {item.icon}
           </div>
           <h3 className="text-xl font-semibold text-base-black">{item.title}</h3>

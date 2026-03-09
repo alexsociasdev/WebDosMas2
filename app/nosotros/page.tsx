@@ -8,6 +8,7 @@ import { PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/reveal";
 import { JsonLd } from "@/components/seo/json-ld";
 import { aboutUsContent, editorialSection, teamSection, valuesSection } from "@/content/site-content";
+import { getDictionary, getServerLocale } from "@/lib/i18n-server";
 import { pageMetadata } from "@/lib/metadata";
 import { breadcrumbSchema } from "@/lib/seo-schema";
 import { teamMembers } from "@/team/data";
@@ -26,19 +27,22 @@ const icons = [
   <svg key="4" viewBox="0 0 24 24" fill="none" className="h-6 w-6" aria-hidden="true"><path d="M6 18h12M8 18V7h8v11" stroke="currentColor" strokeWidth="1.8" /></svg>
 ];
 
-export default function NosotrosPage() {
+export default async function NosotrosPage() {
+  const locale = await getServerLocale();
+  const t = getDictionary(locale);
+
   return (
     <>
       <JsonLd
         id="breadcrumb-nosotros"
         data={breadcrumbSchema([
-          { name: "Inicio", path: "/" },
-          { name: "Nosotros", path: "/nosotros" }
+          { name: t.common.home, path: "/" },
+          { name: t.nav.about, path: "/nosotros" }
         ])}
       />
 
       <PageHero
-        title="Nosotros"
+        title={t.nav.about}
         subtitle="Dosmas Grup es un grupo de empresas especializado en excavaciones, movimientos de tierra y obras integrales, con sede en Mallorca."
         image="/images/brand/portada.webp"
       />
@@ -46,8 +50,8 @@ export default function NosotrosPage() {
       <section className="bg-white py-20">
         <Container className="space-y-10">
           <Reveal>
-            <Breadcrumb items={[{ label: "Inicio", href: "/" }, { label: "Nosotros" }]} />
-            <SectionHeading title={aboutUsContent.title} />
+            <Breadcrumb items={[{ label: t.common.home, href: "/" }, { label: t.nav.about }]} />
+            <SectionHeading title={aboutUsContent.title.toUpperCase()} />
             <div className="mt-8 space-y-5 text-base leading-8 text-base-dark">
               {aboutUsContent.paragraphs.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
@@ -62,10 +66,10 @@ export default function NosotrosPage() {
 
           <Reveal>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              <article className="rounded-2xl border border-base-mid bg-base-light p-5"><p className="text-sm text-base-dark">Años de experiencia</p><p className="mt-2 text-3xl font-bold text-base-black"><CountUp to={70} suffix="+" /></p></article>
-              <article className="rounded-2xl border border-base-mid bg-base-light p-5"><p className="text-sm text-base-dark">Profesionales</p><p className="mt-2 text-3xl font-bold text-base-black"><CountUp to={200} suffix="+" /></p></article>
-              <article className="rounded-2xl border border-base-mid bg-base-light p-5"><p className="text-sm text-base-dark">Máquinas en activo</p><p className="mt-2 text-3xl font-bold text-base-black"><CountUp to={250} suffix="+" /></p></article>
-              <article className="rounded-2xl border border-base-mid bg-base-light p-5"><p className="text-sm text-base-dark">Vehículos</p><p className="mt-2 text-3xl font-bold text-base-black"><CountUp to={50} suffix="+" /></p></article>
+              <article className="rounded-2xl border border-base-mid bg-base-light p-5"><p className="text-sm text-base-dark">{t.home.statsTrajectory}</p><p className="mt-2 text-3xl font-bold text-base-black"><CountUp to={70} suffix="+" /></p></article>
+              <article className="rounded-2xl border border-base-mid bg-base-light p-5"><p className="text-sm text-base-dark">{t.home.statsProfessionals}</p><p className="mt-2 text-3xl font-bold text-base-black"><CountUp to={200} suffix="+" /></p></article>
+              <article className="rounded-2xl border border-base-mid bg-base-light p-5"><p className="text-sm text-base-dark">{t.home.statsMachines}</p><p className="mt-2 text-3xl font-bold text-base-black"><CountUp to={250} suffix="+" /></p></article>
+              <article className="rounded-2xl border border-base-mid bg-base-light p-5"><p className="text-sm text-base-dark">{t.home.statsVehicles}</p><p className="mt-2 text-3xl font-bold text-base-black"><CountUp to={50} suffix="+" /></p></article>
             </div>
           </Reveal>
         </Container>
@@ -73,10 +77,9 @@ export default function NosotrosPage() {
 
       <section className="border-y border-base-mid bg-base-light py-20">
         <Container className="grid gap-6 md:grid-cols-3">
-          {editorialSection.blocks.map((block, index) => (
+          {editorialSection.blocks.map((block) => (
             <Reveal key={block.title}>
               <article className="h-full rounded-2xl border border-base-mid bg-white p-7">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-purple">0{index + 1}</p>
                 <h3 className="mt-3 text-xl font-semibold text-base-black">{block.title}</h3>
                 <p className="mt-4 text-base leading-7 text-base-dark">{block.text}</p>
                 {"bullets" in block && block.bullets ? (
@@ -98,12 +101,20 @@ export default function NosotrosPage() {
       <section className="bg-white py-20">
         <Container>
           <Reveal>
-            <SectionHeading title={teamSection.title} />
+            <SectionHeading title={teamSection.title.toUpperCase()} />
             <div className="mt-6 space-y-4 text-base leading-8 text-base-dark">
               {teamSection.paragraphs.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
             </div>
+          </Reveal>
+
+          <Reveal>
+            <article className="mt-8 overflow-hidden rounded-3xl border border-base-mid bg-base-light shadow-soft">
+              <div className="relative aspect-[16/7]">
+                <Image src="/images/team/foto-grupo-dosmas.jpg" alt="Equipo de Dosmas Grup" fill className="object-cover" />
+              </div>
+            </article>
           </Reveal>
 
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -116,6 +127,7 @@ export default function NosotrosPage() {
                   <div className="space-y-1 p-5">
                     <h3 className="text-lg font-semibold text-base-black">{member.name}</h3>
                     <p className="text-sm text-base-dark">{member.role}</p>
+                    <p className="text-sm font-medium text-base-black">{t.pages.contact.phoneLabel}: {member.phone}</p>
                     <a
                       href={`mailto:${member.email}`}
                       className="inline-block text-sm font-medium text-base-black underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"

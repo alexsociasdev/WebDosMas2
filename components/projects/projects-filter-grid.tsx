@@ -4,29 +4,32 @@ import { useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import type { ProjectItem } from "@/projects/data";
+import { getDictionary, type Locale } from "@/lib/i18n";
 
 type ProjectsFilterGridProps = {
   projects: ProjectItem[];
+  locale: Locale;
 };
 
-export function ProjectsFilterGrid({ projects }: ProjectsFilterGridProps) {
+export function ProjectsFilterGrid({ projects, locale }: ProjectsFilterGridProps) {
+  const t = getDictionary(locale);
   const categories = useMemo(
-    () => ["Todas", ...Array.from(new Set(projects.map((project) => project.category)))],
-    [projects]
+    () => [t.common.all, ...Array.from(new Set(projects.map((project) => project.category)))],
+    [projects, t.common.all]
   );
   const years = useMemo(
-    () => ["Todos", ...Array.from(new Set(projects.map((project) => project.year))).sort().reverse()],
-    [projects]
+    () => [t.common.allMasc, ...Array.from(new Set(projects.map((project) => project.year))).sort().reverse()],
+    [projects, t.common.allMasc]
   );
 
-  const [category, setCategory] = useState("Todas");
-  const [year, setYear] = useState("Todos");
+  const [category, setCategory] = useState(t.common.all);
+  const [year, setYear] = useState(t.common.allMasc);
   const [search, setSearch] = useState("");
 
   const filtered = useMemo(() => {
     return projects.filter((project) => {
-      const categoryOk = category === "Todas" || project.category === category;
-      const yearOk = year === "Todos" || project.year === year;
+      const categoryOk = category === t.common.all || project.category === category;
+      const yearOk = year === t.common.allMasc || project.year === year;
       const searchOk =
         search.trim().length === 0 ||
         project.title.toLowerCase().includes(search.toLowerCase()) ||
@@ -34,18 +37,20 @@ export function ProjectsFilterGrid({ projects }: ProjectsFilterGridProps) {
 
       return categoryOk && yearOk && searchOk;
     });
-  }, [projects, category, year, search]);
+  }, [projects, category, year, search, t.common.all, t.common.allMasc]);
 
   return (
     <div className="space-y-8">
-      <div className="grid gap-4 rounded-2xl border border-base-mid bg-white p-5 md:grid-cols-3">
+      <div className="rounded-3xl border-2 border-brand-purple/20 bg-gradient-to-br from-brand-yellow/10 via-white to-brand-purple/10 p-6 shadow-soft">
+        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.24em] text-base-black">{t.pages.projects.filterTitle}</p>
+        <div className="grid gap-4 md:grid-cols-3">
         <label className="space-y-2 text-sm font-medium text-base-dark">
-          Categoría
+          {t.pages.projects.filterCategory}
           <select
             value={category}
             onChange={(event) => setCategory(event.target.value)}
-            className="w-full rounded-lg border border-base-mid px-3 py-2 text-base-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
-            aria-label="Filtrar por categoría"
+            className="w-full rounded-lg border border-base-mid bg-white px-3 py-2 text-base-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
+            aria-label={t.pages.projects.filterCategory}
           >
             {categories.map((option) => (
               <option key={option} value={option}>
@@ -56,12 +61,12 @@ export function ProjectsFilterGrid({ projects }: ProjectsFilterGridProps) {
         </label>
 
         <label className="space-y-2 text-sm font-medium text-base-dark">
-          Año
+          {t.pages.projects.filterYear}
           <select
             value={year}
             onChange={(event) => setYear(event.target.value)}
-            className="w-full rounded-lg border border-base-mid px-3 py-2 text-base-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
-            aria-label="Filtrar por año"
+            className="w-full rounded-lg border border-base-mid bg-white px-3 py-2 text-base-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
+            aria-label={t.pages.projects.filterYear}
           >
             {years.map((option) => (
               <option key={option} value={option}>
@@ -72,15 +77,16 @@ export function ProjectsFilterGrid({ projects }: ProjectsFilterGridProps) {
         </label>
 
         <label className="space-y-2 text-sm font-medium text-base-dark">
-          Buscar
+          {t.pages.projects.filterSearch}
           <input
             value={search}
             onChange={(event) => setSearch(event.target.value)}
-            placeholder="Título o ubicación"
-            className="w-full rounded-lg border border-base-mid px-3 py-2 text-base-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
-            aria-label="Buscar proyecto"
+            placeholder={t.pages.projects.searchPlaceholder}
+            className="w-full rounded-lg border border-base-mid bg-white px-3 py-2 text-base-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
+            aria-label={t.pages.projects.filterSearch}
           />
         </label>
+        </div>
       </div>
 
       <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
@@ -103,7 +109,7 @@ export function ProjectsFilterGrid({ projects }: ProjectsFilterGridProps) {
                 href={`/proyectos/${project.slug}`}
                 className="inline-flex rounded-full border border-base-mid px-4 py-2 text-sm font-semibold text-base-black transition hover:border-brand-yellow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
               >
-                Ver proyecto
+                {t.common.viewProject}
               </Link>
             </div>
           </article>

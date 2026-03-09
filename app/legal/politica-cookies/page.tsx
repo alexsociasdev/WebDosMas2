@@ -5,6 +5,7 @@ import { PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/reveal";
 import { JsonLd } from "@/components/seo/json-ld";
 import { cookiePolicyContent } from "@/content/site-content";
+import { getDictionary, getServerLocale } from "@/lib/i18n-server";
 import { pageMetadata } from "@/lib/metadata";
 import { breadcrumbSchema } from "@/lib/seo-schema";
 
@@ -15,14 +16,17 @@ export const metadata = pageMetadata(
   { image: "/images/brand/portada.webp" }
 );
 
-export default function PoliticaCookiesPage() {
+export default async function PoliticaCookiesPage() {
+  const locale = await getServerLocale();
+  const t = getDictionary(locale);
+
   return (
     <>
       <JsonLd
         id="breadcrumb-cookies"
         data={breadcrumbSchema([
-          { name: "Inicio", path: "/" },
-          { name: "Política cookies", path: "/legal/politica-cookies" }
+          { name: t.common.home, path: "/" },
+          { name: t.pages.legal.cookiePolicy, path: "/legal/politica-cookies" }
         ])}
       />
 
@@ -30,7 +34,7 @@ export default function PoliticaCookiesPage() {
       <section className="bg-white py-20">
         <Container className="space-y-10">
           <Reveal>
-            <Breadcrumb items={[{ label: "Inicio", href: "/" }, { label: "Política cookies" }]} />
+            <Breadcrumb items={[{ label: t.common.home, href: "/" }, { label: t.pages.legal.cookiePolicy }]} />
             <SectionHeading title={cookiePolicyContent.title} />
             <article className="mt-6 rounded-2xl border border-base-mid bg-base-light p-7">
               <div className="space-y-4 text-base leading-8 text-base-dark">
@@ -43,7 +47,7 @@ export default function PoliticaCookiesPage() {
 
           <Reveal>
             <article className="rounded-2xl border border-base-mid bg-base-light p-7">
-              <h2 className="text-2xl font-semibold text-base-black">{cookiePolicyContent.integratedPolicyTitle}</h2>
+              <h2 className="text-2xl font-semibold text-base-black">{t.pages.legal.integratedPolicy}</h2>
               <p className="mt-4 text-base leading-8 text-base-dark">{cookiePolicyContent.integratedPolicyIntro}</p>
               <ul className="mt-4 list-disc space-y-2 pl-6 text-base leading-8 text-base-dark">
                 {cookiePolicyContent.integratedPolicyAreas.map((item) => (

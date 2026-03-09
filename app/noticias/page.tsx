@@ -6,18 +6,22 @@ import { SectionHeading } from "@/components/marketing/section-heading";
 import { PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/reveal";
 import { JsonLd } from "@/components/seo/json-ld";
+import { getDictionary, getServerLocale } from "@/lib/i18n-server";
 import { pageMetadata } from "@/lib/metadata";
 import { breadcrumbSchema } from "@/lib/seo-schema";
 import { postsData } from "@/posts/data";
 
 export const metadata = pageMetadata(
   "Noticias",
-  "NOTICIAS: este apartado sería como un blog.",
+  "Noticias de Dosmas Grup.",
   "/noticias",
   { image: "/images/brand/portada.webp", keywords: ["blog", "noticias", "obra civil"] }
 );
 
-export default function NoticiasPage() {
+export default async function NoticiasPage() {
+  const locale = await getServerLocale();
+  const t = getDictionary(locale);
+  const text = t.pages.news;
   const [featured, ...rest] = postsData;
 
   return (
@@ -25,21 +29,25 @@ export default function NoticiasPage() {
       <JsonLd
         id="breadcrumb-noticias"
         data={breadcrumbSchema([
-          { name: "Inicio", path: "/" },
-          { name: "Noticias", path: "/noticias" }
+          { name: t.common.home, path: "/" },
+          { name: t.common.news, path: "/noticias" }
         ])}
       />
 
-      <PageHero title="Noticias" subtitle="NOTICIAS: este apartado sería como un blog." image="/images/brand/portada.webp" />
+      <PageHero
+        title={text.pageTitle}
+        subtitle={text.pageSubtitle}
+        image="/images/brand/portada.webp"
+      />
 
       <section className="bg-white py-20">
         <Container className="space-y-10">
           <Reveal>
-            <Breadcrumb items={[{ label: "Inicio", href: "/" }, { label: "Noticias" }]} />
+            <Breadcrumb items={[{ label: t.common.home, href: "/" }, { label: t.common.news }]} />
             <SectionHeading
-              eyebrow="Blog"
-              title="Actualidad y conocimiento técnico"
-              description="NOTICIAS: este apartado sería como un blog."
+              eyebrow={text.eyebrow}
+              title={text.heading}
+              description={text.description}
             />
           </Reveal>
 
@@ -51,15 +59,11 @@ export default function NoticiasPage() {
               <div className="flex flex-col justify-center">
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-base-dark">{featured.category}</p>
                 <h2 className="mt-2 text-3xl font-semibold text-base-black">{featured.title}</h2>
-                <p className="mt-3 text-base leading-7 text-base-dark">{featured.excerpt}</p>
-                <p className="mt-3 text-xs text-base-dark">
-                  {featured.date} · {featured.author} · {featured.readingTime}
-                </p>
                 <Link
                   href={`/noticias/${featured.slug}`}
                   className="mt-6 inline-flex w-fit rounded-full bg-brand-yellow px-5 py-2 text-sm font-semibold text-base-black transition hover:bg-brand-yellow/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple"
                 >
-                  Leer artículo
+                  {t.common.readArticle}
                 </Link>
               </div>
             </article>
@@ -75,15 +79,11 @@ export default function NoticiasPage() {
                   <div className="flex flex-col justify-center">
                     <p className="text-xs font-semibold uppercase tracking-[0.2em] text-base-dark">{post.category}</p>
                     <h3 className="mt-2 text-xl font-semibold text-base-black">{post.title}</h3>
-                    <p className="mt-2 text-sm leading-7 text-base-dark">{post.excerpt}</p>
-                    <p className="mt-2 text-xs text-base-dark">
-                      {post.date} · {post.readingTime}
-                    </p>
                     <Link
                       href={`/noticias/${post.slug}`}
                       className="mt-4 inline-flex rounded-full border border-base-mid px-4 py-2 text-sm font-semibold text-base-black transition hover:border-brand-yellow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
                     >
-                      Leer noticia
+                      {t.common.readNews}
                     </Link>
                   </div>
                 </article>

@@ -3,28 +3,31 @@
 import { useMemo, useState } from "react";
 import type { ServiceItem } from "@/services/data";
 import { serviceMetaBySlug } from "@/services/data";
+import { getDictionary, type Locale } from "@/lib/i18n";
 
 type ServiceIndexProps = {
   services: ServiceItem[];
+  locale: Locale;
 };
 
-export function ServiceIndex({ services }: ServiceIndexProps) {
+export function ServiceIndex({ services, locale }: ServiceIndexProps) {
+  const t = getDictionary(locale);
   const categories = useMemo(
-    () => ["Todas", ...Array.from(new Set(services.map((service) => serviceMetaBySlug[service.slug]?.category || "General")))],
-    [services]
+    () => [t.common.all, ...Array.from(new Set(services.map((service) => serviceMetaBySlug[service.slug]?.category || "General")))],
+    [services, t.common.all]
   );
 
-  const [selectedCategory, setSelectedCategory] = useState("Todas");
+  const [selectedCategory, setSelectedCategory] = useState(t.common.all);
 
   const items = useMemo(() => {
     return services.filter((service) => {
-      if (selectedCategory === "Todas") {
+      if (selectedCategory === t.common.all) {
         return true;
       }
 
       return (serviceMetaBySlug[service.slug]?.category || "General") === selectedCategory;
     });
-  }, [services, selectedCategory]);
+  }, [services, selectedCategory, t.common.all]);
 
   return (
     <div className="space-y-5">
@@ -45,7 +48,7 @@ export function ServiceIndex({ services }: ServiceIndexProps) {
         ))}
       </div>
 
-      <nav aria-label="Índice de servicios" className="rounded-2xl border border-base-mid bg-white p-5">
+      <nav aria-label={t.pages.services.indexAria} className="rounded-2xl border border-base-mid bg-white p-5">
         <ul className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((service) => (
             <li key={service.slug}>

@@ -6,31 +6,36 @@ import { ServiceIndex } from "@/components/services/service-index";
 import { PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/reveal";
 import { JsonLd } from "@/components/seo/json-ld";
+import { getDictionary, getServerLocale } from "@/lib/i18n-server";
 import { pageMetadata } from "@/lib/metadata";
 import { breadcrumbSchema } from "@/lib/seo-schema";
 import { serviceMetaBySlug, servicesData } from "@/services/data";
 
 export const metadata = pageMetadata(
   "Servicios",
-  "SERVICIOS. Cada servicio irá acompañado de tres o cuatro fotos.",
+  "Servicios de Dosmas Grup.",
   "/servicios",
   { image: "/images/brand/portada.webp", keywords: ["excavaciones", "demoliciones", "obra civil", "Mallorca"] }
 );
 
-export default function ServiciosPage() {
+export default async function ServiciosPage() {
+  const locale = await getServerLocale();
+  const t = getDictionary(locale);
+  const text = t.pages.services;
+
   return (
     <>
       <JsonLd
         id="breadcrumb-servicios"
         data={breadcrumbSchema([
-          { name: "Inicio", path: "/" },
-          { name: "Servicios", path: "/servicios" }
+          { name: t.common.home, path: "/" },
+          { name: t.common.services, path: "/servicios" }
         ])}
       />
 
       <PageHero
-        title="Servicios"
-        subtitle="SERVICIOS. Cada servicio irá acompañado de tres o cuatro fotos."
+        title={text.pageTitle}
+        subtitle={text.pageSubtitle}
         image="/images/brand/portada.webp"
       />
 
@@ -38,15 +43,15 @@ export default function ServiciosPage() {
         <Container>
           <Reveal>
             <SectionHeading
-              eyebrow="Servicios"
-              title="Especialistas en obra y servicios integrales"
-              description="SERVICIOS. Cada servicio irá acompañado de tres o cuatro fotos."
+              eyebrow={text.eyebrow}
+              title={text.heading}
+              description={text.description}
               action={
                 <Link
                   href="/solicite-presupuesto"
                   className="inline-flex rounded-full bg-brand-yellow px-5 py-3 text-sm font-semibold text-base-black transition hover:bg-brand-yellow/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple"
                 >
-                  Solicitar presupuesto
+                  {text.requestQuote}
                 </Link>
               }
             />
@@ -54,7 +59,7 @@ export default function ServiciosPage() {
 
           <div className="mt-10">
             <Reveal>
-              <ServiceIndex services={servicesData} />
+              <ServiceIndex services={servicesData} locale={locale} />
             </Reveal>
           </div>
 
@@ -77,7 +82,7 @@ export default function ServiciosPage() {
                         sizes="(min-width: 1280px) 30vw, (min-width: 768px) 45vw, 100vw"
                       />
                       <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-5 text-white">
-                        <p className="text-xs font-semibold uppercase tracking-[0.2em]">{meta?.category ?? "Servicios"}</p>
+                        <p className="text-xs font-semibold uppercase tracking-[0.2em]">{meta?.category ?? t.common.services}</p>
                       </div>
                     </div>
                     <div className="space-y-3 p-6">
@@ -88,13 +93,13 @@ export default function ServiciosPage() {
                           href={`/servicios/${service.slug}`}
                           className="inline-flex rounded-full border border-base-mid px-4 py-2 text-sm font-semibold text-base-black transition hover:border-brand-yellow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
                         >
-                          Ver servicio
+                          {t.common.viewService}
                         </Link>
                         <Link
                           href="/solicite-presupuesto"
                           className="inline-flex rounded-full border border-base-mid bg-white px-4 py-2 text-sm font-semibold text-base-black transition hover:border-brand-purple focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
                         >
-                          Presupuesto
+                          {t.nav.budgetShort}
                         </Link>
                       </div>
                     </div>

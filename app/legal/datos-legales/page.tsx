@@ -5,6 +5,7 @@ import { PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/reveal";
 import { JsonLd } from "@/components/seo/json-ld";
 import { legalDataContent } from "@/content/site-content";
+import { getDictionary, getServerLocale } from "@/lib/i18n-server";
 import { pageMetadata } from "@/lib/metadata";
 import { breadcrumbSchema } from "@/lib/seo-schema";
 
@@ -12,14 +13,17 @@ export const metadata = pageMetadata("Datos legales", "DATOS LEGALES", "/legal/d
   image: "/images/brand/portada.webp"
 });
 
-export default function DatosLegalesPage() {
+export default async function DatosLegalesPage() {
+  const locale = await getServerLocale();
+  const t = getDictionary(locale);
+
   return (
     <>
       <JsonLd
         id="breadcrumb-datos-legales"
         data={breadcrumbSchema([
-          { name: "Inicio", path: "/" },
-          { name: "Datos legales", path: "/legal/datos-legales" }
+          { name: t.common.home, path: "/" },
+          { name: t.pages.legal.legalData, path: "/legal/datos-legales" }
         ])}
       />
 
@@ -27,7 +31,7 @@ export default function DatosLegalesPage() {
       <section className="bg-white py-20">
         <Container>
           <Reveal>
-            <Breadcrumb items={[{ label: "Inicio", href: "/" }, { label: "Datos legales" }]} />
+            <Breadcrumb items={[{ label: t.common.home, href: "/" }, { label: t.pages.legal.legalData }]} />
             <SectionHeading title={legalDataContent.title} />
             <article className="mt-6 rounded-2xl border border-base-mid bg-base-light p-7">
               <div className="space-y-4 text-base leading-8 text-base-dark">

@@ -1,14 +1,40 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
+import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import { navigationLinks } from "@/content/site-content";
 import { cn } from "@/lib/utils";
 import { Container } from "@/components/container";
+import { getDictionary, type Locale, locales } from "@/lib/i18n";
 
-export function SiteHeader() {
+const languageLinks = {
+  ca: { code: "CA", label: "Català", flag: "/images/flags/catalonia.svg" },
+  es: { code: "ES", label: "Castellano", flag: "/images/flags/spain.png" },
+  en: { code: "EN", label: "English", flag: "/images/flags/uk.svg" }
+} as const;
+
+type SiteHeaderProps = {
+  locale: Locale;
+};
+
+export function SiteHeader({ locale }: SiteHeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const t = getDictionary(locale);
+
+  const redirectPath = `${pathname}${searchParams.toString() ? `?${searchParams.toString()}` : ""}`;
+  const navigationLinks = [
+    { label: t.nav.about, href: "/nosotros" },
+    { label: t.nav.projects, href: "/proyectos" },
+    { label: t.nav.workAreas, href: "/areas-de-trabajo" },
+    { label: t.nav.news, href: "/noticias" },
+    { label: t.nav.rsc, href: "/rsc" },
+    { label: t.nav.quote, href: "/solicite-presupuesto" },
+    { label: t.nav.contact, href: "/contacto" }
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -27,21 +53,45 @@ export function SiteHeader() {
       )}
     >
       <div className="hidden border-b border-base-mid bg-base-light/90 lg:block">
-        <Container className="flex min-h-10 items-center justify-between text-xs text-base-dark">
-          <p className="font-medium">Carretera Petra – Santa Margalida, S/N, Parcela km 1,3 · 07520 Petra</p>
+        <Container className="relative flex min-h-10 items-center justify-between text-xs text-white">
+          <div className="absolute inset-0 -z-10 bg-gradient-to-r from-brand-purple via-[#6e6e6e] to-brand-yellow" />
+          <p className="font-semibold text-white/95">Carretera Petra – Santa Margalida, S/N, Parcela km 1,3 · 07520 Petra</p>
           <div className="flex items-center gap-4">
             <a
               href="tel:+34971096012"
-              className="font-semibold hover:text-base-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
+              className="font-semibold text-white transition hover:text-base-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
             >
               971 09 60 12
             </a>
             <a
               href="mailto:info@dosmasgrup.com"
-              className="font-semibold hover:text-base-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
+              className="font-semibold text-white transition hover:text-base-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
             >
               info@dosmasgrup.com
             </a>
+            <ul className="flex items-center gap-2">
+              {locales.map((languageCode) => {
+                const language = languageLinks[languageCode];
+                return (
+                <li key={language.code}>
+                  <a
+                    href={`/api/locale?lang=${languageCode}&redirect=${encodeURIComponent(redirectPath)}`}
+                    aria-label={`${t.header.languagesAriaPrefix} ${language.label}`}
+                    className={cn(
+                      "inline-flex items-center gap-1.5 rounded-full border px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-white transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white",
+                      locale === languageCode
+                        ? "border-white bg-white/40"
+                        : "border-white/70 bg-white/20 hover:bg-white/30"
+                    )}
+                  >
+                    <span className="relative block h-3.5 w-5 overflow-hidden rounded-sm border border-white/60">
+                      <Image src={language.flag} alt="" aria-hidden="true" fill sizes="20px" className="object-cover" />
+                    </span>
+                    {language.code}
+                  </a>
+                </li>
+              )})}
+            </ul>
           </div>
         </Container>
       </div>
@@ -52,10 +102,8 @@ export function SiteHeader() {
           aria-label="Ir a la página de inicio"
           className="group flex items-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
         >
-          <span className="inline-block h-10 w-10 rounded-full border border-base-mid bg-base-light p-1.5">
-            <span className="flex h-full w-full items-center justify-center rounded-full border border-brand-purple/40 text-xs font-bold text-base-black">
-              DM
-            </span>
+          <span className="inline-flex h-14 w-14 items-center justify-center overflow-hidden rounded-full border border-brand-purple/30 bg-white p-1 shadow-soft">
+            <Image src="/images/logo-dosmas.png" alt="Logo Dosmas Grup" width={56} height={56} className="h-auto w-full object-contain" priority />
           </span>
           <span className="text-lg font-semibold tracking-tight text-base-black group-hover:text-base-dark">
             Dosmas Grup
@@ -67,14 +115,14 @@ export function SiteHeader() {
           className="inline-flex items-center rounded-md border border-base-mid px-3 py-2 text-sm font-medium text-base-black hover:border-brand-yellow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow lg:hidden"
           aria-expanded={menuOpen}
           aria-controls="mobile-main-menu"
-          aria-label="Abrir o cerrar el menú principal"
+          aria-label={t.nav.menuToggle}
           onClick={() => setMenuOpen((prev) => !prev)}
         >
-          Menú
+          {t.nav.menu}
         </button>
 
         <nav className="hidden lg:block" aria-label="Menú principal">
-          <ul className="flex items-center gap-6 text-sm font-medium text-base-dark">
+          <ul className="flex items-center gap-6 text-sm font-semibold uppercase tracking-[0.08em] text-base-dark">
             {navigationLinks.map((item) => (
               <li key={item.href}>
                 <Link
@@ -90,7 +138,7 @@ export function SiteHeader() {
                 href="/solicite-presupuesto"
                 className="inline-flex rounded-full bg-brand-yellow px-4 py-2 text-xs font-semibold uppercase tracking-wide text-base-black transition hover:bg-brand-yellow/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple"
               >
-                Presupuesto
+                {t.nav.budgetShort}
               </Link>
             </li>
           </ul>
@@ -112,13 +160,36 @@ export function SiteHeader() {
                 <Link
                   href={item.href}
                   onClick={() => setMenuOpen(false)}
-                  className="block rounded-md px-3 py-2 text-sm font-medium text-base-dark transition-colors hover:bg-base-light hover:text-base-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
+                  className="block rounded-md px-3 py-2 text-sm font-semibold uppercase tracking-[0.08em] text-base-dark transition-colors hover:bg-base-light hover:text-base-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
                 >
                   {item.label}
                 </Link>
               </li>
             ))}
           </ul>
+          <div className="mb-4 flex items-center gap-2 border-t border-base-mid pt-3">
+            {locales.map((languageCode) => {
+              const language = languageLinks[languageCode];
+              return (
+                <a
+                  key={language.code}
+                  href={`/api/locale?lang=${languageCode}&redirect=${encodeURIComponent(redirectPath)}`}
+                  aria-label={`${t.header.languagesAriaPrefix} ${language.label}`}
+                  className={cn(
+                    "inline-flex items-center gap-1.5 rounded-full border px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-base-black transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow",
+                    locale === languageCode
+                      ? "border-brand-purple bg-brand-purple/10"
+                      : "border-base-mid bg-white hover:border-brand-yellow"
+                  )}
+                >
+                  <span className="relative block h-3.5 w-5 overflow-hidden rounded-sm border border-base-mid">
+                    <Image src={language.flag} alt="" aria-hidden="true" fill sizes="20px" className="object-cover" />
+                  </span>
+                  {language.code}
+                </a>
+              );
+            })}
+          </div>
         </Container>
       </nav>
     </header>
