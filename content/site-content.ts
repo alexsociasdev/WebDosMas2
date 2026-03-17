@@ -60,7 +60,7 @@ export const editorialSection = {
 
 export const brandsSection = {
   title: "NUESTRAS MARCA: Dosmas Obras y Proyectos, Coexma Obres i Serveis, Tot Natura y Pintura 3V.",
-  subtitle: "Cuatro marcas, un mismo propósito",
+  subtitle: "Nuestras marcas especializadas, una estructura sólida",
   paragraphs: [
     "Dosmas Grup se articula en cuatro unidades de negocio: Dosmas Obras y Proyectos, Coexma Obres i Serveis, Tot Natura y Pintura 3V.",
     "Juntas conforman una estructura sólida y versátil que nos permite abordar proyectos de cualquier magnitud, ofreciendo soluciones integrales que van desde la construcción de obra nueva hasta la rehabilitación y reformas, pasando por excavaciones, movimientos de tierra, demoliciones y derribos.",

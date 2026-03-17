@@ -15,7 +15,7 @@ export const metadata = pageMetadata(
   "Servicios",
   "Servicios de Dosmas Grup.",
   "/servicios",
-  { image: "/images/brand/portada.webp", keywords: ["excavaciones", "demoliciones", "obra civil", "Mallorca"] }
+  { image: "/images/projects/excavacion-en-son-vida/01.webp", keywords: ["excavaciones", "demoliciones", "obra civil", "Mallorca"] }
 );
 
 export default async function ServiciosPage() {
@@ -36,7 +36,7 @@ export default async function ServiciosPage() {
       <PageHero
         title={text.pageTitle}
         subtitle={text.pageSubtitle}
-        image="/images/brand/portada.webp"
+        image="/images/projects/excavacion-en-son-vida/01.webp"
       />
 
       <section className="bg-white py-20">
@@ -74,7 +74,7 @@ export default async function ServiciosPage() {
                   >
                     <div className="relative aspect-[4/3]">
                       <Image
-                        src="/images/fondo.webp"
+                        src={service.gallery[0]}
                         alt={service.title}
                         fill
                         className="object-cover"

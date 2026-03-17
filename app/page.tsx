@@ -113,17 +113,12 @@ export default async function HomePage() {
       ]
     }
   ];
-  const homeTeamMembers = teamMembers.map((member, index) => ({
-    ...member,
-    name: `${t.home.worker} ${index + 1}`,
-    email: `trabajador${index + 1}@dosmasgrup.com`
-  }));
 
   return (
     <>
       <section className="relative overflow-hidden border-b border-base-mid bg-base-black">
         <Image src="/images/fondo.webp" alt="Fondo Dosmas Grup" fill priority sizes="100vw" className="object-cover opacity-30" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(255,206,5,0.3),transparent_32%),radial-gradient(circle_at_85%_15%,rgba(155,57,237,0.38),transparent_35%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(241,171,0,0.28),transparent_32%),radial-gradient(circle_at_85%_15%,rgba(136,94,128,0.38),transparent_35%)]" />
         <div className="absolute inset-0 bg-gradient-to-b from-base-black/70 via-base-black/60 to-base-black/70" />
 
         <Container className="relative space-y-10 py-8 lg:py-12">
@@ -153,12 +148,12 @@ export default async function HomePage() {
               </div>
 
               <div className="flex flex-col justify-center gap-6">
-                <article className="mx-auto inline-flex h-56 w-56 items-center justify-center rounded-full border-2 border-brand-purple/40 bg-gradient-to-br from-brand-yellow via-[#ffe06b] to-brand-purple/20 text-center shadow-soft">
+                <article className="mx-auto inline-flex h-56 w-56 items-center justify-center rounded-full border-2 border-brand-purple/40 bg-gradient-to-br from-brand-yellow via-[#ffd875] to-brand-purple/20 text-center shadow-soft">
                   <p className="px-6 text-center text-base-black">
-                    <span className="block text-lg font-bold leading-5">más de</span>
-                    <span className="block text-6xl font-extrabold leading-none">70</span>
+                    <span className="block text-4xl font-bold leading-none">+</span>
+                    <span className="block text-[5.4rem] font-extrabold leading-none">70</span>
                     <span className="block text-lg font-bold leading-5">años</span>
-                    <span className="mt-2 block text-sm font-semibold leading-5">
+                    <span className="mt-2 block text-xs font-semibold uppercase tracking-[0.22em] leading-5">
                       ({startYear} – {currentYear})
                     </span>
                   </p>
@@ -167,7 +162,7 @@ export default async function HomePage() {
                 <article className="overflow-hidden rounded-3xl border border-base-mid bg-base-light shadow-soft">
                   <div className="relative aspect-[5/4]">
                     <Image
-                      src="/images/fondo.webp"
+                      src="/images/team/foto-grupo-puente.jpg"
                       alt="Dosmas Grup"
                       fill
                       sizes="(min-width: 1024px) 40vw, 100vw"
@@ -196,7 +191,7 @@ export default async function HomePage() {
         </Container>
       </section>
 
-      <section className="bg-gradient-to-b from-[#f7f7f7] via-[#fffdf4] to-[#f5f5f5] py-20">
+      <section className="bg-gradient-to-b from-[#f7f4ef] via-[#fff8eb] to-[#f2efec] py-20">
         <Container>
           <Reveal>
             <SectionHeading title={aboutUsContent.title.toUpperCase()} />
@@ -214,7 +209,7 @@ export default async function HomePage() {
         </Container>
       </section>
 
-      <section className="border-y border-brand-purple/20 bg-gradient-to-b from-[#f3f3f3] to-[#ece9f6] py-20">
+      <section className="border-y border-brand-purple/20 bg-gradient-to-b from-[#f3efea] to-[#ebe4e8] py-20">
         <Container>
           <div className="grid gap-6 md:grid-cols-3">
             {editorialSection.blocks.map((block) => (
@@ -240,7 +235,7 @@ export default async function HomePage() {
         </Container>
       </section>
 
-      <section className="bg-gradient-to-b from-[#ececec] via-[#ede6fb] to-[#f3f3f3] py-20">
+      <section className="bg-gradient-to-b from-[#ede7df] via-[#efe8ec] to-[#f4f1ed] py-20">
         <Container className="space-y-10">
           <Reveal>
             <SectionHeading title={brandsSection.title.toUpperCase()} description={brandsSection.subtitle} />
@@ -292,7 +287,7 @@ export default async function HomePage() {
         </Container>
       </section>
 
-      <section className="bg-gradient-to-b from-[#ffffff] via-[#f8f8f8] to-[#f2eefb] py-20">
+      <section className="bg-gradient-to-b from-[#fffdf8] via-[#f7f2ed] to-[#efe8eb] py-20">
         <Container>
           <Reveal>
             <SectionHeading title={teamSection.title.toUpperCase()} />
@@ -306,13 +301,21 @@ export default async function HomePage() {
           <Reveal>
             <article className="mt-8 overflow-hidden rounded-3xl border border-base-mid bg-base-light shadow-soft">
               <div className="relative aspect-[16/7]">
+                <Image src="/images/team/foto-grupo-puente.jpg" alt="Equipo de Dosmas Grup" fill className="object-cover" />
+              </div>
+            </article>
+          </Reveal>
+
+          <Reveal>
+            <article className="mt-6 overflow-hidden rounded-3xl border border-base-mid bg-base-light shadow-soft">
+              <div className="relative aspect-[16/7]">
                 <Image src="/images/team/foto-grupo-dosmas.jpg" alt="Equipo de Dosmas Grup" fill className="object-cover" />
               </div>
             </article>
           </Reveal>
 
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {homeTeamMembers.map((member) => (
+            {teamMembers.map((member) => (
               <Reveal key={member.email}>
                 <article className="overflow-hidden rounded-2xl border border-brand-purple/20 bg-gradient-to-b from-base-light to-white transition hover:-translate-y-1 hover:shadow-soft">
                   <div className="relative aspect-[4/3]">
@@ -336,7 +339,7 @@ export default async function HomePage() {
         </Container>
       </section>
 
-      <section className="border-y border-brand-purple/20 bg-gradient-to-b from-[#efefef] via-[#f8f1ff] to-[#f2f2f2] py-20">
+      <section className="border-y border-brand-purple/20 bg-gradient-to-b from-[#f0ece6] via-[#efe5eb] to-[#f3efeb] py-20">
         <Container>
           <Reveal>
             <FeaturePanels
@@ -350,7 +353,7 @@ export default async function HomePage() {
         </Container>
       </section>
 
-      <section className="bg-gradient-to-b from-[#ffffff] via-[#f9f9f9] to-[#fff7de] py-20">
+      <section className="bg-gradient-to-b from-[#fffdfa] via-[#faf4eb] to-[#fff4d7] py-20">
         <Container className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
           <Reveal>
             <SectionHeading title={trustSection.title.toUpperCase()} />

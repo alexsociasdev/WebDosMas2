@@ -10,7 +10,7 @@ import { pageMetadata } from "@/lib/metadata";
 import { breadcrumbSchema } from "@/lib/seo-schema";
 
 export const metadata = pageMetadata("Contacto", "CONTACTA.", "/contacto", {
-  image: "/images/brand/portada.webp"
+  image: "/images/team/foto-grupo-puente.jpg"
 });
 
 export default async function ContactoPage() {
@@ -28,7 +28,7 @@ export default async function ContactoPage() {
         ])}
       />
 
-      <PageHero title={text.pageTitle} subtitle={text.pageSubtitle} image="/images/brand/portada.webp" />
+      <PageHero title={text.pageTitle} subtitle={text.pageSubtitle} image="/images/team/foto-grupo-puente.jpg" />
 
       <section className="bg-white py-20">
         <Container className="grid gap-10 lg:grid-cols-[0.92fr_1.08fr]">

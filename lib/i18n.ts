@@ -392,14 +392,14 @@ const dictionaries: Record<Locale, Dictionary> = {
       },
       slide3: {
         eyebrow: "ÁREAS DE TRABAJO",
-        title: "Cuatro marcas especializadas, una estructura sólida",
+        title: "Nuestras marcas especializadas, una estructura sólida",
         description:
           "Dosmas Obras y Proyectos, Coexma Obres i Serveis, Tot Natura y Pintura 3V para cubrir todas las fases de cada proyecto.",
         cta: "VER ÁREAS DE TRABAJO",
-        metric1: "Marcas",
+        metric1: "Solidez",
         metric2: "Cobertura",
         metric3: "Compromiso",
-        value1: "4 unidades",
+        value1: "en cada sector",
         value2: "Illes Balears",
         value3: "Calidad y seguridad"
       },
@@ -641,14 +641,14 @@ const dictionaries: Record<Locale, Dictionary> = {
       },
       slide3: {
         eyebrow: "ÀREES DE TREBALL",
-        title: "Quatre marques especialitzades, una estructura sòlida",
+        title: "Les nostres marques especialitzades, una estructura sòlida",
         description:
           "Dosmas Obras y Proyectos, Coexma Obres i Serveis, Tot Natura i Pintura 3V per cobrir totes les fases de cada projecte.",
         cta: "VEURE ÀREES DE TREBALL",
-        metric1: "Marques",
+        metric1: "Solidesa",
         metric2: "Cobertura",
         metric3: "Compromís",
-        value1: "4 unitats",
+        value1: "a cada sector",
         value2: "Illes Balears",
         value3: "Qualitat i seguretat"
       },
@@ -890,14 +890,14 @@ const dictionaries: Record<Locale, Dictionary> = {
       },
       slide3: {
         eyebrow: "WORK AREAS",
-        title: "Four specialized brands, one solid structure",
+        title: "Our specialized brands, one solid structure",
         description:
           "Dosmas Obras y Proyectos, Coexma Obres i Serveis, Tot Natura and Pintura 3V to cover every phase of each project.",
         cta: "VIEW WORK AREAS",
-        metric1: "Brands",
+        metric1: "Strength",
         metric2: "Coverage",
         metric3: "Commitment",
-        value1: "4 units",
+        value1: "in every sector",
         value2: "Balearic Islands",
         value3: "Quality and safety"
       },

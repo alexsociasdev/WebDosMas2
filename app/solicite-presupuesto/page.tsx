@@ -13,7 +13,7 @@ export const metadata = pageMetadata(
   "Solicite presupuesto",
   "SOLICITE PRESUPUESTO.",
   "/solicite-presupuesto",
-  { image: "/images/brand/portada.webp" }
+  { image: "/images/projects/excavacion-en-son-vida/04.webp" }
 );
 
 export default async function SolicitePresupuestoPage() {
@@ -31,7 +31,7 @@ export default async function SolicitePresupuestoPage() {
         ])}
       />
 
-      <PageHero title={text.pageTitle} subtitle={text.pageSubtitle} image="/images/brand/portada.webp" />
+      <PageHero title={text.pageTitle} subtitle={text.pageSubtitle} image="/images/projects/excavacion-en-son-vida/04.webp" />
 
       <section className="bg-base-light py-20">
         <Container className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">

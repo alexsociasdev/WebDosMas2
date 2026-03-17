@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "@/styles/globals.css";
 import { defaultMetadata } from "@/lib/metadata";
 import { SiteHeader } from "@/components/site-header";
@@ -10,22 +9,6 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { organizationSchema, websiteSchema } from "@/lib/seo-schema";
 import { FloatingCta } from "@/components/floating-cta";
 import { getDictionary, getServerLocale } from "@/lib/i18n-server";
-
-const brandFont = localFont({
-  src: [
-    {
-      path: "./fonts/geist-latin.woff2",
-      weight: "100 900",
-      style: "normal"
-    },
-    {
-      path: "./fonts/geist-latin-ext.woff2",
-      weight: "100 900",
-      style: "normal"
-    }
-  ],
-  display: "swap"
-});
 
 export const metadata: Metadata = defaultMetadata;
 
@@ -39,7 +22,7 @@ export default async function RootLayout({
 
   return (
     <html lang={t.lang}>
-      <body className={`${brandFont.className} antialiased`}>
+      <body className="antialiased">
         <JsonLd id="schema-org" data={[organizationSchema(), websiteSchema()]} />
         <a
           href="#contenido-principal"

@@ -100,6 +100,16 @@ export function SiteFooter({ locale }: SiteFooterProps) {
             </li>
             <li>
               <a
+                href="https://www.youtube.com/@DosMasGrup"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-base-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
+              >
+                YouTube
+              </a>
+            </li>
+            <li>
+              <a
                 href="mailto:info@dosmasgrup.com"
                 className="hover:text-base-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
               >

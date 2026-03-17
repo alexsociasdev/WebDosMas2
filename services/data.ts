@@ -7,10 +7,10 @@ export type ServiceItem = {
 };
 
 const defaultGallery = [
-  "/images/fondo.webp",
-  "/images/fondo.webp",
-  "/images/fondo.webp",
-  "/images/fondo.webp"
+  "/images/projects/excavacion-en-son-vida/01.webp",
+  "/images/projects/demolicion-en-santa-ponca/03.webp",
+  "/images/projects/son-ribotet/04.webp",
+  "/images/projects/aeropuerto-de-palma/08.webp"
 ];
 
 export const servicesData: ServiceItem[] = [

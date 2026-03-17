@@ -17,7 +17,7 @@ export const metadata = pageMetadata(
   "Nosotros",
   "Dosmas Grup es un grupo de empresas especializado en excavaciones, movimientos de tierra y obras integrales, con sede en Mallorca.",
   "/nosotros",
-  { image: "/images/brand/portada.webp" }
+  { image: "/images/team/foto-grupo-puente.jpg" }
 );
 
 const icons = [
@@ -44,7 +44,7 @@ export default async function NosotrosPage() {
       <PageHero
         title={t.nav.about}
         subtitle="Dosmas Grup es un grupo de empresas especializado en excavaciones, movimientos de tierra y obras integrales, con sede en Mallorca."
-        image="/images/brand/portada.webp"
+        image="/images/team/foto-grupo-puente.jpg"
       />
 
       <section className="bg-white py-20">
@@ -111,6 +111,14 @@ export default async function NosotrosPage() {
 
           <Reveal>
             <article className="mt-8 overflow-hidden rounded-3xl border border-base-mid bg-base-light shadow-soft">
+              <div className="relative aspect-[16/7]">
+                <Image src="/images/team/foto-grupo-puente.jpg" alt="Equipo de Dosmas Grup" fill className="object-cover" />
+              </div>
+            </article>
+          </Reveal>
+
+          <Reveal>
+            <article className="mt-6 overflow-hidden rounded-3xl border border-base-mid bg-base-light shadow-soft">
               <div className="relative aspect-[16/7]">
                 <Image src="/images/team/foto-grupo-dosmas.jpg" alt="Equipo de Dosmas Grup" fill className="object-cover" />
               </div>

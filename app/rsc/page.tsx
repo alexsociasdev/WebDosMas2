@@ -14,7 +14,7 @@ import { breadcrumbSchema } from "@/lib/seo-schema";
 import { rscInitiatives } from "@/rsc/data";
 
 export const metadata = pageMetadata("RSC", "Responsabilidad Social Corporativa", "/rsc", {
-  image: "/images/brand/portada.webp",
+  image: "/images/team/foto-grupo-puente.jpg",
   keywords: ["RSC", "sostenibilidad", "responsabilidad social", "Dosmas Grup"]
 });
 
@@ -33,7 +33,7 @@ export default async function RscPage() {
         ])}
       />
 
-      <PageHero title={text.pageTitle} subtitle={text.pageSubtitle} image="/images/brand/portada.webp" />
+      <PageHero title={text.pageTitle} subtitle={text.pageSubtitle} image="/images/team/foto-grupo-puente.jpg" />
 
       <section className="bg-white py-20">
         <Container className="space-y-10">

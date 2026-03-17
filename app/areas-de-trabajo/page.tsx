@@ -15,7 +15,7 @@ export const metadata = pageMetadata(
   "Areas de trabajo",
   "Areas de trabajo",
   "/areas-de-trabajo",
-  { image: "/images/brand/portada.webp" }
+  { image: "/images/projects/demolicion-en-santa-ponca/03.webp" }
 );
 
 export default async function AreasTrabajoPage() {
@@ -33,7 +33,7 @@ export default async function AreasTrabajoPage() {
         ])}
       />
 
-      <PageHero title={text.pageTitle} subtitle={text.pageSubtitle} image="/images/brand/portada.webp" />
+      <PageHero title={text.pageTitle} subtitle={text.pageSubtitle} image="/images/projects/demolicion-en-santa-ponca/03.webp" />
 
       <section className="bg-base-light py-20">
         <Container>
@@ -47,7 +47,7 @@ export default async function AreasTrabajoPage() {
               <Reveal key={service.slug}>
                 <article className="overflow-hidden rounded-2xl border border-base-mid bg-white p-5 transition hover:-translate-y-1 hover:shadow-soft">
                   <div className="relative mb-5 aspect-[16/10] overflow-hidden rounded-xl border border-base-mid">
-                    <Image src="/images/fondo.webp" alt={service.title} fill className="object-cover" loading="lazy" sizes="(min-width: 1024px) 30vw, (min-width: 768px) 45vw, 100vw" />
+                    <Image src={service.gallery[0]} alt={service.title} fill className="object-cover" loading="lazy" sizes="(min-width: 1024px) 30vw, (min-width: 768px) 45vw, 100vw" />
                   </div>
                   <p className="text-xs font-semibold uppercase tracking-[0.2em] text-base-dark">{serviceMetaBySlug[service.slug]?.category || t.common.services}</p>
                   <h2 className="mt-2 text-lg font-semibold text-base-black">{service.title}</h2>
