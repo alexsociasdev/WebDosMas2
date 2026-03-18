@@ -38,7 +38,7 @@ export default async function ProyectosPage() {
         image="/images/projects/aeropuerto-de-palma/08.webp"
       />
 
-      <section className="bg-white py-20">
+      <section className="bg-brand-yellow py-20">
         <Container>
           <Reveal>
             <Breadcrumb items={[{ label: t.common.home, href: "/" }, { label: t.common.projects }]} />

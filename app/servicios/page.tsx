@@ -39,7 +39,7 @@ export default async function ServiciosPage() {
         image="/images/projects/excavacion-en-son-vida/01.webp"
       />
 
-      <section className="bg-white py-20">
+      <section className="bg-brand-gray py-20">
         <Container>
           <Reveal>
             <SectionHeading
@@ -70,7 +70,7 @@ export default async function ServiciosPage() {
                 <Reveal key={service.slug}>
                   <article
                     id={service.slug}
-                    className="group h-full overflow-hidden rounded-3xl border border-base-mid bg-base-light transition hover:-translate-y-1 hover:shadow-soft"
+                    className="group h-full overflow-hidden rounded-3xl border border-base-mid bg-white transition hover:-translate-y-1 hover:shadow-soft"
                   >
                     <div className="relative aspect-[4/3]">
                       <Image

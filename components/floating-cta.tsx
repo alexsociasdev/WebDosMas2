@@ -74,7 +74,7 @@ export function FloatingCta({ locale }: FloatingCtaProps) {
       <div className="flex flex-col items-end gap-3">
         {open ? (
           <div className="w-[22rem] overflow-hidden rounded-[1.75rem] border border-brand-purple/30 bg-white shadow-[0_28px_70px_-28px_rgba(17,17,17,0.45)]">
-            <div className="bg-gradient-to-r from-brand-purple to-brand-gray px-5 py-4 text-white">
+            <div className="bg-brand-purple px-5 py-4 text-white">
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/80">{copy.badge}</p>
               <h3 className="mt-1 text-lg font-semibold">{copy.title}</h3>
               <p className="mt-1 text-sm text-white/80">{copy.intro}</p>
@@ -84,27 +84,27 @@ export function FloatingCta({ locale }: FloatingCtaProps) {
                 <button
                   type="button"
                   onClick={() => pushMessage(copy.answer1)}
-                  className="rounded-full border border-brand-yellow/50 bg-brand-yellow/15 px-3 py-2 text-xs font-semibold text-base-black transition hover:bg-brand-yellow/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple"
+                  className="rounded-full border border-brand-yellow bg-brand-yellow px-3 py-2 text-xs font-semibold text-base-black transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple"
                 >
                   {copy.quick1}
                 </button>
                 <button
                   type="button"
                   onClick={() => pushMessage(copy.answer2)}
-                  className="rounded-full border border-brand-purple/30 bg-brand-purple/10 px-3 py-2 text-xs font-semibold text-base-black transition hover:bg-brand-purple/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple"
+                  className="rounded-full border border-brand-purple bg-brand-purple px-3 py-2 text-xs font-semibold text-white transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple"
                 >
                   {copy.quick2}
                 </button>
                 <button
                   type="button"
                   onClick={() => pushMessage(copy.answer3)}
-                  className="rounded-full border border-brand-gray/30 bg-base-light px-3 py-2 text-xs font-semibold text-base-black transition hover:border-brand-yellow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple"
+                  className="rounded-full border border-brand-gray bg-white px-3 py-2 text-xs font-semibold text-base-black transition hover:border-brand-yellow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple"
                 >
                   {copy.quick3}
                 </button>
               </div>
 
-              <div className="max-h-52 space-y-2 overflow-y-auto rounded-2xl bg-base-light p-3">
+              <div className="max-h-52 space-y-2 overflow-y-auto rounded-2xl bg-white p-3">
                 {messages.length === 0 ? (
                   <div className="rounded-2xl bg-white p-3 text-sm leading-6 text-base-dark shadow-soft">
                     {copy.intro}
@@ -140,7 +140,7 @@ export function FloatingCta({ locale }: FloatingCtaProps) {
           type="button"
           aria-label={copy.ariaToggle}
           onClick={() => setOpen((current) => !current)}
-          className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-brand-purple to-brand-yellow px-5 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-base-black shadow-soft transition hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+          className="inline-flex items-center gap-3 rounded-full bg-brand-purple px-5 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-white shadow-soft transition hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
         >
           <span className="relative flex h-3 w-3">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white/70" />

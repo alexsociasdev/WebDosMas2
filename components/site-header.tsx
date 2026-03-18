@@ -32,7 +32,6 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
     { label: t.nav.workAreas, href: "/areas-de-trabajo" },
     { label: t.nav.news, href: "/noticias" },
     { label: t.nav.rsc, href: "/rsc" },
-    { label: t.nav.quote, href: "/solicite-presupuesto" },
     { label: t.nav.contact, href: "/contacto" }
   ];
 
@@ -48,24 +47,23 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
       className={cn(
         "sticky top-0 z-50 border-b border-transparent transition-all duration-300",
         scrolled
-          ? "border-base-mid bg-white/95 shadow-soft backdrop-blur"
-          : "bg-white/85 backdrop-blur"
+          ? "border-brand-gray/40 bg-white shadow-soft"
+          : "bg-white"
       )}
     >
-      <div className="hidden border-b border-base-mid bg-base-light/90 lg:block">
-        <Container className="relative flex min-h-10 items-center justify-between text-xs text-white">
-          <div className="absolute inset-0 -z-10 bg-gradient-to-r from-brand-purple via-[#6e6e6e] to-brand-yellow" />
-          <p className="font-semibold text-white/95">Carretera Petra – Santa Margalida, S/N, Parcela km 1,3 · 07520 Petra</p>
+      <div className="hidden border-b border-brand-yellow bg-brand-yellow lg:block">
+        <Container className="flex min-h-11 items-center justify-between text-xs text-base-black">
+          <p className="font-semibold text-base-black">Carretera Petra – Santa Margalida, S/N, Parcela km 1,3 · 07520 Petra</p>
           <div className="flex items-center gap-4">
             <a
               href="tel:+34971096012"
-              className="font-semibold text-white transition hover:text-base-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+              className="rounded-full bg-brand-purple px-3 py-1 font-semibold text-white transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
             >
               971 09 60 12
             </a>
             <a
               href="mailto:info@dosmasgrup.com"
-              className="font-semibold text-white transition hover:text-base-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+              className="rounded-full bg-brand-yellow px-3 py-1 font-semibold text-base-black transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
             >
               info@dosmasgrup.com
             </a>
@@ -78,13 +76,13 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                     href={`/api/locale?lang=${languageCode}&redirect=${encodeURIComponent(redirectPath)}`}
                     aria-label={`${t.header.languagesAriaPrefix} ${language.label}`}
                     className={cn(
-                      "inline-flex items-center gap-1.5 rounded-full border px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-white transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white",
+                      "inline-flex items-center gap-1.5 rounded-full border px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white",
                       locale === languageCode
-                        ? "border-white bg-white/40"
-                        : "border-white/70 bg-white/20 hover:bg-white/30"
+                        ? "border-brand-purple bg-brand-purple text-white"
+                        : "border-brand-gray bg-white text-base-black hover:bg-brand-gray hover:text-white"
                     )}
                   >
-                    <span className="relative block h-3.5 w-5 overflow-hidden rounded-sm border border-white/60">
+                    <span className="relative block h-3.5 w-5 overflow-hidden rounded-sm border border-brand-gray/60">
                       <Image src={language.flag} alt="" aria-hidden="true" fill sizes="20px" className="object-cover" />
                     </span>
                     {language.code}
@@ -102,7 +100,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
           aria-label="Ir a la página de inicio"
           className="group flex items-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
         >
-          <span className="inline-flex h-14 w-14 items-center justify-center overflow-hidden rounded-full border border-brand-purple/30 bg-white p-1 shadow-soft">
+          <span className="inline-flex h-14 w-14 items-center justify-center overflow-hidden rounded-full border border-brand-gray/40 bg-white p-1 shadow-soft">
             <Image src="/images/logo-dosmas.png" alt="Logo Dosmas Grup" width={56} height={56} className="h-auto w-full object-contain" priority />
           </span>
           <span className="text-lg font-semibold tracking-tight text-base-black group-hover:text-base-dark">
@@ -112,7 +110,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
 
         <button
           type="button"
-          className="inline-flex items-center rounded-md border border-base-mid px-3 py-2 text-sm font-medium text-base-black hover:border-brand-yellow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow lg:hidden"
+          className="inline-flex items-center rounded-md border border-brand-gray/40 bg-white px-3 py-2 text-sm font-medium text-base-black hover:border-brand-yellow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow lg:hidden"
           aria-expanded={menuOpen}
           aria-controls="mobile-main-menu"
           aria-label={t.nav.menuToggle}
@@ -127,7 +125,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="relative whitespace-nowrap py-2 transition-colors duration-200 hover:text-base-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
+                  className="relative whitespace-nowrap py-2 transition-colors duration-200 hover:text-brand-purple focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
                 >
                   {item.label}
                 </Link>
@@ -136,7 +134,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
             <li>
               <Link
                 href="/solicite-presupuesto"
-                className="inline-flex rounded-full bg-brand-yellow px-4 py-2 text-xs font-semibold uppercase tracking-wide text-base-black transition hover:bg-brand-yellow/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple"
+                className="inline-flex rounded-full bg-brand-purple px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
               >
                 {t.nav.budgetShort}
               </Link>
@@ -149,7 +147,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
         id="mobile-main-menu"
         aria-label="Menú principal móvil"
         className={cn(
-          "overflow-hidden border-t border-base-mid bg-white transition-all duration-300 lg:hidden",
+          "overflow-hidden border-t border-brand-gray/30 bg-white transition-all duration-300 lg:hidden",
           menuOpen ? "max-h-screen" : "max-h-0"
         )}
       >
@@ -160,7 +158,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                 <Link
                   href={item.href}
                   onClick={() => setMenuOpen(false)}
-                  className="block rounded-md px-3 py-2 text-sm font-semibold uppercase tracking-[0.08em] text-base-dark transition-colors hover:bg-base-light hover:text-base-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
+                  className="block rounded-md px-3 py-2 text-sm font-semibold uppercase tracking-[0.08em] text-base-dark transition-colors hover:bg-brand-yellow hover:text-base-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
                 >
                   {item.label}
                 </Link>
@@ -178,7 +176,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
                   className={cn(
                     "inline-flex items-center gap-1.5 rounded-full border px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-base-black transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow",
                     locale === languageCode
-                      ? "border-brand-purple bg-brand-purple/10"
+                      ? "border-brand-purple bg-brand-purple text-white"
                       : "border-base-mid bg-white hover:border-brand-yellow"
                   )}
                 >

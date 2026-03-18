@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/container";
 import { Breadcrumb } from "@/components/marketing/breadcrumb";
-import { MosaicGallery } from "@/components/marketing/mosaic-gallery";
+import { ProjectGallerySlider } from "@/components/marketing/project-gallery-slider";
 import { RelatedLinks } from "@/components/marketing/related-links";
 import { SectionHeading } from "@/components/marketing/section-heading";
 import { PageHero } from "@/components/page-hero";
@@ -99,7 +99,7 @@ export default async function ProyectoDetailPage({ params }: ProjectDetailPagePr
 
       <PageHero title={project.title} subtitle={project.summary} image={project.image} />
 
-      <section className="bg-white py-20">
+      <section className="bg-brand-yellow py-20">
         <Container className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
           <Reveal>
             <Breadcrumb
@@ -122,7 +122,7 @@ export default async function ProyectoDetailPage({ params }: ProjectDetailPagePr
 
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               {project.kpis.map((kpi) => (
-                <article key={kpi.label} className="rounded-xl border border-base-mid bg-base-light p-4">
+                <article key={kpi.label} className="rounded-xl border border-base-mid bg-white p-4">
                   <p className="text-xs font-semibold uppercase tracking-[0.2em] text-base-dark">{kpi.label}</p>
                   <p className="mt-2 text-2xl font-bold text-base-black">{kpi.value}</p>
                 </article>
@@ -158,7 +158,7 @@ export default async function ProyectoDetailPage({ params }: ProjectDetailPagePr
                 </dl>
               </article>
 
-              <div className="rounded-2xl border border-base-mid bg-base-light p-6">
+              <div className="rounded-2xl border border-base-mid bg-white p-6">
                 <p className="text-sm text-base-dark">{t.pages.projects.needSimilarProject}</p>
                 <Link
                   href="/solicite-presupuesto"
@@ -172,15 +172,15 @@ export default async function ProyectoDetailPage({ params }: ProjectDetailPagePr
         </Container>
       </section>
 
-      <section className="border-y border-base-mid bg-base-light py-20">
+      <section className="border-y border-brand-gray/35 bg-brand-yellow py-20">
         <Container>
           <Reveal>
-            <MosaicGallery images={project.gallery} label={project.title} />
+            <ProjectGallerySlider images={project.gallery} label={project.title} />
           </Reveal>
         </Container>
       </section>
 
-      <section className="bg-white py-20">
+      <section className="bg-brand-yellow py-20">
         <Container className="grid gap-6 lg:grid-cols-2">
           <Reveal>
             <RelatedLinks title={t.common.relatedServices} items={relatedServices} />

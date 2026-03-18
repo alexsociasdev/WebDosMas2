@@ -35,7 +35,7 @@ export default async function RscPage() {
 
       <PageHero title={text.pageTitle} subtitle={text.pageSubtitle} image="/images/team/foto-grupo-puente.jpg" />
 
-      <section className="bg-white py-20">
+      <section className="bg-brand-yellow py-20">
         <Container className="space-y-10">
           <Reveal>
             <Breadcrumb items={[{ label: t.common.home, href: "/" }, { label: text.pageTitle }]} />
@@ -61,7 +61,7 @@ export default async function RscPage() {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {rscInitiatives.map((item) => (
               <Reveal key={item.title}>
-                <article className="overflow-hidden rounded-2xl border border-base-mid bg-base-light transition hover:-translate-y-1 hover:shadow-soft">
+                <article className="overflow-hidden rounded-2xl border border-base-mid bg-white transition hover:-translate-y-1 hover:shadow-soft">
                   <div className="relative aspect-[4/3]">
                     <Image src={item.image} alt={item.title} fill className="object-cover" loading="lazy" sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw" />
                   </div>
@@ -76,7 +76,7 @@ export default async function RscPage() {
           </div>
 
           <Reveal>
-            <article className="rounded-2xl border border-base-mid bg-base-light p-8">
+            <article className="rounded-2xl border border-base-mid bg-white p-8">
               <h3 className="text-2xl font-semibold text-base-black">{text.collaborateTitle}</h3>
               <p className="mt-3 text-base leading-8 text-base-dark">
                 {text.collaborateBody}

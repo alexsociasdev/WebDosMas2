@@ -108,7 +108,7 @@ export function ContactForm({ locale }: ContactFormProps) {
         />
       </label>
 
-      <label className="flex items-start gap-3 rounded-lg border border-base-mid bg-base-light p-3 text-sm text-base-dark">
+      <label className="flex items-start gap-3 rounded-lg border border-base-mid bg-white p-3 text-sm text-base-dark">
         <input
           type="checkbox"
           checked={form.privacyAccepted}

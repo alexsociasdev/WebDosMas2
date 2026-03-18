@@ -1,7 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/container";
 import { Breadcrumb } from "@/components/marketing/breadcrumb";
+import { ImageCollage } from "@/components/marketing/image-collage";
 import { SectionHeading } from "@/components/marketing/section-heading";
 import { PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/reveal";
@@ -35,7 +35,7 @@ export default async function AreasTrabajoPage() {
 
       <PageHero title={text.pageTitle} subtitle={text.pageSubtitle} image="/images/projects/demolicion-en-santa-ponca/03.webp" />
 
-      <section className="bg-base-light py-20">
+      <section className="bg-brand-yellow py-20">
         <Container>
           <Reveal>
             <Breadcrumb items={[{ label: t.common.home, href: "/" }, { label: text.pageTitle }]} />
@@ -46,8 +46,8 @@ export default async function AreasTrabajoPage() {
             {servicesData.map((service) => (
               <Reveal key={service.slug}>
                 <article className="overflow-hidden rounded-2xl border border-base-mid bg-white p-5 transition hover:-translate-y-1 hover:shadow-soft">
-                  <div className="relative mb-5 aspect-[16/10] overflow-hidden rounded-xl border border-base-mid">
-                    <Image src={service.gallery[0]} alt={service.title} fill className="object-cover" loading="lazy" sizes="(min-width: 1024px) 30vw, (min-width: 768px) 45vw, 100vw" />
+                  <div className="mb-5 overflow-hidden rounded-xl border border-base-mid">
+                    <ImageCollage images={service.gallery} label={service.title} />
                   </div>
                   <p className="text-xs font-semibold uppercase tracking-[0.2em] text-base-dark">{serviceMetaBySlug[service.slug]?.category || t.common.services}</p>
                   <h2 className="mt-2 text-lg font-semibold text-base-black">{service.title}</h2>
@@ -55,7 +55,7 @@ export default async function AreasTrabajoPage() {
                   <div className="mt-5 flex gap-2">
                     <Link
                       href={`/servicios/${service.slug}`}
-                      className="inline-flex rounded-full border border-base-mid px-4 py-2 text-xs font-semibold uppercase tracking-wide text-base-black transition hover:border-brand-purple focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
+                      className="inline-flex rounded-full bg-brand-purple px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
                     >
                       {t.common.viewDetail}
                     </Link>

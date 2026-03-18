@@ -61,7 +61,7 @@ export function CookieBanner({ locale }: CookieBannerProps) {
 
   return (
     <aside
-      className="fixed inset-x-0 bottom-0 z-[60] border-t border-base-mid bg-white/98 shadow-soft backdrop-blur"
+      className="fixed inset-x-0 bottom-0 z-[60] border-t border-base-mid bg-white shadow-soft"
       aria-label={t.cookieBanner.ariaLabel}
     >
       <div className="mx-auto grid max-w-7xl gap-5 px-6 py-6 lg:grid-cols-[1.2fr_1fr] lg:px-10">
@@ -73,7 +73,7 @@ export function CookieBanner({ locale }: CookieBannerProps) {
         </div>
 
         <div className="space-y-4">
-          <div className="space-y-3 rounded-lg border border-base-mid bg-base-light p-4 text-sm text-base-dark">
+          <div className="space-y-3 rounded-lg border border-base-mid bg-white p-4 text-sm text-base-dark">
             <label className="flex items-center justify-between gap-4">
               <span>{t.cookieBanner.necessaryCookies}</span>
               <input type="checkbox" checked readOnly aria-label={t.cookieBanner.necessaryAria} />

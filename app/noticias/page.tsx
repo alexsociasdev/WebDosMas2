@@ -40,7 +40,7 @@ export default async function NoticiasPage() {
         image="/images/projects/casa-en-son-vida/08.webp"
       />
 
-      <section className="bg-white py-20">
+      <section className="bg-brand-yellow py-20">
         <Container className="space-y-10">
           <Reveal>
             <Breadcrumb items={[{ label: t.common.home, href: "/" }, { label: t.common.news }]} />
@@ -52,7 +52,7 @@ export default async function NoticiasPage() {
           </Reveal>
 
           <Reveal>
-            <article className="grid gap-6 overflow-hidden rounded-3xl border border-base-mid bg-base-light p-6 lg:grid-cols-[1.1fr_0.9fr]">
+            <article className="grid gap-6 overflow-hidden rounded-3xl border border-base-mid bg-white p-6 lg:grid-cols-[1.1fr_0.9fr]">
               <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-base-mid">
                 <Image src={featured.image} alt={featured.title} fill className="object-cover" priority sizes="(min-width: 1024px) 52vw, 100vw" />
               </div>
@@ -61,7 +61,7 @@ export default async function NoticiasPage() {
                 <h2 className="mt-2 text-3xl font-semibold text-base-black">{featured.title}</h2>
                 <Link
                   href={`/noticias/${featured.slug}`}
-                  className="mt-6 inline-flex w-fit rounded-full bg-brand-yellow px-5 py-2 text-sm font-semibold text-base-black transition hover:bg-brand-yellow/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple"
+                  className="mt-6 inline-flex w-fit rounded-full bg-brand-purple px-5 py-2 text-sm font-semibold text-white transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
                 >
                   {t.common.readArticle}
                 </Link>
@@ -81,7 +81,7 @@ export default async function NoticiasPage() {
                     <h3 className="mt-2 text-xl font-semibold text-base-black">{post.title}</h3>
                     <Link
                       href={`/noticias/${post.slug}`}
-                      className="mt-4 inline-flex rounded-full border border-base-mid px-4 py-2 text-sm font-semibold text-base-black transition hover:border-brand-yellow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
+                      className="mt-4 inline-flex rounded-full bg-brand-purple px-4 py-2 text-sm font-semibold text-white transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
                     >
                       {t.common.readNews}
                     </Link>

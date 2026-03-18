@@ -84,7 +84,7 @@ export default async function NoticiaDetailPage({ params }: NewsDetailPageProps)
 
       <PageHero title={post.title} subtitle={t.pages.news.detailSubtitle} image={post.image} />
 
-      <section className="bg-white py-20">
+      <section className="bg-brand-yellow py-20">
         <Container className="grid gap-10 lg:grid-cols-[1.02fr_0.98fr]">
           <Reveal>
             <Breadcrumb

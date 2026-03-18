@@ -53,7 +53,7 @@ export default async function ContactoPage() {
               </div>
             </article>
 
-            <article className="mt-8 rounded-2xl border border-base-mid bg-base-light p-6">
+            <article className="mt-8 rounded-2xl border border-base-mid bg-white p-6">
               <h3 className="text-lg font-semibold text-base-black">{text.scheduleTitle}</h3>
               <p className="mt-2 text-sm leading-7 text-base-dark">{text.scheduleBody}</p>
             </article>

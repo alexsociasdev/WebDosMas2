@@ -1,3 +1,5 @@
+import { projectsBySlug } from "@/projects/data";
+
 export type ServiceItem = {
   slug: string;
   title: string;
@@ -13,7 +15,7 @@ const defaultGallery = [
   "/images/projects/aeropuerto-de-palma/08.webp"
 ];
 
-export const servicesData: ServiceItem[] = [
+const baseServicesData: ServiceItem[] = [
   {
     slug: "excavaciones",
     title: "Excavaciones",
@@ -222,10 +224,6 @@ export const servicesData: ServiceItem[] = [
   }
 ];
 
-export const servicesBySlug = Object.fromEntries(
-  servicesData.map((service) => [service.slug, service])
-) as Record<string, ServiceItem>;
-
 export type ServiceMeta = {
   category: string;
   ctaLabel: string;
@@ -324,3 +322,43 @@ export const serviceMetaBySlug: Record<string, ServiceMeta> = {
     relatedProjects: ["preparacion-terreno-son-ribotet", "excavacion-en-son-vida"]
   }
 };
+
+function buildServiceGallery(relatedProjects: string[]): string[] {
+  const uniqueImages = Array.from(
+    new Set(
+      relatedProjects.flatMap((projectSlug) => {
+        const project = projectsBySlug[projectSlug];
+        if (!project) {
+          return [];
+        }
+
+        return [project.image, ...project.gallery];
+      })
+    )
+  );
+
+  if (uniqueImages.length === 0) {
+    return defaultGallery;
+  }
+
+  if (uniqueImages.length <= 4) {
+    return uniqueImages;
+  }
+
+  return [0, 1, 2, 3].map((slot) => {
+    const index = Math.min(
+      uniqueImages.length - 1,
+      Math.floor((slot * (uniqueImages.length - 1)) / 3)
+    );
+    return uniqueImages[index];
+  });
+}
+
+export const servicesData: ServiceItem[] = baseServicesData.map((service) => ({
+  ...service,
+  gallery: buildServiceGallery(serviceMetaBySlug[service.slug]?.relatedProjects ?? [])
+}));
+
+export const servicesBySlug = Object.fromEntries(
+  servicesData.map((service) => [service.slug, service])
+) as Record<string, ServiceItem>;

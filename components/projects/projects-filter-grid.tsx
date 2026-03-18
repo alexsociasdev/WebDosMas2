@@ -41,7 +41,7 @@ export function ProjectsFilterGrid({ projects, locale }: ProjectsFilterGridProps
 
   return (
     <div className="space-y-8">
-      <div className="rounded-3xl border-2 border-brand-purple/20 bg-gradient-to-br from-brand-yellow/10 via-white to-brand-purple/10 p-6 shadow-soft">
+      <div className="rounded-3xl border-2 border-brand-yellow p-6 shadow-soft bg-white">
         <p className="mb-4 text-xs font-semibold uppercase tracking-[0.24em] text-base-black">{t.pages.projects.filterTitle}</p>
         <div className="grid gap-4 md:grid-cols-3">
         <label className="space-y-2 text-sm font-medium text-base-dark">
@@ -93,7 +93,7 @@ export function ProjectsFilterGrid({ projects, locale }: ProjectsFilterGridProps
         {filtered.map((project) => (
           <article
             key={project.slug}
-            className="group overflow-hidden rounded-3xl border border-base-mid bg-base-light transition hover:-translate-y-1 hover:shadow-soft"
+            className="group overflow-hidden rounded-3xl border border-base-mid bg-white transition hover:-translate-y-1 hover:shadow-soft"
           >
             <div className="relative aspect-[4/3]">
               <Image src={project.image} alt={project.title} fill className="object-cover" loading="lazy" sizes="(min-width: 1280px) 30vw, (min-width: 768px) 45vw, 100vw" />
@@ -107,7 +107,7 @@ export function ProjectsFilterGrid({ projects, locale }: ProjectsFilterGridProps
               <p className="line-clamp-4 text-base leading-7 text-base-dark">{project.summary}</p>
               <Link
                 href={`/proyectos/${project.slug}`}
-                className="inline-flex rounded-full border border-base-mid px-4 py-2 text-sm font-semibold text-base-black transition hover:border-brand-yellow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
+                className="inline-flex rounded-full bg-brand-purple px-4 py-2 text-sm font-semibold text-white transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
               >
                 {t.common.viewProject}
               </Link>

@@ -26,7 +26,7 @@ export function SiteFooter({ locale }: SiteFooterProps) {
   ] as const;
 
   return (
-    <footer className="mt-24 border-t border-brand-purple/20 bg-gradient-to-b from-base-light to-[#ece9f6]">
+    <footer className="mt-24 border-t border-brand-gray/30 bg-brand-gray">
       <Container className="grid gap-12 py-14 md:grid-cols-4">
         <div>
           <div className="inline-flex items-center gap-3 rounded-full border border-brand-purple/25 bg-white px-3 py-2 shadow-soft">

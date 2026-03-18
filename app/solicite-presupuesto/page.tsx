@@ -33,7 +33,7 @@ export default async function SolicitePresupuestoPage() {
 
       <PageHero title={text.pageTitle} subtitle={text.pageSubtitle} image="/images/projects/excavacion-en-son-vida/04.webp" />
 
-      <section className="bg-base-light py-20">
+      <section className="bg-brand-yellow py-20">
         <Container className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
           <Reveal>
             <Breadcrumb items={[{ label: t.common.home, href: "/" }, { label: text.breadcrumb }]} />

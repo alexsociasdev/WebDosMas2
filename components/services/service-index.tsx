@@ -39,7 +39,7 @@ export function ServiceIndex({ services, locale }: ServiceIndexProps) {
             onClick={() => setSelectedCategory(category)}
             className={`rounded-full border px-4 py-2 text-xs font-semibold uppercase tracking-wide transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow ${
               selectedCategory === category
-                ? "border-brand-purple bg-brand-purple/10 text-base-black"
+                ? "border-brand-purple bg-brand-purple text-white"
                 : "border-base-mid bg-white text-base-dark hover:border-brand-yellow"
             }`}
           >
@@ -54,7 +54,7 @@ export function ServiceIndex({ services, locale }: ServiceIndexProps) {
             <li key={service.slug}>
               <a
                 href={`#${service.slug}`}
-                className="block rounded-lg px-3 py-2 text-sm font-medium text-base-dark transition hover:bg-base-light hover:text-base-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
+                className="block rounded-lg px-3 py-2 text-sm font-medium text-base-dark transition hover:bg-white hover:text-base-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
               >
                 {service.title}
               </a>

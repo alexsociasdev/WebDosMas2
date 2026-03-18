@@ -31,12 +31,12 @@ export default async function PoliticaCookiesPage() {
       />
 
       <PageHero title="POLÍTICA DE COOKIES" image="/images/brand/portada.webp" />
-      <section className="bg-white py-20">
+      <section className="bg-brand-gray py-20">
         <Container className="space-y-10">
           <Reveal>
             <Breadcrumb items={[{ label: t.common.home, href: "/" }, { label: t.pages.legal.cookiePolicy }]} />
             <SectionHeading title={cookiePolicyContent.title} />
-            <article className="mt-6 rounded-2xl border border-base-mid bg-base-light p-7">
+            <article className="mt-6 rounded-2xl border border-base-mid bg-white p-7">
               <div className="space-y-4 text-base leading-8 text-base-dark">
                 {cookiePolicyContent.paragraphs.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
@@ -46,7 +46,7 @@ export default async function PoliticaCookiesPage() {
           </Reveal>
 
           <Reveal>
-            <article className="rounded-2xl border border-base-mid bg-base-light p-7">
+            <article className="rounded-2xl border border-base-mid bg-white p-7">
               <h2 className="text-2xl font-semibold text-base-black">{t.pages.legal.integratedPolicy}</h2>
               <p className="mt-4 text-base leading-8 text-base-dark">{cookiePolicyContent.integratedPolicyIntro}</p>
               <ul className="mt-4 list-disc space-y-2 pl-6 text-base leading-8 text-base-dark">

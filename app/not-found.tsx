@@ -7,7 +7,7 @@ export default async function NotFound() {
   const t = getDictionary(locale);
 
   return (
-    <section className="bg-white py-28">
+    <section className="bg-brand-gray py-28">
       <Container className="text-center">
         <h1 className="text-4xl font-bold text-base-black">{t.pages.notFound.title}</h1>
         <p className="mt-4 text-base text-base-dark">{t.pages.notFound.description}</p>

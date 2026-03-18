@@ -9,21 +9,21 @@ type PageHeroProps = {
 
 export function PageHero({ title, subtitle, image = "/images/projects/excavacion-en-son-vida/01.webp" }: PageHeroProps) {
   return (
-    <section className="relative overflow-hidden border-b border-base-mid bg-base-light">
+    <section className="relative overflow-hidden border-b border-brand-gray/35 bg-brand-gray">
       <Image
         src={image}
         alt={title}
         fill
         priority
         sizes="100vw"
-        className="object-cover opacity-50"
+        className="scale-[1.02] object-cover blur-[2px]"
       />
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(17,17,17,0.78)_0%,rgba(17,17,17,0.58)_38%,rgba(255,255,255,0.18)_100%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_18%,rgba(241,171,0,0.28),transparent_22%),radial-gradient(circle_at_86%_16%,rgba(136,94,128,0.22),transparent_26%)]" />
-      <Container className="relative py-20 md:py-24">
-        <div className="max-w-4xl rounded-[2rem] border border-white/20 bg-white/10 p-8 backdrop-blur-sm md:p-10">
-          <h1 className="max-w-4xl text-4xl font-bold tracking-tight text-white md:text-5xl">{title}</h1>
-          {subtitle ? <p className="mt-4 max-w-3xl text-lg text-white/88">{subtitle}</p> : null}
+      <div className="absolute inset-0 bg-base-black/42" />
+      <Container className="relative py-24 md:py-32">
+        <div className="max-w-4xl rounded-[2rem] border border-white/30 bg-base-black/30 p-8 shadow-soft backdrop-blur-sm md:p-10">
+          <span className="mb-4 block h-1.5 w-20 rounded-full bg-brand-yellow" />
+          <h1 className="max-w-4xl text-5xl font-bold tracking-tight text-white md:text-6xl xl:text-7xl">{title}</h1>
+          {subtitle ? <p className="mt-5 max-w-3xl text-xl leading-8 text-white md:text-2xl">{subtitle}</p> : null}
         </div>
       </Container>
     </section>

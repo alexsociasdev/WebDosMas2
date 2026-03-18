@@ -66,16 +66,16 @@ export default async function NosotrosPage() {
 
           <Reveal>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              <article className="rounded-2xl border border-base-mid bg-base-light p-5"><p className="text-sm text-base-dark">{t.home.statsTrajectory}</p><p className="mt-2 text-3xl font-bold text-base-black"><CountUp to={70} suffix="+" /></p></article>
-              <article className="rounded-2xl border border-base-mid bg-base-light p-5"><p className="text-sm text-base-dark">{t.home.statsProfessionals}</p><p className="mt-2 text-3xl font-bold text-base-black"><CountUp to={200} suffix="+" /></p></article>
-              <article className="rounded-2xl border border-base-mid bg-base-light p-5"><p className="text-sm text-base-dark">{t.home.statsMachines}</p><p className="mt-2 text-3xl font-bold text-base-black"><CountUp to={250} suffix="+" /></p></article>
-              <article className="rounded-2xl border border-base-mid bg-base-light p-5"><p className="text-sm text-base-dark">{t.home.statsVehicles}</p><p className="mt-2 text-3xl font-bold text-base-black"><CountUp to={50} suffix="+" /></p></article>
+              <article className="rounded-2xl border border-base-mid bg-white p-5"><p className="text-sm text-base-dark">{t.home.statsTrajectory}</p><p className="mt-2 text-3xl font-bold text-base-black"><CountUp to={70} suffix="+" /></p></article>
+              <article className="rounded-2xl border border-base-mid bg-white p-5"><p className="text-sm text-base-dark">{t.home.statsProfessionals}</p><p className="mt-2 text-3xl font-bold text-base-black"><CountUp to={200} suffix="+" /></p></article>
+              <article className="rounded-2xl border border-base-mid bg-white p-5"><p className="text-sm text-base-dark">{t.home.statsMachines}</p><p className="mt-2 text-3xl font-bold text-base-black"><CountUp to={250} suffix="+" /></p></article>
+              <article className="rounded-2xl border border-base-mid bg-white p-5"><p className="text-sm text-base-dark">{t.home.statsVehicles}</p><p className="mt-2 text-3xl font-bold text-base-black"><CountUp to={50} suffix="+" /></p></article>
             </div>
           </Reveal>
         </Container>
       </section>
 
-      <section className="border-y border-base-mid bg-base-light py-20">
+      <section className="border-y border-base-mid bg-brand-purple py-20">
         <Container className="grid gap-6 md:grid-cols-3">
           {editorialSection.blocks.map((block) => (
             <Reveal key={block.title}>
@@ -98,7 +98,7 @@ export default async function NosotrosPage() {
         </Container>
       </section>
 
-      <section className="bg-white py-20">
+      <section className="bg-brand-yellow py-20">
         <Container>
           <Reveal>
             <SectionHeading title={teamSection.title.toUpperCase()} />
@@ -110,7 +110,7 @@ export default async function NosotrosPage() {
           </Reveal>
 
           <Reveal>
-            <article className="mt-8 overflow-hidden rounded-3xl border border-base-mid bg-base-light shadow-soft">
+            <article className="mt-8 overflow-hidden rounded-3xl border border-base-mid bg-white shadow-soft">
               <div className="relative aspect-[16/7]">
                 <Image src="/images/team/foto-grupo-puente.jpg" alt="Equipo de Dosmas Grup" fill className="object-cover" />
               </div>
@@ -118,7 +118,7 @@ export default async function NosotrosPage() {
           </Reveal>
 
           <Reveal>
-            <article className="mt-6 overflow-hidden rounded-3xl border border-base-mid bg-base-light shadow-soft">
+            <article className="mt-6 overflow-hidden rounded-3xl border border-base-mid bg-white shadow-soft">
               <div className="relative aspect-[16/7]">
                 <Image src="/images/team/foto-grupo-dosmas.jpg" alt="Equipo de Dosmas Grup" fill className="object-cover" />
               </div>
@@ -128,7 +128,7 @@ export default async function NosotrosPage() {
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {teamMembers.map((member) => (
               <Reveal key={member.email}>
-                <article className="overflow-hidden rounded-2xl border border-base-mid bg-base-light transition hover:-translate-y-1 hover:shadow-soft">
+                <article className="overflow-hidden rounded-2xl border border-base-mid bg-white transition hover:-translate-y-1 hover:shadow-soft">
                   <div className="relative aspect-[4/3]">
                     <Image src={member.image} alt={member.name} fill className="object-cover" loading="lazy" sizes="(min-width: 1024px) 28vw, (min-width: 640px) 45vw, 100vw" />
                   </div>

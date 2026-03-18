@@ -24,7 +24,7 @@ export function RelatedLinks({ title, items }: RelatedLinksProps) {
           <li key={item.href}>
             <Link
               href={item.href}
-              className="block rounded-xl border border-base-mid bg-base-light px-4 py-3 transition hover:-translate-y-0.5 hover:border-brand-yellow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
+              className="block rounded-xl border border-base-mid bg-white px-4 py-3 transition hover:-translate-y-0.5 hover:border-brand-yellow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
             >
               <p className="text-sm font-semibold text-base-black">{item.title}</p>
               {item.meta ? <p className="mt-1 text-xs text-base-dark">{item.meta}</p> : null}

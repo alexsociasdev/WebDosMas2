@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: ServiceDetailPageProps) {
 
   return pageMetadata(service.title, service.paragraphs[0], `/servicios/${service.slug}`, {
     type: "website",
-    image: "/images/fondo.webp"
+    image: service.gallery[0]
   });
 }
 
@@ -81,7 +81,7 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
         })}
       />
 
-      <PageHero title={service.title} subtitle={t.pages.services.detailSubtitle} />
+      <PageHero title={service.title} subtitle={t.pages.services.detailSubtitle} image={service.gallery[0]} />
 
       <section className="bg-white py-20">
         <Container className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
@@ -133,7 +133,7 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
         </Container>
       </section>
 
-      <section className="border-y border-base-mid bg-base-light py-20">
+      <section className="border-y border-brand-gray/35 bg-brand-yellow py-20">
         <Container>
           <Reveal>
             <ImageGallery images={service.gallery} label={service.title} />

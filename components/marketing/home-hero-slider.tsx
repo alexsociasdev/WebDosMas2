@@ -52,7 +52,7 @@ export function HomeHeroSlider({ slides }: HomeHeroSliderProps) {
 
   return (
     <section
-      className="relative overflow-hidden rounded-[2rem] border border-brand-purple/30 bg-base-black shadow-soft"
+      className="relative overflow-hidden rounded-[2rem] border border-brand-gray/40 bg-base-black shadow-soft"
       aria-label="Resumen destacado de Dosmas Grup"
       tabIndex={0}
       onKeyDown={(event) => {
@@ -81,8 +81,8 @@ export function HomeHeroSlider({ slides }: HomeHeroSliderProps) {
             )}
           />
         ))}
-        <div className="absolute inset-0 bg-gradient-to-r from-base-black via-base-black/80 to-brand-purple/40" />
-        <div className="absolute inset-0 bg-gradient-to-t from-base-black/90 via-base-black/30 to-transparent" />
+        <div className="absolute inset-0 bg-base-black/60" />
+        <div className="absolute inset-y-0 right-0 hidden w-[32%] bg-brand-purple lg:block" />
       </div>
 
       <div className="relative grid min-h-[560px] gap-10 p-8 sm:p-10 lg:grid-cols-[1.2fr_0.8fr] lg:p-14">
@@ -106,7 +106,7 @@ export function HomeHeroSlider({ slides }: HomeHeroSliderProps) {
               type="button"
               onClick={goPrev}
               aria-label="Slide anterior"
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/40 bg-white/10 text-white transition hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/40 bg-brand-gray text-white transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
             >
               <span aria-hidden="true">←</span>
             </button>
@@ -114,7 +114,7 @@ export function HomeHeroSlider({ slides }: HomeHeroSliderProps) {
               type="button"
               onClick={goNext}
               aria-label="Siguiente slide"
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/40 bg-white/10 text-white transition hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/40 bg-brand-gray text-white transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
             >
               <span aria-hidden="true">→</span>
             </button>
@@ -125,10 +125,10 @@ export function HomeHeroSlider({ slides }: HomeHeroSliderProps) {
           {activeSlide.metrics.map((metric) => (
             <article
               key={`${activeSlide.id}-${metric.label}`}
-              className="rounded-2xl border border-white/20 bg-white/10 p-5 backdrop-blur"
+              className="rounded-2xl border border-white/20 bg-white p-5"
             >
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-white/75">{metric.label}</p>
-              <p className="mt-2 text-3xl font-bold text-brand-yellow">{metric.value}</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand-gray">{metric.label}</p>
+              <p className="mt-2 text-3xl font-bold text-brand-purple">{metric.value}</p>
             </article>
           ))}
         </aside>
@@ -145,7 +145,7 @@ export function HomeHeroSlider({ slides }: HomeHeroSliderProps) {
               aria-label={`Mostrar slide ${index + 1}`}
               className={cn(
                 "h-2.5 rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow",
-                index === activeIndex ? "w-9 bg-brand-yellow" : "w-2.5 bg-white/50 hover:bg-white/80"
+                index === activeIndex ? "w-9 bg-brand-yellow" : "w-2.5 bg-white hover:bg-brand-gray"
               )}
               onClick={() => goTo(index)}
             />

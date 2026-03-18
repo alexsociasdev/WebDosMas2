@@ -31,12 +31,12 @@ export default async function PoliticaPrivacidadPage() {
       />
 
       <PageHero title="POLÍTICA DE PRIVACIDAD" image="/images/brand/portada.webp" />
-      <section className="bg-white py-20">
+      <section className="bg-brand-gray py-20">
         <Container>
           <Reveal>
             <Breadcrumb items={[{ label: t.common.home, href: "/" }, { label: t.pages.legal.privacyPolicy }]} />
             <SectionHeading title={privacyPolicyContent.title} />
-            <article className="mt-6 rounded-2xl border border-base-mid bg-base-light p-7">
+            <article className="mt-6 rounded-2xl border border-base-mid bg-white p-7">
               <div className="space-y-4 text-base leading-8 text-base-dark">
                 {privacyPolicyContent.paragraphs.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
