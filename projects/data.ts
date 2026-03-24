@@ -37,13 +37,13 @@ export const projectsData: ProjectItem[] = [
     slug: "excavacion-en-son-vida",
     title: "EXCAVACIÓN EN SON VIDA",
     summary:
-      "Dosmas Grup lleva a cabo una excavación de gran envergadura en la exclusiva urbanización de Son Vida, uno de los enclaves residenciales más prestigiosos de España.",
+      "DOSMAS GRUP lleva a cabo una excavación de gran envergadura en la exclusiva urbanización de Son Vida, uno de los enclaves residenciales más prestigiosos de España.",
     location: "Son Vida, Mallorca",
     category: "Excavaciones",
     year: "2025",
     description: [
-      "Dosmas Grup lleva a cabo una excavación de gran envergadura en la exclusiva urbanización de Son Vida, uno de los enclaves residenciales más prestigiosos de España. El proyecto se ejecuta con maquinaria de última generación, como las potentes Caterpillar 352 y Liebherr 944, junto a una flota de camiones Renault, Volvo y Scania, garantizando precisión, rapidez y los más altos estándares de calidad.",
-      "Esta actuación refuerza el compromiso de la empresa con la excelencia técnica y la innovación, combinando un entorno de máximo lujo con un trabajo meticuloso que prepara el terreno para futuras construcciones de alto nivel. Con más de setenta años de experiencia, Dosmas Grup demuestra nuevamente su liderazgo en excavaciones complejas, avalado por un equipo de profesionales altamente cualificados y una tecnología que marca la diferencia en cada proyecto."
+      "DOSMAS GRUP lleva a cabo una excavación de gran envergadura en la exclusiva urbanización de Son Vida, uno de los enclaves residenciales más prestigiosos de España. El proyecto se ejecuta con maquinaria de última generación, como las potentes Caterpillar 352 y Liebherr 944, junto a una flota de camiones Renault, Volvo y Scania, garantizando precisión, rapidez y los más altos estándares de calidad.",
+      "Esta actuación refuerza el compromiso de la empresa con la excelencia técnica y la innovación, combinando un entorno de máximo lujo con un trabajo meticuloso que prepara el terreno para futuras construcciones de alto nivel. Con más de setenta años de experiencia, DOSMAS GRUP demuestra nuevamente su liderazgo en excavaciones complejas, avalado por un equipo de profesionales altamente cualificados y una tecnología que marca la diferencia en cada proyecto."
     ],
     image: "/images/projects/excavacion-en-son-vida/01.webp",
     gallery: buildGallery("/images/projects/excavacion-en-son-vida", 4),
@@ -69,14 +69,14 @@ export const projectsData: ProjectItem[] = [
     slug: "remodelacion-placa-des-mercat",
     title: "Remodelación Plaça des Mercat – Maria de la Salut",
     summary:
-      "Dosmas Grup ejecutó la remodelación completa de esta histórica plaza, transformándola en un espacio moderno sin perder su esencia tradicional.",
+      "DOSMAS GRUP ejecutó la remodelación completa de esta histórica plaza, transformándola en un espacio moderno sin perder su esencia tradicional.",
     location: "Maria de la Salut, Mallorca",
     category: "Obra pública",
     year: "2025",
     description: [
-      "Dosmas Grup ejecutó la remodelación completa de esta histórica plaza, transformándola en un espacio moderno sin perder su esencia tradicional. El proyecto incluyó la sustitución del pavimento por un nuevo adoquinado de alta resistencia que garantiza durabilidad y uniformidad, así como la incorporación de arbolado y zonas verdes que aportan frescor, sombra y un ambiente más natural al corazón del municipio.",
+      "DOSMAS GRUP ejecutó la remodelación completa de esta histórica plaza, transformándola en un espacio moderno sin perder su esencia tradicional. El proyecto incluyó la sustitución del pavimento por un nuevo adoquinado de alta resistencia que garantiza durabilidad y uniformidad, así como la incorporación de arbolado y zonas verdes que aportan frescor, sombra y un ambiente más natural al corazón del municipio.",
       "La intervención contempló también la creación de amplias áreas peatonales para favorecer el paseo y la convivencia, junto con un parque infantil diseñado con criterios de seguridad y accesibilidad para que los más pequeños puedan disfrutar con tranquilidad. Esta actuación dota al centro de Maria de la Salut de un entorno acogedor y funcional, preparado para acoger mercados, celebraciones populares y la vida cotidiana de vecinos y visitantes.",
-      "Con más de setenta años de experiencia en obra pública y construcción sostenible, Dosmas Grup reafirma su compromiso con la mejora de los espacios urbanos, ofreciendo soluciones que respetan la identidad local mientras responden a las necesidades actuales de la ciudadanía."
+      "Con más de setenta años de experiencia en obra pública y construcción sostenible, DOSMAS GRUP reafirma su compromiso con la mejora de los espacios urbanos, ofreciendo soluciones que respetan la identidad local mientras responden a las necesidades actuales de la ciudadanía."
     ],
     image: "/images/projects/placa-des-mercat-maria-de-la-salut/01.webp",
     gallery: buildGallery("/images/projects/placa-des-mercat-maria-de-la-salut", 8),
@@ -106,13 +106,13 @@ export const projectsData: ProjectItem[] = [
     slug: "construccion-casa-en-son-vida",
     title: "CONSTRUCCIÓN DE CASA EN SON VIDA",
     summary:
-      "Dosmas Grup llevó a cabo la edificación de una vivienda de aproximadamente 1.000 m² en una de las urbanizaciones más exclusivas de Mallorca.",
+      "DOSMAS GRUP llevó a cabo la edificación de una vivienda de aproximadamente 1.000 m² en una de las urbanizaciones más exclusivas de Mallorca.",
     location: "Son Vida, Mallorca",
     category: "Edificación",
     year: "2025",
     description: [
-      "Dosmas Grup llevó a cabo la edificación de una vivienda de aproximadamente 1.000 m² en una de las urbanizaciones más exclusivas de Mallorca, integrando una amplia piscina y elegantes zonas ajardinadas. El proyecto destaca por el uso de materiales de altísima calidad y por una ejecución que combina diseño contemporáneo, solidez estructural y acabados de primer nivel.",
-      "Cada fase de la obra se desarrolló con un estricto control técnico, garantizando la máxima eficiencia y el respeto por el entorno. Con esta realización, Dosmas Grup reafirma su experiencia en construcciones de lujo, ofreciendo espacios que unen confort, estética y durabilidad en un entorno residencial de prestigio."
+      "DOSMAS GRUP llevó a cabo la edificación de una vivienda de aproximadamente 1.000 m² en una de las urbanizaciones más exclusivas de Mallorca, integrando una amplia piscina y elegantes zonas ajardinadas. El proyecto destaca por el uso de materiales de altísima calidad y por una ejecución que combina diseño contemporáneo, solidez estructural y acabados de primer nivel.",
+      "Cada fase de la obra se desarrolló con un estricto control técnico, garantizando la máxima eficiencia y el respeto por el entorno. Con esta realización, DOSMAS GRUP reafirma su experiencia en construcciones de lujo, ofreciendo espacios que unen confort, estética y durabilidad en un entorno residencial de prestigio."
     ],
     image: "/images/projects/casa-en-son-vida/01.webp",
     gallery: buildGallery("/images/projects/casa-en-son-vida", 10),
@@ -138,13 +138,13 @@ export const projectsData: ProjectItem[] = [
     slug: "demolicion-en-santa-ponca",
     title: "DEMOLICIÓN EN SANTA PONÇA",
     summary:
-      "Dosmas Grup ejecutó la demolición completa de una vivienda situada frente a las Illes Malgrats, en el municipio de Calvià.",
+      "DOSMAS GRUP ejecutó la demolición completa de una vivienda situada frente a las Illes Malgrats, en el municipio de Calvià.",
     location: "Santa Ponça, Calvià",
     category: "Demoliciones",
     year: "2025",
     description: [
-      "Dosmas Grup ejecutó la demolición completa de una vivienda situada frente a las Illes Malgrats, en el municipio de Calvià, como fase inicial para la construcción de una exclusiva residencia unifamiliar. El trabajo se realizó con maquinaria especializada y estrictos protocolos de seguridad, garantizando una retirada eficiente de estructuras y residuos.",
-      "Esta actuación abre paso a un proyecto de alto standing que, gracias a su ubicación privilegiada con vistas panorámicas y rápido acceso a Palma y al aeropuerto, redefine el concepto de vivienda de lujo en la zona. Con esta intervención, Dosmas Grup demuestra nuevamente su capacidad para abordar con precisión y solvencia las etapas previas de grandes construcciones residenciales."
+      "DOSMAS GRUP ejecutó la demolición completa de una vivienda situada frente a las Illes Malgrats, en el municipio de Calvià, como fase inicial para la construcción de una exclusiva residencia unifamiliar. El trabajo se realizó con maquinaria especializada y estrictos protocolos de seguridad, garantizando una retirada eficiente de estructuras y residuos.",
+      "Esta actuación abre paso a un proyecto de alto standing que, gracias a su ubicación privilegiada con vistas panorámicas y rápido acceso a Palma y al aeropuerto, redefine el concepto de vivienda de lujo en la zona. Con esta intervención, DOSMAS GRUP demuestra nuevamente su capacidad para abordar con precisión y solvencia las etapas previas de grandes construcciones residenciales."
     ],
     image: "/images/projects/demolicion-en-santa-ponca/01.webp",
     gallery: buildGallery("/images/projects/demolicion-en-santa-ponca", 12),
@@ -170,13 +170,13 @@ export const projectsData: ProjectItem[] = [
     slug: "demolicion-aeropuerto-de-palma",
     title: "DEMOLICIÓN EN EL AEROPUERTO DE PALMA DE MALLORCA",
     summary:
-      "Dosmas Grup participa en el proyecto de modernización del aeropuerto ejecutando la demolición del paso peatonal que conectaba las dos terminales.",
+      "DOSMAS GRUP participa en el proyecto de modernización del aeropuerto ejecutando la demolición del paso peatonal que conectaba las dos terminales.",
     location: "Aeropuerto de Palma, Mallorca",
     category: "Infraestructuras",
     year: "2025",
     description: [
-      "Dosmas Grup participa en el proyecto de modernización del aeropuerto ejecutando la demolición del paso peatonal que conectaba las dos terminales. Con la nueva excavadora Caterpillar 352 y maquinaria de última generación, el trabajo se desarrolla con máxima precisión, seguridad y eficiencia.",
-      "Esta intervención constituye un paso clave en la transformación de las instalaciones aeroportuarias, preparando el terreno para un espacio más moderno y funcional que mejorará la experiencia de millones de pasajeros. Con esta actuación, Dosmas Grup reafirma su experiencia en grandes obras de infraestructura, uniendo tecnología avanzada y rigor técnico en cada fase del proyecto."
+      "DOSMAS GRUP participa en el proyecto de modernización del aeropuerto ejecutando la demolición del paso peatonal que conectaba las dos terminales. Con la nueva excavadora Caterpillar 352 y maquinaria de última generación, el trabajo se desarrolla con máxima precisión, seguridad y eficiencia.",
+      "Esta intervención constituye un paso clave en la transformación de las instalaciones aeroportuarias, preparando el terreno para un espacio más moderno y funcional que mejorará la experiencia de millones de pasajeros. Con esta actuación, DOSMAS GRUP reafirma su experiencia en grandes obras de infraestructura, uniendo tecnología avanzada y rigor técnico en cada fase del proyecto."
     ],
     image: "/images/projects/aeropuerto-de-palma/01.webp",
     gallery: buildGallery("/images/projects/aeropuerto-de-palma", 9),
@@ -202,13 +202,13 @@ export const projectsData: ProjectItem[] = [
     slug: "preparacion-terreno-son-ribotet",
     title: "PREPARACIÓN DE TERRENO PARA NUEVA VIÑA – SON RIBOTET, PETRA",
     summary:
-      "Dosmas Grup asumió la puesta a punto de esta finca del Pla de Mallorca para la futura plantación de viñedo.",
+      "DOSMAS GRUP asumió la puesta a punto de esta finca del Pla de Mallorca para la futura plantación de viñedo.",
     location: "Petra, Mallorca",
     category: "Movimientos de tierra",
     year: "2025",
     description: [
-      "Dosmas Grup asumió la puesta a punto de esta finca del Pla de Mallorca para la futura plantación de viñedo, realizando un movimiento de tierras de gran escala con maquinaria de alto rendimiento. La actuación incluyó trituración de roca, nivelación y adecuación del terreno, empleando una flota especializada que garantizó precisión y rapidez en cada fase del trabajo.",
-      "El despliegue técnico, con excavadoras y equipos de última generación, permitió transformar el paisaje con eficacia y total seguridad, asegurando la base perfecta para un proyecto vitivinícola de calidad. Con más de setenta años de experiencia, Dosmas Grup reafirma su liderazgo en excavaciones, canalizaciones y grandes obras, combinando innovación, respeto medioambiental y un compromiso constante con la excelencia."
+      "DOSMAS GRUP asumió la puesta a punto de esta finca del Pla de Mallorca para la futura plantación de viñedo, realizando un movimiento de tierras de gran escala con maquinaria de alto rendimiento. La actuación incluyó trituración de roca, nivelación y adecuación del terreno, empleando una flota especializada que garantizó precisión y rapidez en cada fase del trabajo.",
+      "El despliegue técnico, con excavadoras y equipos de última generación, permitió transformar el paisaje con eficacia y total seguridad, asegurando la base perfecta para un proyecto vitivinícola de calidad. Con más de setenta años de experiencia, DOSMAS GRUP reafirma su liderazgo en excavaciones, canalizaciones y grandes obras, combinando innovación, respeto medioambiental y un compromiso constante con la excelencia."
     ],
     image: "/images/projects/son-ribotet/01.webp",
     gallery: buildGallery("/images/projects/son-ribotet", 12),

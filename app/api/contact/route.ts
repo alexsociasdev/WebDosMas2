@@ -31,7 +31,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Submission rejected" }, { status: 400 });
   }
 
-  await dispatchFormSubmission("contact", data);
+  await dispatchFormSubmission("contact", data, "info@dosmasgrup.com");
 
   return NextResponse.json(
     {

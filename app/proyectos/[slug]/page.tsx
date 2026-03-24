@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: ProjectDetailPageProps) {
   const project = projectsBySlug[slug];
 
   if (!project) {
-    return pageMetadata("Proyecto", "Proyecto de Dosmas Grup.", `/proyectos/${slug}`);
+    return pageMetadata("Proyecto", "Proyecto de DOSMAS GRUP.", `/proyectos/${slug}`);
   }
 
   return pageMetadata(project.title, project.summary, `/proyectos/${project.slug}`, {
@@ -93,7 +93,7 @@ export default async function ProyectoDetailPage({ params }: ProjectDetailPagePr
           path: `/proyectos/${project.slug}`,
           image: project.image,
           datePublished: `${project.year}-01-10`,
-          author: "Dosmas Grup"
+          author: "DOSMAS GRUP"
         })}
       />
 

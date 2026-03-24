@@ -53,7 +53,7 @@ export function HomeHeroSlider({ slides }: HomeHeroSliderProps) {
   return (
     <section
       className="relative overflow-hidden rounded-[2rem] border border-brand-gray/40 bg-base-black shadow-soft"
-      aria-label="Resumen destacado de Dosmas Grup"
+      aria-label="Resumen destacado de DOSMAS GRUP"
       tabIndex={0}
       onKeyDown={(event) => {
         if (event.key === "ArrowRight") {

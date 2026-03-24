@@ -20,10 +20,10 @@ export const postsData: PostItem[] = [
       "Un enfoque práctico para planificar, coordinar y ejecutar proyectos de obra civil con control real de tiempos y recursos.",
     date: "2026-02-24",
     category: "Gestión de obra",
-    author: "Equipo Técnico Dosmas Grup",
+    author: "Equipo Técnico DOSMAS GRUP",
     readingTime: "5 min",
     content: [
-      "En Dosmas Grup entendemos que el plazo es un compromiso operativo, no una estimación. Por eso trabajamos con planificación por fases, seguimiento diario de hitos críticos y coordinación continua entre oficina técnica, producción y logística.",
+      "En DOSMAS GRUP entendemos que el plazo es un compromiso operativo, no una estimación. Por eso trabajamos con planificación por fases, seguimiento diario de hitos críticos y coordinación continua entre oficina técnica, producción y logística.",
       "La clave está en anticipar los cuellos de botella antes de que impacten en obra: disponibilidad de maquinaria, secuencia de subcontratas, condicionantes meteorológicos y suministros. Este enfoque preventivo reduce incidencias y mejora la productividad global del proyecto.",
       "Aplicando metodologías de control y comunicación estructurada, conseguimos mantener la calidad técnica sin comprometer tiempos. El resultado es una ejecución más fiable para el cliente y una toma de decisiones más rápida para el equipo de obra."
     ],
@@ -97,7 +97,7 @@ export const postsData: PostItem[] = [
     content: [
       "La cimentación es una fase crítica que define el comportamiento estructural a largo plazo. Un análisis geotécnico correcto permite seleccionar tipologías y procedimientos adecuados según la naturaleza del suelo y condiciones hidrogeológicas.",
       "Durante la ejecución, el control de parámetros y la supervisión continua reducen incertidumbre y evitan correcciones costosas en fases avanzadas. Este control técnico mejora tanto la seguridad como el rendimiento de la obra.",
-      "En Dosmas Grup abordamos la cimentación con enfoque integral: diseño, maquinaria especializada y coordinación entre equipos para asegurar resultados sólidos y duraderos."
+      "En DOSMAS GRUP abordamos la cimentación con enfoque integral: diseño, maquinaria especializada y coordinación entre equipos para asegurar resultados sólidos y duraderos."
     ],
     image: "/images/projects/casa-en-son-vida/02.webp",
     relatedServices: ["cimentaciones", "cimentaciones-en-edificios", "zanjas-y-cimientos"],

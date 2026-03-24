@@ -1,6 +1,7 @@
 export async function dispatchFormSubmission(
-  type: "contact" | "quote",
-  payload: Record<string, unknown>
+  type: "contact" | "quote" | "jobs",
+  payload: Record<string, unknown>,
+  recipient?: string
 ): Promise<{ delivered: boolean; status?: number }> {
   const webhook = process.env.FORM_WEBHOOK_URL;
 
@@ -17,6 +18,7 @@ export async function dispatchFormSubmission(
       type,
       source: "dosmasgrup-web",
       createdAt: new Date().toISOString(),
+      recipient,
       payload
     }),
     cache: "no-store"

@@ -73,6 +73,7 @@ export type Dictionary = {
   floatingCta: {
     callNow: string;
     requestQuote: string;
+    workWithUs: string;
   };
   cookieBanner: {
     ariaLabel: string;
@@ -109,6 +110,20 @@ export type Dictionary = {
       requestedService: string;
       projectLocation: string;
       projectDetails: string;
+      privacyAcceptance: string;
+      honeypot: string;
+      sending: string;
+      submit: string;
+      success: string;
+      error: string;
+    };
+    jobs: {
+      fullName: string;
+      phone: string;
+      email: string;
+      message: string;
+      cv: string;
+      cvHelp: string;
       privacyAcceptance: string;
       honeypot: string;
       sending: string;
@@ -264,7 +279,7 @@ const dictionaries: Record<Locale, Dictionary> = {
     nav: {
       about: "Nosotros",
       projects: "Proyectos",
-      workAreas: "Areas de trabajo",
+      workAreas: "Áreas de trabajo",
       news: "Noticias",
       rsc: "RSC",
       quote: "Solicite presupuesto",
@@ -318,7 +333,8 @@ const dictionaries: Record<Locale, Dictionary> = {
     },
     floatingCta: {
       callNow: "Llamar ahora",
-      requestQuote: "Solicitar presupuesto"
+      requestQuote: "Solicitar presupuesto",
+      workWithUs: "Trabaja con nosotros"
     },
     cookieBanner: {
       ariaLabel: "Consentimiento de cookies",
@@ -361,14 +377,28 @@ const dictionaries: Record<Locale, Dictionary> = {
         submit: "Solicitar presupuesto",
         success: "Solicitud enviada correctamente.",
         error: "No se ha podido enviar la solicitud."
+      },
+      jobs: {
+        fullName: "Nombre y apellidos",
+        phone: "Teléfono",
+        email: "Correo electrónico",
+        message: "Presentación",
+        cv: "Adjuntar CV",
+        cvHelp: "Formatos admitidos: PDF, DOC o DOCX. Tamaño máximo recomendado: 5 MB.",
+        privacyAcceptance: "Acepto el tratamiento de datos personales de acuerdo con la Política de privacidad.",
+        honeypot: "No rellenar",
+        sending: "Enviando...",
+        submit: "Enviar candidatura",
+        success: "Candidatura enviada correctamente.",
+        error: "No se ha podido enviar la candidatura."
       }
     },
     home: {
       slide1: {
         eyebrow: "DOSMAS GRUP",
-        title: "Más de 70 años construyendo confianza en Baleares",
+        title: "Más de 70 años construyendo confianza en Illes Balears",
         description:
-          "Grupo de referencia en excavaciones, movimientos de tierra, obra civil y proyectos integrales para clientes públicos y privados.",
+          "Somos un grupo de empresas especializadas en edificación, obra pública, obra privada, excavaciones y movimiento de tierras.",
         cta: "DESCUBRE MÁS SOBRE NOSOTROS",
         metric1: "Trayectoria",
         metric2: "Equipo humano",
@@ -417,8 +447,8 @@ const dictionaries: Record<Locale, Dictionary> = {
         pageSubtitle: "CONTACTA.",
         heading: "CONTACTA",
         scheduleTitle: "Horario de atención",
-        scheduleBody: "Lunes a viernes de 8:00 a 16:00.",
-        mapTitle: "Ubicación Dosmas Grup en Google Maps",
+        scheduleBody: "De lunes a jueves, de 7 a 18 horas.\nViernes de 7 a 16 horas.",
+        mapTitle: "Ubicación DOSMAS GRUP en Google Maps",
         breadcrumb: "Contacto",
         phoneLabel: "Teléfono",
         emailLabel: "Email"
@@ -442,14 +472,14 @@ const dictionaries: Record<Locale, Dictionary> = {
         requestQuote: "Solicitar presupuesto",
         indexAria: "Índice de servicios",
         filterTitle: "Filtrar servicios",
-        detailSubtitle: "Servicio especializado de Dosmas Grup.",
+        detailSubtitle: "Servicio especializado de DOSMAS GRUP.",
         ctaDescription: "Nuestro equipo técnico puede revisar su necesidad y proponer la solución más adecuada para su obra.",
         contactNow: "Contactar ahora",
         projectsRelated: "Proyectos relacionados"
       },
       projects: {
         pageTitle: "Proyectos",
-        pageSubtitle: "Obras ejecutadas por Dosmas Grup.",
+        pageSubtitle: "Obras ejecutadas por DOSMAS GRUP.",
         eyebrow: "Proyectos",
         heading: "Casos de estudio y obras ejecutadas",
         description: "Selección de proyectos con información técnica y visual de ejecución.",
@@ -468,18 +498,18 @@ const dictionaries: Record<Locale, Dictionary> = {
       news: {
         pageTitle: "Noticias",
         pageSubtitle:
-          "Un espacio donde compartimos nuestras obras, proyectos, novedades y avances, mostrando la evolución constante de Dosmas Grup.",
+          "Un espacio donde compartimos nuestras obras, proyectos, novedades y avances, mostrando la evolución constante de DOSMAS GRUP.",
         eyebrow: "Noticias",
         heading: "Noticias",
         description:
-          "Un espacio donde compartimos nuestras obras, proyectos, novedades y avances, mostrando la evolución constante de Dosmas Grup.",
+          "Un espacio donde compartimos nuestras obras, proyectos, novedades y avances, mostrando la evolución constante de DOSMAS GRUP.",
         detailSubtitle: "Noticias"
       },
       workAreas: {
-        pageTitle: "Areas de trabajo",
-        pageSubtitle: "Areas de trabajo",
-        heading: "Areas de trabajo",
-        description: "Areas de trabajo",
+        pageTitle: "Áreas de trabajo",
+        pageSubtitle: "Áreas de trabajo",
+        heading: "Áreas de trabajo",
+        description: "Áreas de trabajo",
         budget: "Presupuesto"
       },
       rsc: {
@@ -491,7 +521,7 @@ const dictionaries: Record<Locale, Dictionary> = {
         solidarityActions: "Acciones solidarias",
         partnerEntities: "Entidades colaboradoras",
         collaborateTitle: "¿Quiere colaborar con nuestra estrategia RSC?",
-        collaborateBody: "En Dosmas Grup mantenemos una agenda abierta de colaboración con entidades sociales, educativas y deportivas.",
+        collaborateBody: "En DOSMAS GRUP mantenemos una agenda abierta de colaboración con entidades sociales, educativas y deportivas.",
         collaborateCta: "Contactar con RSC"
       },
       legal: {
@@ -567,7 +597,8 @@ const dictionaries: Record<Locale, Dictionary> = {
     },
     floatingCta: {
       callNow: "Trucar ara",
-      requestQuote: "Sol·licitar pressupost"
+      requestQuote: "Sol·licitar pressupost",
+      workWithUs: "Treballa amb nosaltres"
     },
     cookieBanner: {
       ariaLabel: "Consentiment de cookies",
@@ -610,14 +641,28 @@ const dictionaries: Record<Locale, Dictionary> = {
         submit: "Sol·licitar pressupost",
         success: "Sol·licitud enviada correctament.",
         error: "No s'ha pogut enviar la sol·licitud."
+      },
+      jobs: {
+        fullName: "Nom i llinatges",
+        phone: "Telèfon",
+        email: "Correu electrònic",
+        message: "Presentació",
+        cv: "Adjuntar CV",
+        cvHelp: "Formats admesos: PDF, DOC o DOCX. Grandària màxima recomanada: 5 MB.",
+        privacyAcceptance: "Accepto el tractament de dades personals d'acord amb la Política de privacitat.",
+        honeypot: "No emplenar",
+        sending: "Enviant...",
+        submit: "Enviar candidatura",
+        success: "Candidatura enviada correctament.",
+        error: "No s'ha pogut enviar la candidatura."
       }
     },
     home: {
       slide1: {
         eyebrow: "DOSMAS GRUP",
-        title: "Més de 70 anys construint confiança a Balears",
+        title: "Més de 70 anys construint confiança a les Illes Balears",
         description:
-          "Grup de referència en excavacions, moviments de terra, obra civil i projectes integrals per a clients públics i privats.",
+          "Som un grup d'empreses especialitzades en edificació, obra pública, obra privada, excavacions i moviment de terres.",
         cta: "DESCOBREIX MÉS SOBRE NOSALTRES",
         metric1: "Trajectòria",
         metric2: "Equip humà",
@@ -666,8 +711,8 @@ const dictionaries: Record<Locale, Dictionary> = {
         pageSubtitle: "CONTACTA.",
         heading: "CONTACTA",
         scheduleTitle: "Horari d'atenció",
-        scheduleBody: "De dilluns a divendres de 8:00 a 16:00.",
-        mapTitle: "Ubicació Dosmas Grup a Google Maps",
+        scheduleBody: "De dilluns a dijous, de 7 a 18 hores.\nDivendres de 7 a 16 hores.",
+        mapTitle: "Ubicació DOSMAS GRUP a Google Maps",
         breadcrumb: "Contacte",
         phoneLabel: "Telèfon",
         emailLabel: "Email"
@@ -691,14 +736,14 @@ const dictionaries: Record<Locale, Dictionary> = {
         requestQuote: "Sol·licitar pressupost",
         indexAria: "Índex de serveis",
         filterTitle: "Filtrar serveis",
-        detailSubtitle: "Servei especialitzat de Dosmas Grup.",
+        detailSubtitle: "Servei especialitzat de DOSMAS GRUP.",
         ctaDescription: "El nostre equip tècnic pot revisar la seva necessitat i proposar la solució més adequada per a la seva obra.",
         contactNow: "Contactar ara",
         projectsRelated: "Projectes relacionats"
       },
       projects: {
         pageTitle: "Projectes",
-        pageSubtitle: "Obres executades per Dosmas Grup.",
+        pageSubtitle: "Obres executades per DOSMAS GRUP.",
         eyebrow: "Projectes",
         heading: "Casos d'estudi i obres executades",
         description: "Selecció de projectes amb informació tècnica i visual d'execució.",
@@ -717,11 +762,11 @@ const dictionaries: Record<Locale, Dictionary> = {
       news: {
         pageTitle: "Notícies",
         pageSubtitle:
-          "Un espai on compartim les nostres obres, projectes, novetats i avenços, mostrant l'evolució constant de Dosmas Grup.",
+          "Un espai on compartim les nostres obres, projectes, novetats i avenços, mostrant l'evolució constant de DOSMAS GRUP.",
         eyebrow: "Notícies",
         heading: "Notícies",
         description:
-          "Un espai on compartim les nostres obres, projectes, novetats i avenços, mostrant l'evolució constant de Dosmas Grup.",
+          "Un espai on compartim les nostres obres, projectes, novetats i avenços, mostrant l'evolució constant de DOSMAS GRUP.",
         detailSubtitle: "Notícies"
       },
       workAreas: {
@@ -740,7 +785,7 @@ const dictionaries: Record<Locale, Dictionary> = {
         solidarityActions: "Accions solidàries",
         partnerEntities: "Entitats col·laboradores",
         collaborateTitle: "Vol col·laborar amb la nostra estratègia RSC?",
-        collaborateBody: "A Dosmas Grup mantenim una agenda oberta de col·laboració amb entitats socials, educatives i esportives.",
+        collaborateBody: "A DOSMAS GRUP mantenim una agenda oberta de col·laboració amb entitats socials, educatives i esportives.",
         collaborateCta: "Contactar amb RSC"
       },
       legal: {
@@ -816,7 +861,8 @@ const dictionaries: Record<Locale, Dictionary> = {
     },
     floatingCta: {
       callNow: "Call now",
-      requestQuote: "Request quote"
+      requestQuote: "Request quote",
+      workWithUs: "Work with us"
     },
     cookieBanner: {
       ariaLabel: "Cookie consent",
@@ -859,6 +905,20 @@ const dictionaries: Record<Locale, Dictionary> = {
         submit: "Request quote",
         success: "Request submitted successfully.",
         error: "The request could not be submitted."
+      },
+      jobs: {
+        fullName: "Full name",
+        phone: "Phone",
+        email: "Email",
+        message: "Introduction",
+        cv: "Upload CV",
+        cvHelp: "Accepted formats: PDF, DOC or DOCX. Recommended maximum size: 5 MB.",
+        privacyAcceptance: "I accept personal data processing according to the Privacy policy.",
+        honeypot: "Do not fill in",
+        sending: "Sending...",
+        submit: "Send application",
+        success: "Application submitted successfully.",
+        error: "The application could not be submitted."
       }
     },
     home: {
@@ -866,7 +926,7 @@ const dictionaries: Record<Locale, Dictionary> = {
         eyebrow: "DOSMAS GRUP",
         title: "More than 70 years building trust in the Balearic Islands",
         description:
-          "A benchmark group in excavation, earthmoving, civil works and turnkey projects for public and private clients.",
+          "We are a group of companies specialized in building construction, public works, private works, excavations and earthmoving.",
         cta: "DISCOVER MORE ABOUT US",
         metric1: "Track record",
         metric2: "Team",
@@ -915,8 +975,8 @@ const dictionaries: Record<Locale, Dictionary> = {
         pageSubtitle: "CONTACT US.",
         heading: "CONTACT",
         scheduleTitle: "Business hours",
-        scheduleBody: "Monday to Friday from 8:00 to 16:00.",
-        mapTitle: "Dosmas Grup location on Google Maps",
+        scheduleBody: "Monday to Thursday, from 7:00 to 18:00.\nFriday from 7:00 to 16:00.",
+        mapTitle: "DOSMAS GRUP location on Google Maps",
         breadcrumb: "Contact",
         phoneLabel: "Phone",
         emailLabel: "Email"
@@ -940,14 +1000,14 @@ const dictionaries: Record<Locale, Dictionary> = {
         requestQuote: "Request quote",
         indexAria: "Services index",
         filterTitle: "Filter services",
-        detailSubtitle: "Specialized service by Dosmas Grup.",
+        detailSubtitle: "Specialized service by DOSMAS GRUP.",
         ctaDescription: "Our technical team can review your needs and propose the most suitable solution for your project.",
         contactNow: "Contact now",
         projectsRelated: "Related projects"
       },
       projects: {
         pageTitle: "Projects",
-        pageSubtitle: "Works delivered by Dosmas Grup.",
+        pageSubtitle: "Works delivered by DOSMAS GRUP.",
         eyebrow: "Projects",
         heading: "Case studies and delivered works",
         description: "Selected projects with technical and visual execution information.",
@@ -966,11 +1026,11 @@ const dictionaries: Record<Locale, Dictionary> = {
       news: {
         pageTitle: "News",
         pageSubtitle:
-          "A space where we share our works, projects, updates and progress, showcasing the constant evolution of Dosmas Grup.",
+          "A space where we share our works, projects, updates and progress, showcasing the constant evolution of DOSMAS GRUP.",
         eyebrow: "News",
         heading: "News",
         description:
-          "A space where we share our works, projects, updates and progress, showcasing the constant evolution of Dosmas Grup.",
+          "A space where we share our works, projects, updates and progress, showcasing the constant evolution of DOSMAS GRUP.",
         detailSubtitle: "News"
       },
       workAreas: {
@@ -989,7 +1049,7 @@ const dictionaries: Record<Locale, Dictionary> = {
         solidarityActions: "Solidarity actions",
         partnerEntities: "Partner entities",
         collaborateTitle: "Would you like to collaborate with our CSR strategy?",
-        collaborateBody: "At Dosmas Grup we maintain an open collaboration agenda with social, educational and sports organizations.",
+        collaborateBody: "At DOSMAS GRUP we maintain an open collaboration agenda with social, educational and sports organizations.",
         collaborateCta: "Contact CSR"
       },
       legal: {

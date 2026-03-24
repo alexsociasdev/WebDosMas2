@@ -13,7 +13,7 @@ import { serviceMetaBySlug, servicesData } from "@/services/data";
 
 export const metadata = pageMetadata(
   "Servicios",
-  "Servicios de Dosmas Grup.",
+  "Servicios de DOSMAS GRUP.",
   "/servicios",
   { image: "/images/projects/excavacion-en-son-vida/01.webp", keywords: ["excavaciones", "demoliciones", "obra civil", "Mallorca"] }
 );

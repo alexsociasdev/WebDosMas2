@@ -42,7 +42,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Submission rejected" }, { status: 400 });
   }
 
-  await dispatchFormSubmission("quote", data);
+  await dispatchFormSubmission("quote", data, "estudio@dosmasgrup.com");
 
   return NextResponse.json(
     {

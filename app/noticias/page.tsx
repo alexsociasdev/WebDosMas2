@@ -13,7 +13,7 @@ import { postsData } from "@/posts/data";
 
 export const metadata = pageMetadata(
   "Noticias",
-  "Noticias de Dosmas Grup.",
+  "Noticias de DOSMAS GRUP.",
   "/noticias",
   { image: "/images/projects/casa-en-son-vida/08.webp", keywords: ["blog", "noticias", "obra civil"] }
 );

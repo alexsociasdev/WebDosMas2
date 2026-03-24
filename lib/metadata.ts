@@ -5,17 +5,17 @@ export const BASE_URL = "https://www.dosmasgrup.com";
 export const defaultMetadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "Dosmas Grup",
-    template: "%s | Dosmas Grup"
+    default: "DOSMAS GRUP",
+    template: "%s | DOSMAS GRUP"
   },
   description:
-    "Dosmas Grup es un referente en el sector de las excavaciones y obras en Mallorca.",
+    "DOSMAS GRUP es un referente en el sector de las excavaciones y obras en Mallorca.",
   openGraph: {
-    title: "Dosmas Grup",
+    title: "DOSMAS GRUP",
     description:
-      "Dosmas Grup es un referente en el sector de las excavaciones y obras en Mallorca.",
+      "DOSMAS GRUP es un referente en el sector de las excavaciones y obras en Mallorca.",
     url: BASE_URL,
-    siteName: "Dosmas Grup",
+    siteName: "DOSMAS GRUP",
     locale: "es_ES",
     type: "website",
     images: [
@@ -23,15 +23,15 @@ export const defaultMetadata: Metadata = {
         url: "/images/fondo.webp",
         width: 1200,
         height: 630,
-        alt: "Dosmas Grup"
+        alt: "DOSMAS GRUP"
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dosmas Grup",
+    title: "DOSMAS GRUP",
     description:
-      "Dosmas Grup es un referente en el sector de las excavaciones y obras en Mallorca.",
+      "DOSMAS GRUP es un referente en el sector de las excavaciones y obras en Mallorca.",
     images: ["/images/fondo.webp"]
   }
 };

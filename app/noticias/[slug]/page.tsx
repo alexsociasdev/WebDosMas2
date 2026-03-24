@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: NewsDetailPageProps) {
   const post = postsBySlug[slug];
 
   if (!post) {
-    return pageMetadata("Noticia", "Noticia de Dosmas Grup.", `/noticias/${slug}`);
+    return pageMetadata("Noticia", "Noticia de DOSMAS GRUP.", `/noticias/${slug}`);
   }
 
   return pageMetadata(post.title, post.excerpt, `/noticias/${post.slug}`, {

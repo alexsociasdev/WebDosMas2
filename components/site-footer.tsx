@@ -31,9 +31,9 @@ export function SiteFooter({ locale }: SiteFooterProps) {
         <div>
           <div className="inline-flex items-center gap-3 rounded-full border border-brand-purple/25 bg-white px-3 py-2 shadow-soft">
             <span className="relative block h-10 w-10 overflow-hidden rounded-full border border-base-mid">
-              <Image src="/images/logo-dosmas.png" alt="Logo Dosmas Grup" fill sizes="40px" className="object-contain" />
+              <Image src="/images/logo-dosmas.png" alt="Logo DOSMAS GRUP" fill sizes="40px" className="object-contain" />
             </span>
-            <p className="text-sm font-semibold tracking-tight text-base-black">Dosmas Grup</p>
+            <p className="text-sm font-semibold tracking-tight text-base-black">DOSMAS GRUP</p>
           </div>
           <h2 className="mt-5 text-sm font-semibold uppercase tracking-[0.2em] text-base-dark">{t.footer.corporateData}</h2>
           <ul className="mt-4 space-y-2 text-sm text-base-dark">

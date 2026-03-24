@@ -6,6 +6,7 @@ import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { Container } from "@/components/container";
+import { officeLocations } from "@/content/site-content";
 import { getDictionary, type Locale, locales } from "@/lib/i18n";
 
 const languageLinks = {
@@ -52,8 +53,15 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
       )}
     >
       <div className="hidden border-b border-brand-yellow bg-brand-yellow lg:block">
-        <Container className="flex min-h-11 items-center justify-between text-xs text-base-black">
-          <p className="font-semibold text-base-black">Carretera Petra – Santa Margalida, S/N, Parcela km 1,3 · 07520 Petra</p>
+        <Container className="flex min-h-12 items-center justify-between gap-4 text-xs text-base-black">
+          <div className="flex items-center gap-2">
+            <span className="rounded-full bg-white px-3 py-1 font-semibold text-base-black shadow-soft">
+              {officeLocations.petra.label}
+            </span>
+            <span className="rounded-full bg-white px-3 py-1 font-semibold text-base-black shadow-soft">
+              {officeLocations.palma.label}
+            </span>
+          </div>
           <div className="flex items-center gap-4">
             <a
               href="tel:+34971096012"
@@ -63,7 +71,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
             </a>
             <a
               href="mailto:info@dosmasgrup.com"
-              className="rounded-full bg-brand-yellow px-3 py-1 font-semibold text-base-black transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+              className="rounded-full bg-white px-3 py-1 font-semibold text-base-black transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
             >
               info@dosmasgrup.com
             </a>
@@ -101,10 +109,10 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
           className="group flex items-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
         >
           <span className="inline-flex h-14 w-14 items-center justify-center overflow-hidden rounded-full border border-brand-gray/40 bg-white p-1 shadow-soft">
-            <Image src="/images/logo-dosmas.png" alt="Logo Dosmas Grup" width={56} height={56} className="h-auto w-full object-contain" priority />
+            <Image src="/images/logo-dosmas.png" alt="Logo DOSMAS GRUP" width={56} height={56} className="h-auto w-full object-contain" priority />
           </span>
-          <span className="text-lg font-semibold tracking-tight text-base-black group-hover:text-base-dark">
-            Dosmas Grup
+          <span className="text-xl font-bold tracking-tight text-base-black transition-colors group-hover:text-base-dark">
+            DOSMAS GRUP
           </span>
         </Link>
 
@@ -165,6 +173,14 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
               </li>
             ))}
           </ul>
+          <div className="mb-4 flex flex-wrap gap-2 border-t border-base-mid pt-3">
+            <span className="rounded-full bg-brand-yellow px-3 py-1 text-xs font-semibold text-base-black">
+              {officeLocations.petra.label}
+            </span>
+            <span className="rounded-full bg-brand-yellow px-3 py-1 text-xs font-semibold text-base-black">
+              {officeLocations.palma.label}
+            </span>
+          </div>
           <div className="mb-4 flex items-center gap-2 border-t border-base-mid pt-3">
             {locales.map((languageCode) => {
               const language = languageLinks[languageCode];

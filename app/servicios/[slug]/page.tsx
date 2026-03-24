@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: ServiceDetailPageProps) {
   const service = servicesBySlug[slug];
 
   if (!service) {
-    return pageMetadata("Servicio", "Servicio de Dosmas Grup.", `/servicios/${slug}`);
+    return pageMetadata("Servicio", "Servicio de DOSMAS GRUP.", `/servicios/${slug}`);
   }
 
   return pageMetadata(service.title, service.paragraphs[0], `/servicios/${service.slug}`, {

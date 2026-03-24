@@ -12,7 +12,7 @@ import { projectsData } from "@/projects/data";
 
 export const metadata = pageMetadata(
   "Proyectos",
-  "Proyectos ejecutados por Dosmas Grup en Baleares.",
+  "Proyectos ejecutados por DOSMAS GRUP en Baleares.",
   "/proyectos",
   { image: "/images/projects/aeropuerto-de-palma/08.webp", keywords: ["proyectos", "obra civil", "Mallorca"] }
 );

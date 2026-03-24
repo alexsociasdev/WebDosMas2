@@ -4,7 +4,7 @@ export function organizationSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Dosmas Grup",
+    name: "DOSMAS GRUP",
     legalName: "DOSMAS OBRAS Y PROYECTOS, S.L.",
     url: BASE_URL,
     logo: `${BASE_URL}/images/fondo.webp`,
@@ -31,7 +31,7 @@ export function websiteSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "Dosmas Grup",
+    name: "DOSMAS GRUP",
     url: BASE_URL,
     inLanguage: "es-ES"
   };
@@ -72,7 +72,7 @@ export function articleSchema(input: {
     },
     publisher: {
       "@type": "Organization",
-      name: "Dosmas Grup",
+      name: "DOSMAS GRUP",
       logo: {
         "@type": "ImageObject",
         url: `${BASE_URL}/images/fondo.webp`
@@ -93,7 +93,7 @@ export function serviceSchema(input: {
     serviceType: input.name,
     provider: {
       "@type": "Organization",
-      name: "Dosmas Grup",
+      name: "DOSMAS GRUP",
       url: BASE_URL
     },
     areaServed: "Illes Balears",
@@ -122,7 +122,7 @@ export function projectSchema(input: {
     },
     creator: {
       "@type": "Organization",
-      name: "Dosmas Grup"
+      name: "DOSMAS GRUP"
     }
   };
 }

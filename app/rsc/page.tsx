@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { Container } from "@/components/container";
 import { Breadcrumb } from "@/components/marketing/breadcrumb";
 import { SectionHeading } from "@/components/marketing/section-heading";
@@ -15,7 +14,7 @@ import { rscInitiatives } from "@/rsc/data";
 
 export const metadata = pageMetadata("RSC", "Responsabilidad Social Corporativa", "/rsc", {
   image: "/images/team/foto-grupo-puente.jpg",
-  keywords: ["RSC", "sostenibilidad", "responsabilidad social", "Dosmas Grup"]
+  keywords: ["RSC", "sostenibilidad", "responsabilidad social", "DOSMAS GRUP"]
 });
 
 export default async function RscPage() {
@@ -74,21 +73,6 @@ export default async function RscPage() {
               </Reveal>
             ))}
           </div>
-
-          <Reveal>
-            <article className="rounded-2xl border border-base-mid bg-white p-8">
-              <h3 className="text-2xl font-semibold text-base-black">{text.collaborateTitle}</h3>
-              <p className="mt-3 text-base leading-8 text-base-dark">
-                {text.collaborateBody}
-              </p>
-              <Link
-                href="/contacto"
-                className="mt-6 inline-flex rounded-full bg-brand-yellow px-5 py-3 text-sm font-semibold text-base-black transition hover:bg-brand-yellow/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple"
-              >
-                {text.collaborateCta}
-              </Link>
-            </article>
-          </Reveal>
         </Container>
       </section>
     </>

@@ -7,6 +7,7 @@ import { LogoCloud } from "@/components/marketing/logo-cloud";
 import { SectionHeading } from "@/components/marketing/section-heading";
 import { StatsStrip } from "@/components/marketing/stats-strip";
 import { Reveal } from "@/components/reveal";
+import { TeamOrganigram } from "@/components/team/team-organigram";
 import {
   aboutUsContent,
   brandDetails,
@@ -24,7 +25,7 @@ import { teamMembers } from "@/team/data";
 
 export const metadata = pageMetadata(
   "Inicio",
-  "Dosmas Grup es un referente en el sector de las excavaciones y obras en Mallorca.",
+  "DOSMAS GRUP es un referente en el sector de las excavaciones y obras en Mallorca.",
   "/",
   {
     image: "/images/brand/portada.webp",
@@ -127,8 +128,8 @@ export default async function HomePage() {
               <div>
                 <SectionHeading
                   eyebrow="WEB DOSMAS GRUP"
-                  title="Dosmas Grup"
-                  description="Dosmas Grup es un referente en el sector de las excavaciones y obras en Mallorca."
+                  title="DOSMAS GRUP"
+                  description="Somos un grupo de empresas especializadas en edificación, obra pública, obra privada, excavaciones y movimiento de tierras."
                 />
                 <div className="mt-7 space-y-5 text-base leading-8 text-base-dark">
                   {homeIntroParagraphs.map((paragraph) => (
@@ -159,7 +160,7 @@ export default async function HomePage() {
                   <div className="relative aspect-[5/4]">
                     <Image
                       src="/images/team/foto-grupo-puente.jpg"
-                      alt="Dosmas Grup"
+                      alt="DOSMAS GRUP"
                       fill
                       sizes="(min-width: 1024px) 40vw, 100vw"
                       className="object-cover"
@@ -294,44 +295,7 @@ export default async function HomePage() {
             </div>
           </Reveal>
 
-          <Reveal>
-            <article className="mt-8 overflow-hidden rounded-3xl border border-base-mid bg-white shadow-soft">
-              <div className="relative aspect-[16/7]">
-                <Image src="/images/team/foto-grupo-puente.jpg" alt="Equipo de Dosmas Grup" fill className="object-cover" />
-              </div>
-            </article>
-          </Reveal>
-
-          <Reveal>
-            <article className="mt-6 overflow-hidden rounded-3xl border border-base-mid bg-white shadow-soft">
-              <div className="relative aspect-[16/7]">
-                <Image src="/images/team/foto-grupo-dosmas.jpg" alt="Equipo de Dosmas Grup" fill className="object-cover" />
-              </div>
-            </article>
-          </Reveal>
-
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {teamMembers.map((member) => (
-              <Reveal key={member.email}>
-                <article className="overflow-hidden rounded-2xl border border-brand-purple/20 bg-white transition hover:-translate-y-1 hover:shadow-soft">
-                  <div className="relative aspect-[4/3]">
-                    <Image src={member.image} alt={member.name} fill className="object-cover" loading="lazy" />
-                  </div>
-                  <div className="space-y-1 bg-brand-yellow p-5">
-                    <h3 className="text-lg font-semibold text-base-black">{member.name}</h3>
-                    <p className="text-sm text-base-dark">{member.role}</p>
-                    <p className="text-sm font-medium text-base-black">Teléfono: {member.phone}</p>
-                    <a
-                      href={`mailto:${member.email}`}
-                      className="inline-block text-sm font-medium text-base-black underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
-                    >
-                      {member.email}
-                    </a>
-                  </div>
-                </article>
-              </Reveal>
-            ))}
-          </div>
+          <TeamOrganigram members={teamMembers} phoneLabel={t.pages.contact.phoneLabel} />
         </Container>
       </section>
 

@@ -12,8 +12,8 @@ import { breadcrumbSchema } from "@/lib/seo-schema";
 import { serviceMetaBySlug, servicesData } from "@/services/data";
 
 export const metadata = pageMetadata(
-  "Areas de trabajo",
-  "Areas de trabajo",
+  "Áreas de trabajo",
+  "Áreas de trabajo",
   "/areas-de-trabajo",
   { image: "/images/projects/demolicion-en-santa-ponca/03.webp" }
 );
