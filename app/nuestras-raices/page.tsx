@@ -63,9 +63,6 @@ export default async function NuestrasRaicesPage() {
                     />
                     <div className="absolute inset-0 ring-0 ring-brand-yellow/80 transition group-hover:ring-4" />
                   </div>
-                  <div className="bg-white px-5 py-4">
-                    <p className="text-sm font-semibold uppercase tracking-[0.18em] text-base-dark">{photo.title}</p>
-                  </div>
                 </a>
               </Reveal>
             ))}

@@ -1,3 +1,5 @@
+import { projectDescriptions } from "@/projects/project-descriptions";
+
 export type CaseStudy = {
   reto: string;
   solucion: string;
@@ -41,12 +43,7 @@ export const projectsData: ProjectItem[] = [
     location: "Sencelles, Mallorca",
     category: "Edificación",
     year: "2026",
-    description: [
-      "En DOSMAS GRUP entendemos la construcción de una vivienda como un proceso complejo que exige experiencia, visión global, coordinación constante y un compromiso absoluto con la calidad en cada fase de la obra. Actualmente, nuestra empresa está llevando a cabo la construcción de dos chalets de 500 metros cuadrados en el municipio de Sencelles, un proyecto que refleja a la perfección nuestra capacidad para asumir obras de gran envergadura con solvencia, seriedad y máxima implicación.",
-      "En ambos casos, en DOSMAS GRUP estamos desarrollando todo el proceso constructivo, desde los primeros trabajos de excavación y cimentación, hasta la estructura, la evolución completa de la obra y sus acabados finales. Esta capacidad de abordar un proyecto de principio a fin es uno de los grandes valores diferenciales de nuestra empresa, ya que nos permite garantizar un control riguroso sobre cada detalle, una ejecución bien planificada y una coordinación eficaz entre todas las fases del trabajo.",
-      "Además de la propia edificación, estas dos viviendas contarán con piscina y jardín, elementos que completan el conjunto y que exigen el mismo nivel de precisión, planificación y conocimiento técnico que el resto de la obra. En este sentido, DOSMAS GRUP también asume la ejecución de la piscina y todo el proyecto de ajardinamiento, reafirmando así nuestra capacidad para ofrecer soluciones integrales y responder con garantías a proyectos residenciales de gran dimensión.",
-      "Uno de los aspectos más destacados de esta actuación es el respeto por la esencia del paisaje y de la construcción tradicional mallorquina. En ambas casas hemos ejecutado más de 1.000 metros lineales de pared de piedra seca, un trabajo que aporta autenticidad, valor estético y una integración coherente con el entorno."
-    ],
+    description: projectDescriptions.sencelles,
     image: "/images/projects/sencelles/01.jpg",
     gallery: buildGallery("/images/projects/sencelles", 18),
     relatedServices: ["cimentaciones-en-edificios", "cimentaciones", "zanjas-y-cimientos"],
@@ -75,11 +72,7 @@ export const projectsData: ProjectItem[] = [
     location: "Valldemossa, Mallorca",
     category: "Edificación",
     year: "2025",
-    description: [
-      "En DOSMAS GRUP entendemos la construcción como algo más que levantar estructuras. Cada proyecto es un proceso vivo, una suma de decisiones, conocimiento y compromiso que empieza mucho antes del primer movimiento de tierra y se prolonga hasta el último detalle. Así lo demuestra la vivienda que actualmente estamos construyendo en Valldemossa, en pleno corazón de la Serra de Tramuntana.",
-      "Ubicada en uno de los entornos naturales más emblemáticos de Mallorca, esta casa nace con la voluntad de integrarse en el paisaje, respetando su esencia y dialogando con la arquitectura tradicional de la zona desde una mirada contemporánea.",
-      "Desde los cimientos hasta los acabados finales, cada decisión responde a un objetivo claro: crear espacios duraderos, funcionales y capaces de transmitir bienestar. Detrás de cada obra existe una promesa firme: seleccionar materiales que perduren en el tiempo, aplicar procesos constructivos rigurosos y trabajar con un equipo humano que afronta cada proyecto como si fuera propio."
-    ],
+    description: projectDescriptions.valldemossa,
     image: "/images/projects/valldemossa/01.jpg",
     gallery: buildGallery("/images/projects/valldemossa", 25),
     relatedServices: ["cimentaciones-en-edificios", "cimentaciones", "zanjas-y-cimientos"],
@@ -108,11 +101,7 @@ export const projectsData: ProjectItem[] = [
     location: "Portocolom, Mallorca",
     category: "Obra pública",
     year: "2026",
-    description: [
-      "En DOSMAS GRUP continuamos desarrollando proyectos que contribuyen de forma directa a mejorar el entorno, optimizar los espacios públicos y avanzar hacia un modelo de desarrollo más sostenible. Recientemente hemos finalizado una importante actuación en s’Arenal de Portocolom, una obra que ha permitido recuperar un espacio clave del litoral y transformarlo en una zona más accesible, ordenada y respetuosa con su entorno.",
-      "La intervención ha supuesto la eliminación del antiguo vial junto a la playa y la creación de una gran zona verde y peatonal, concebida para favorecer un uso más amable del espacio público, potenciar la integración paisajística y ofrecer un entorno más cómodo y seguro para peatones y visitantes.",
-      "El proyecto también ha incluido la instalación de una pasarela de madera y de pavimentos ecológicos, además de la creación de un nuevo aparcamiento de 28 plazas en es Tancat de sa Torre, mejorando de forma directa la movilidad y reduciendo la presión del tráfico rodado en el frente litoral."
-    ],
+    description: projectDescriptions.portocolom,
     image: "/images/projects/portocolom/01.jpg",
     gallery: buildGallery("/images/projects/portocolom", 18),
     relatedServices: ["arreglo-y-acondicionamiento-de-caminos-y-carreteras", "obras-hidraulicas", "escolleras"],
@@ -141,11 +130,7 @@ export const projectsData: ProjectItem[] = [
     location: "Aeropuerto de Palma, Mallorca",
     category: "Infraestructuras",
     year: "2026",
-    description: [
-      "En DOSMAS GRUP creemos firmemente que cada obra es una oportunidad para demostrar cómo trabajamos y cuáles son los valores que nos mueven. Por eso, participar en los trabajos de reciclaje de material de derribo en el aeropuerto de Palma supone para nuestra empresa un motivo de auténtico orgullo.",
-      "Hasta el momento, hemos reciclado en esta obra alrededor de 25.000 metros cúbicos de material, una cifra que da muestra de la magnitud de los trabajos y de la capacidad técnica y humana necesaria para llevarlos a cabo con eficacia, rigor y responsabilidad.",
-      "El proyecto cuenta con un importante despliegue de medios, entre los que destacan dos giratorias JCB de 22 toneladas, una pala Caterpillar 996, una pala Caterpillar 962, una machacadora Kleemann, una cribadora vibradora Frontier Keestrack y diez camiones. Todo el material reciclado se reutiliza en las propias instalaciones del aeropuerto, convirtiendo esta actuación en un magnífico ejemplo de aprovechamiento de recursos y gestión responsable."
-    ],
+    description: projectDescriptions.aeropuertoDePalmaReciclaje,
     image: "/images/projects/aeropuerto-palma-reciclaje/01.jpg",
     gallery: buildGallery("/images/projects/aeropuerto-palma-reciclaje", 17),
     relatedServices: ["machacas-cribado-zahorras-y-aridos", "transporte-de-tierras", "derribos-y-demoliciones"],
@@ -174,11 +159,7 @@ export const projectsData: ProjectItem[] = [
     location: "Son Vida, Mallorca",
     category: "Edificación",
     year: "2026",
-    description: [
-      "En DOSMAS GRUP entendemos cada proyecto como una oportunidad para materializar espacios únicos, pensados para perdurar en el tiempo y adaptarse plenamente al estilo de vida de quienes los habitan. Un claro ejemplo de ello es la reciente construcción de una vivienda unifamiliar en Son Vida, una de las urbanizaciones residenciales más exclusivas y reconocidas de Mallorca.",
-      "La actuación consistió en la edificación de una residencia de aproximadamente 1.000 m², concebida bajo criterios de arquitectura contemporánea y diseñada para integrarse con armonía en su entorno natural. El proyecto incorpora una amplia piscina y cuidadas zonas ajardinadas que dialogan con la vivienda, generando un conjunto equilibrado donde interior y exterior se conectan de forma fluida.",
-      "Desde el inicio de la obra, el objetivo fue claro: alcanzar los más altos estándares constructivos. Para ello, se apostó por materiales de primer nivel, soluciones técnicas avanzadas y una cuidada atención al detalle, logrando acabados que reflejan elegancia, sobriedad y calidad."
-    ],
+    description: projectDescriptions.construccionCasaEnSonVida,
     image: "/images/projects/casa-son-vida/01.jpg",
     gallery: buildGallery("/images/projects/casa-son-vida", 25),
     relatedServices: ["cimentaciones-en-edificios", "cimentaciones", "zanjas-y-cimientos"],
@@ -207,11 +188,7 @@ export const projectsData: ProjectItem[] = [
     location: "Costa de los Pinos, Son Servera",
     category: "Edificación",
     year: "2025",
-    description: [
-      "En DOSMAS GRUP entendemos que cada vivienda es mucho más que una obra: es un proyecto de vida. Actualmente trabajamos en la construcción de una casa de grandes dimensiones en Costa de los Pinos, un enclave privilegiado del litoral mallorquín donde la arquitectura y el entorno natural conviven en equilibrio.",
-      "Este proyecto destaca por la aplicación de primeras calidades constructivas, tanto en los sistemas estructurales como en los materiales seleccionados, respondiendo a las exigencias propias de una vivienda de alto nivel.",
-      "Cada fase del proceso se aborda con planificación, rigor técnico y una visión global que permite anticipar necesidades y garantizar resultados duraderos. La calidad se percibe en los acabados, en la solidez de la construcción y en la armonía del conjunto."
-    ],
+    description: projectDescriptions.costaDeLosPinos,
     image: "/images/projects/costa-de-los-pinos/01.jpg",
     gallery: buildGallery("/images/projects/costa-de-los-pinos", 18),
     relatedServices: ["cimentaciones-en-edificios", "cimentaciones", "zanjas-y-cimientos"],
@@ -240,11 +217,7 @@ export const projectsData: ProjectItem[] = [
     location: "Son Vida, Mallorca",
     category: "Excavaciones",
     year: "2024",
-    description: [
-      "En DOSMAS GRUP, cada proyecto representa un nuevo reto técnico y una oportunidad para demostrar la capacidad y experiencia acumuladas a lo largo de más de 70 años de trayectoria. La empresa ha llevado a cabo una excavación de gran envergadura en la exclusiva urbanización de Son Vida, uno de los enclaves residenciales más prestigiosos de España y referente del lujo residencial en Mallorca.",
-      "Trabajar en un entorno como Son Vida implica afrontar condiciones técnicas exigentes, donde la planificación, la seguridad y la precisión son factores determinantes. La actuación tiene como objetivo preparar el terreno para futuras construcciones de alto nivel, garantizando una base sólida y perfectamente adaptada a las necesidades del proyecto arquitectónico.",
-      "Para alcanzar estos estándares, DOSMAS GRUP ha desplegado maquinaria de última generación, entre la que destacan las potentes excavadoras Caterpillar 352 y Liebherr 944, junto con una flota de camiones Renault, Volvo y Scania que permite optimizar la logística de transporte y asegurar un ritmo de trabajo constante y preciso."
-    ],
+    description: projectDescriptions.excavacionEnSonVida,
     image: "/images/projects/excavacion-son-vida-2024/01.jpg",
     gallery: buildGallery("/images/projects/excavacion-son-vida-2024", 21),
     relatedServices: ["excavaciones", "desmontes", "cimentaciones"],
@@ -273,11 +246,7 @@ export const projectsData: ProjectItem[] = [
     location: "Maria de la Salut, Mallorca",
     category: "Obra pública",
     year: "2025",
-    description: [
-      "Los espacios públicos son mucho más que lugares de paso. Son escenarios de convivencia, puntos de encuentro y enclaves que forman parte de la identidad de un pueblo. Con esta visión, DOSMAS GRUP ha llevado a cabo la remodelación integral de la Plaça des Mercat, en Maria de la Salut, una actuación destinada a renovar este espacio emblemático y convertirlo en un entorno más amable, funcional y acogedor para vecinos y visitantes.",
-      "Entre las principales actuaciones realizadas destaca el nuevo adoquinado, que aporta solidez, uniformidad y armonía al conjunto del espacio. La remodelación también ha incorporado arbolado y zonas verdes, elementos fundamentales para humanizar el entorno, generar frescor y enriquecer la experiencia de quienes lo disfrutan cada día.",
-      "Asimismo, el proyecto ha contemplado la creación de un espacio de juegos pensado para que los más pequeños puedan disfrutar con seguridad. El resultado es una plaza abierta, preparada para pasear, compartir y reencontrarse, y concebida como parte activa de la vida cotidiana de Maria de la Salut."
-    ],
+    description: projectDescriptions.remodelacionPlacaDesMercat,
     image: "/images/projects/placa-des-mercat-maria-de-la-salut/01.webp",
     gallery: buildGallery("/images/projects/placa-des-mercat-maria-de-la-salut", 8, "webp"),
     relatedServices: ["arreglo-y-acondicionamiento-de-caminos-y-carreteras", "obras-hidraulicas", "terraplenes-y-compactaciones"],
@@ -306,11 +275,7 @@ export const projectsData: ProjectItem[] = [
     location: "Es Figueral, Marratxí",
     category: "Obra pública",
     year: "2026",
-    description: [
-      "En DOSMAS GRUP seguimos sumando proyectos que contribuyen de forma directa a mejorar los espacios públicos de Mallorca y la calidad de vida de sus ciudadanos. Actualmente, nuestra empresa está ejecutando una importante obra pública en Es Figueral, en Marratxí, concretamente en la zona cercana a la estación de tren.",
-      "Los trabajos consisten en el acondicionamiento del terreno que posteriormente será asfaltado para crear un total de 266 plazas de aparcamiento, una infraestructura pensada para dar respuesta a las necesidades de movilidad y estacionamiento de esta zona.",
-      "El proyecto también contempla la ejecución de un carril bici y de una amplia zona peatonal, apostando así por un modelo de urbanización más accesible, más cómodo y mejor adaptado a una convivencia equilibrada entre vehículos, peatones y formas de movilidad más sostenibles."
-    ],
+    description: projectDescriptions.esFigueralMarratxi,
     image: "/images/projects/es-figueral-marratxi/01.jpg",
     gallery: buildGallery("/images/projects/es-figueral-marratxi", 10),
     relatedServices: ["arreglo-y-acondicionamiento-de-caminos-y-carreteras", "terraplenes-y-compactaciones", "explanaciones"],
@@ -371,11 +336,7 @@ export const projectsData: ProjectItem[] = [
     location: "Cas Concos, Felanitx",
     category: "Obra pública",
     year: "2026",
-    description: [
-      "La reforma de la Plaça de l’Església, uno de los enclaves más representativos del núcleo urbano de Cas Concos, ha quedado terminada, culminando así una intervención largamente esperada por vecinos y visitantes.",
-      "El proyecto, redactado por los arquitectos Jaume Alomar Sureda y Xavier Fontanet Adrover, de Misión 21 Arquitectos S.L.P., fue adjudicado a DOSMAS GRUP, que ha asumido la ejecución de unas obras de especial relevancia para el municipio. Con un presupuesto de 554.000 euros, financiado con fondos europeos, esta actuación ha permitido recuperar y dignificar un espacio esencial para la vida colectiva del pueblo.",
-      "La nueva plaza ha sido concebida como un entorno pensado para el encuentro, la convivencia y el uso cotidiano, manteniendo la esencia y el valor patrimonial del lugar mientras introduce una transformación urbana orientada a la funcionalidad, la sostenibilidad y la integración."
-    ],
+    description: projectDescriptions.casConcos,
     image: "/images/projects/cas-concos/01.jpg",
     gallery: buildGallery("/images/projects/cas-concos", 16),
     relatedServices: ["arreglo-y-acondicionamiento-de-caminos-y-carreteras", "obras-hidraulicas", "terraplenes-y-compactaciones"],

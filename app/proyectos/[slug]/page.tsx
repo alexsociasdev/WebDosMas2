@@ -65,6 +65,8 @@ export default async function ProyectoDetailPage({ params }: ProjectDetailPagePr
       meta: `${post.category} · ${post.date}`
     }));
 
+  const isLeadHeading = (paragraph: string) => paragraph.length <= 70 && !/[.!?]$/.test(paragraph);
+
   return (
     <>
       <JsonLd
@@ -97,7 +99,7 @@ export default async function ProyectoDetailPage({ params }: ProjectDetailPagePr
         })}
       />
 
-      <PageHero title={project.title} subtitle={project.summary} image={project.image} />
+      <PageHero title={project.title} subtitle={`${project.category} · ${project.location} · ${project.year}`} image={project.image} />
 
       <section className="bg-brand-yellow py-20">
         <Container className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
@@ -116,7 +118,13 @@ export default async function ProyectoDetailPage({ params }: ProjectDetailPagePr
             />
             <div className="mt-5 space-y-5 text-base leading-8 text-base-dark">
               {project.description.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
+                isLeadHeading(paragraph) ? (
+                  <h3 key={paragraph} className="text-2xl font-semibold tracking-tight text-base-black">
+                    {paragraph}
+                  </h3>
+                ) : (
+                  <p key={paragraph}>{paragraph}</p>
+                )
               ))}
             </div>
 
