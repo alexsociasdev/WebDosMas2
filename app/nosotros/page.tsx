@@ -1,3 +1,5 @@
+import Image from "next/image";
+import Link from "next/link";
 import { Container } from "@/components/container";
 import { Breadcrumb } from "@/components/marketing/breadcrumb";
 import { CountUp } from "@/components/marketing/count-up";
@@ -7,7 +9,7 @@ import { PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/reveal";
 import { JsonLd } from "@/components/seo/json-ld";
 import { TeamOrganigram } from "@/components/team/team-organigram";
-import { aboutUsContent, editorialSection, teamSection, valuesSection } from "@/content/site-content";
+import { aboutUsContent, editorialSection, rootsLink, teamSection, valuesSection } from "@/content/site-content";
 import { getDictionary, getServerLocale } from "@/lib/i18n-server";
 import { pageMetadata } from "@/lib/metadata";
 import { breadcrumbSchema } from "@/lib/seo-schema";
@@ -61,6 +63,12 @@ export default async function NosotrosPage() {
                   <li key={item}>{item}</li>
                 ))}
               </ul>
+              <Link
+                href={rootsLink.href}
+                className="inline-flex rounded-full bg-brand-yellow px-6 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-base-black transition hover:bg-brand-yellow/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple"
+              >
+                {rootsLink.label}
+              </Link>
             </div>
           </Reveal>
 
@@ -108,6 +116,35 @@ export default async function NosotrosPage() {
               ))}
             </div>
           </Reveal>
+
+          <div className="mt-10 grid gap-6 lg:grid-cols-2">
+            <Reveal>
+              <article className="overflow-hidden rounded-3xl border border-brand-purple/20 bg-white shadow-soft">
+                <div className="relative aspect-[16/10]">
+                  <Image
+                    src="/images/team/equipo-general.jpg"
+                    alt="Equipo DOSMAS GRUP"
+                    fill
+                    sizes="(min-width: 1024px) 48vw, 100vw"
+                    className="object-cover"
+                  />
+                </div>
+              </article>
+            </Reveal>
+            <Reveal>
+              <article className="overflow-hidden rounded-3xl border border-brand-purple/20 bg-white shadow-soft">
+                <div className="relative aspect-[16/10]">
+                  <Image
+                    src="/images/team/foto-grupo-dosmas.jpg"
+                    alt="Equipo directivo y operativa DOSMAS GRUP"
+                    fill
+                    sizes="(min-width: 1024px) 48vw, 100vw"
+                    className="object-cover"
+                  />
+                </div>
+              </article>
+            </Reveal>
+          </div>
 
           <TeamOrganigram members={teamMembers} phoneLabel={t.pages.contact.phoneLabel} />
 

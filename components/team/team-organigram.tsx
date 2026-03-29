@@ -5,6 +5,7 @@ export type TeamOrganigramMember = {
   name: string;
   role: string;
   image: string;
+  imagePosition?: string;
   email?: string;
   phone?: string;
   featured?: boolean;
@@ -32,6 +33,7 @@ function TeamCard({
           alt={member.name}
           fill
           className="object-cover"
+          style={member.imagePosition ? { objectPosition: member.imagePosition } : undefined}
           loading="lazy"
           sizes={featured ? "(min-width: 768px) 48vw, 100vw" : "(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw"}
         />

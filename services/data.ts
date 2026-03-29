@@ -239,7 +239,7 @@ export const serviceMetaBySlug: Record<string, ServiceMeta> = {
   "derribos-y-demoliciones": {
     category: "Demoliciones",
     ctaLabel: "Solicitar plan de demolición",
-    relatedProjects: ["demolicion-en-santa-ponca", "demolicion-aeropuerto-de-palma"]
+    relatedProjects: ["demolicion-en-santa-ponca", "aeropuerto-de-palma-reciclaje"]
   },
   desmontes: {
     category: "Movimiento de tierras",
@@ -264,7 +264,7 @@ export const serviceMetaBySlug: Record<string, ServiceMeta> = {
   "transporte-de-maquinaria": {
     category: "Logística",
     ctaLabel: "Solicitar transporte especializado",
-    relatedProjects: ["demolicion-aeropuerto-de-palma", "demolicion-en-santa-ponca"]
+    relatedProjects: ["aeropuerto-de-palma-reciclaje", "demolicion-en-santa-ponca"]
   },
   "transporte-de-tierras": {
     category: "Logística",
@@ -274,7 +274,7 @@ export const serviceMetaBySlug: Record<string, ServiceMeta> = {
   "suministro-de-agua-en-mallorca": {
     category: "Suministros",
     ctaLabel: "Solicitar suministro de agua",
-    relatedProjects: ["construccion-casa-en-son-vida", "demolicion-aeropuerto-de-palma"]
+    relatedProjects: ["construccion-casa-en-son-vida", "aeropuerto-de-palma-reciclaje"]
   },
   "machacas-cribado-zahorras-y-aridos": {
     category: "Áridos",
@@ -299,7 +299,7 @@ export const serviceMetaBySlug: Record<string, ServiceMeta> = {
   "arreglo-y-acondicionamiento-de-caminos-y-carreteras": {
     category: "Obra viaria",
     ctaLabel: "Solicitar acondicionamiento viario",
-    relatedProjects: ["remodelacion-placa-des-mercat", "demolicion-aeropuerto-de-palma"]
+    relatedProjects: ["remodelacion-placa-des-mercat", "aeropuerto-de-palma-reciclaje"]
   },
   "cimentaciones-en-edificios": {
     category: "Edificación",
@@ -309,7 +309,7 @@ export const serviceMetaBySlug: Record<string, ServiceMeta> = {
   "obras-hidraulicas": {
     category: "Infraestructura",
     ctaLabel: "Solicitar obra hidráulica",
-    relatedProjects: ["remodelacion-placa-des-mercat", "demolicion-aeropuerto-de-palma"]
+    relatedProjects: ["remodelacion-placa-des-mercat", "aeropuerto-de-palma-reciclaje"]
   },
   escolleras: {
     category: "Contención y drenaje",

@@ -15,6 +15,7 @@ import {
   dossierLink,
   editorialSection,
   homeIntroParagraphs,
+  rootsLink,
   teamSection,
   trustSection,
   valuesSection
@@ -127,7 +128,6 @@ export default async function HomePage() {
             <article className="grid gap-8 rounded-3xl border border-brand-gray/30 bg-white p-7 shadow-soft lg:grid-cols-[1.15fr_0.85fr] lg:p-10">
               <div>
                 <SectionHeading
-                  eyebrow="WEB DOSMAS GRUP"
                   title="DOSMAS GRUP"
                   description="Somos un grupo de empresas especializadas en edificación, obra pública, obra privada, excavaciones y movimiento de tierras."
                 />
@@ -201,6 +201,12 @@ export default async function HomePage() {
                   <li key={item}>{item}</li>
                 ))}
               </ul>
+              <Link
+                href={rootsLink.href}
+                className="inline-flex rounded-full bg-brand-yellow px-6 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-base-black transition hover:bg-brand-yellow/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple"
+              >
+                {rootsLink.label}
+              </Link>
             </div>
           </Reveal>
         </Container>
@@ -295,6 +301,35 @@ export default async function HomePage() {
             </div>
           </Reveal>
 
+          <div className="mt-10 grid gap-6 lg:grid-cols-2">
+            <Reveal>
+              <article className="overflow-hidden rounded-3xl border border-brand-purple/20 bg-white shadow-soft">
+                <div className="relative aspect-[16/10]">
+                  <Image
+                    src="/images/team/equipo-general.jpg"
+                    alt="Equipo DOSMAS GRUP"
+                    fill
+                    sizes="(min-width: 1024px) 48vw, 100vw"
+                    className="object-cover"
+                  />
+                </div>
+              </article>
+            </Reveal>
+            <Reveal>
+              <article className="overflow-hidden rounded-3xl border border-brand-purple/20 bg-white shadow-soft">
+                <div className="relative aspect-[16/10]">
+                  <Image
+                    src="/images/team/foto-grupo-dosmas.jpg"
+                    alt="Equipo directivo y operativa DOSMAS GRUP"
+                    fill
+                    sizes="(min-width: 1024px) 48vw, 100vw"
+                    className="object-cover"
+                  />
+                </div>
+              </article>
+            </Reveal>
+          </div>
+
           <TeamOrganigram members={teamMembers} phoneLabel={t.pages.contact.phoneLabel} />
         </Container>
       </section>
@@ -314,19 +349,27 @@ export default async function HomePage() {
       </section>
 
       <section className="bg-brand-yellow py-20">
-        <Container className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+        <Container className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
           <Reveal>
             <SectionHeading title={trustSection.title.toUpperCase()} />
-            <ul className="mt-6 list-disc space-y-3 pl-6 text-base leading-8 text-base-dark">
-              {trustSection.bullets.map((reason) => (
-                <li key={reason}>{reason}</li>
+            <div className="mt-6 space-y-4">
+              {trustSection.bullets.map((reason, index) => (
+                <p
+                  key={reason}
+                  className={`text-base leading-8 text-base-black md:text-lg ${
+                    index < trustSection.bullets.length - 1 ? "font-semibold" : "font-bold"
+                  }`}
+                >
+                  {reason}
+                </p>
               ))}
-            </ul>
+            </div>
           </Reveal>
 
           <Reveal>
-            <div className="rounded-3xl border border-brand-purple/20 bg-white p-6 shadow-soft">
-              <div className="relative aspect-video overflow-hidden rounded-2xl border border-base-mid bg-white">
+            <div className="rounded-3xl border border-brand-purple/20 bg-brand-purple p-6 text-white shadow-soft">
+              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-brand-yellow">DESCÚBRENOS</p>
+              <div className="relative mt-4 aspect-video overflow-hidden rounded-2xl border border-white/20 bg-white shadow-soft">
                 <iframe
                   src={trustSection.youtubeUrl}
                   title={trustSection.youtubeLabel}
@@ -336,6 +379,30 @@ export default async function HomePage() {
                   allowFullScreen
                   className="h-full w-full"
                 />
+              </div>
+              <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                <article className="rounded-2xl bg-white p-4">
+                  <div className="relative mx-auto aspect-square max-w-[12rem]">
+                    <Image
+                      src="/images/certifications/eco-friendly.jpeg"
+                      alt="Sello ECO FRIENDLY de DOSMAS GRUP"
+                      fill
+                      sizes="(min-width: 1024px) 16vw, 40vw"
+                      className="object-contain"
+                    />
+                  </div>
+                </article>
+                <article className="rounded-2xl bg-white p-4">
+                  <div className="relative mx-auto aspect-[3/4] max-w-[10rem]">
+                    <Image
+                      src="/images/certifications/reduzco-compenso-calculo-2022.jpeg"
+                      alt="Distintivo Reduzco Compenso Calculo 2022"
+                      fill
+                      sizes="(min-width: 1024px) 16vw, 40vw"
+                      className="object-contain"
+                    />
+                  </div>
+                </article>
               </div>
             </div>
           </Reveal>

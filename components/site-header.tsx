@@ -55,12 +55,20 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
       <div className="hidden border-b border-brand-yellow bg-brand-yellow lg:block">
         <Container className="flex min-h-12 items-center justify-between gap-4 text-xs text-base-black">
           <div className="flex items-center gap-2">
-            <span className="rounded-full bg-white px-3 py-1 font-semibold text-base-black shadow-soft">
+            <Link
+              href="/contacto#oficina-central-petra"
+              title={officeLocations.petra.shortAddress}
+              className="rounded-full bg-white px-3 py-1 font-semibold text-base-black shadow-soft transition hover:bg-brand-purple hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple"
+            >
               {officeLocations.petra.label}
-            </span>
-            <span className="rounded-full bg-white px-3 py-1 font-semibold text-base-black shadow-soft">
+            </Link>
+            <Link
+              href="/contacto#delegacion-palma"
+              title={officeLocations.palma.shortAddress}
+              className="rounded-full bg-white px-3 py-1 font-semibold text-base-black shadow-soft transition hover:bg-brand-purple hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple"
+            >
               {officeLocations.palma.label}
-            </span>
+            </Link>
           </div>
           <div className="flex items-center gap-4">
             <a
@@ -174,12 +182,20 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
             ))}
           </ul>
           <div className="mb-4 flex flex-wrap gap-2 border-t border-base-mid pt-3">
-            <span className="rounded-full bg-brand-yellow px-3 py-1 text-xs font-semibold text-base-black">
+            <Link
+              href="/contacto#oficina-central-petra"
+              onClick={() => setMenuOpen(false)}
+              className="rounded-full bg-brand-yellow px-3 py-1 text-xs font-semibold text-base-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple"
+            >
               {officeLocations.petra.label}
-            </span>
-            <span className="rounded-full bg-brand-yellow px-3 py-1 text-xs font-semibold text-base-black">
+            </Link>
+            <Link
+              href="/contacto#delegacion-palma"
+              onClick={() => setMenuOpen(false)}
+              className="rounded-full bg-brand-yellow px-3 py-1 text-xs font-semibold text-base-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple"
+            >
               {officeLocations.palma.label}
-            </span>
+            </Link>
           </div>
           <div className="mb-4 flex items-center gap-2 border-t border-base-mid pt-3">
             {locales.map((languageCode) => {

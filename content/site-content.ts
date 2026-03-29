@@ -4,9 +4,23 @@ export const navigationLinks = [
   { label: "Áreas de trabajo", href: "/areas-de-trabajo" },
   { label: "Noticias", href: "/noticias" },
   { label: "RSC", href: "/rsc" },
-  { label: "Solicite presupuesto", href: "/solicite-presupuesto" },
   { label: "Contacto", href: "/contacto" }
 ] as const;
+
+export const rootsLink = {
+  label: "NUESTRAS RAÍCES",
+  href: "/nuestras-raices"
+} as const;
+
+export const heritagePhotos = Array.from({ length: 18 }, (_, index) => {
+  const order = String(index + 1).padStart(2, "0");
+
+  return {
+    id: `heritage-${order}`,
+    title: `FOTO ${index + 1}`,
+    image: `/images/heritage/foto-${order}.jpg`
+  };
+});
 
 export const officeLocations = {
   petra: {

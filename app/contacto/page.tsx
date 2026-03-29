@@ -37,7 +37,7 @@ export default async function ContactoPage() {
             <Breadcrumb items={[{ label: t.common.home, href: "/" }, { label: text.breadcrumb }]} />
             <SectionHeading title={text.heading} />
             <div className="mt-8 grid gap-6 md:grid-cols-2">
-              <article className="rounded-2xl border border-brand-purple/20 bg-brand-yellow p-6 shadow-soft">
+              <article id="oficina-central-petra" className="scroll-mt-32 rounded-2xl border border-brand-purple/20 bg-brand-yellow p-6 shadow-soft">
                 <p className="text-xs font-semibold uppercase tracking-[0.22em] text-base-dark">{officeLocations.petra.label}</p>
                 <div className="mt-4 space-y-2 text-sm leading-7 text-base-dark">
                   {officeLocations.petra.lines.map((line) => (
@@ -56,9 +56,9 @@ export default async function ContactoPage() {
                 </div>
               </article>
 
-              <article className="rounded-2xl border border-brand-purple/20 bg-white p-6 shadow-soft">
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-base-dark">{officeLocations.palma.label}</p>
-                <div className="mt-4 space-y-2 text-sm leading-7 text-base-dark">
+              <article id="delegacion-palma" className="scroll-mt-32 rounded-2xl border border-brand-purple/20 bg-brand-purple p-6 shadow-soft">
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white">{officeLocations.palma.label}</p>
+                <div className="mt-4 space-y-2 text-sm leading-7 text-white">
                   {officeLocations.palma.lines.map((line) => (
                     <p key={line}>{line}</p>
                   ))}

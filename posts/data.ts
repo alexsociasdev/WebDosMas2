@@ -47,7 +47,7 @@ export const postsData: PostItem[] = [
     ],
     image: "/images/projects/demolicion-en-santa-ponca/04.webp",
     relatedServices: ["derribos-y-demoliciones", "transporte-de-tierras"],
-    relatedProjects: ["demolicion-en-santa-ponca", "demolicion-aeropuerto-de-palma"]
+    relatedProjects: ["demolicion-en-santa-ponca", "aeropuerto-de-palma-reciclaje"]
   },
   {
     slug: "innovacion-en-maquinaria-2026",
@@ -65,7 +65,7 @@ export const postsData: PostItem[] = [
     ],
     image: "/images/projects/excavacion-en-son-vida/01.webp",
     relatedServices: ["excavaciones", "desmontes", "cimentaciones"],
-    relatedProjects: ["excavacion-en-son-vida", "demolicion-aeropuerto-de-palma"]
+    relatedProjects: ["excavacion-en-son-vida", "aeropuerto-de-palma-reciclaje"]
   },
   {
     slug: "rehabilitacion-de-espacios-urbanos",
@@ -119,7 +119,7 @@ export const postsData: PostItem[] = [
     ],
     image: "/images/projects/son-ribotet/08.webp",
     relatedServices: ["transporte-de-maquinaria", "transporte-de-tierras", "suministro-de-agua-en-mallorca"],
-    relatedProjects: ["demolicion-aeropuerto-de-palma", "preparacion-terreno-son-ribotet"]
+    relatedProjects: ["aeropuerto-de-palma-reciclaje", "preparacion-terreno-son-ribotet"]
   }
 ];
 

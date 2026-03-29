@@ -14,7 +14,7 @@ export const metadata = pageMetadata(
   "Proyectos",
   "Proyectos ejecutados por DOSMAS GRUP en Baleares.",
   "/proyectos",
-  { image: "/images/projects/aeropuerto-de-palma/08.webp", keywords: ["proyectos", "obra civil", "Mallorca"] }
+  { image: projectsData[0].image, keywords: ["proyectos", "obra civil", "Mallorca"] }
 );
 
 export default async function ProyectosPage() {
@@ -35,7 +35,7 @@ export default async function ProyectosPage() {
       <PageHero
         title={text.pageTitle}
         subtitle={text.pageSubtitle}
-        image="/images/projects/aeropuerto-de-palma/08.webp"
+        image={projectsData[0].image}
       />
 
       <section className="bg-brand-yellow py-20">

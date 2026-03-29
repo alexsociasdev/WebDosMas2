@@ -2,7 +2,6 @@ import Image from "next/image";
 import { Container } from "@/components/container";
 import { Breadcrumb } from "@/components/marketing/breadcrumb";
 import { SectionHeading } from "@/components/marketing/section-heading";
-import { StatsStrip } from "@/components/marketing/stats-strip";
 import { PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/reveal";
 import { JsonLd } from "@/components/seo/json-ld";
@@ -21,6 +20,12 @@ export default async function RscPage() {
   const locale = await getServerLocale();
   const t = getDictionary(locale);
   const text = t.pages.rsc;
+  const highlightedMessages = [
+    "PROGRAMAS ACTIVOS",
+    "FORMACIÓN AL PERSONAL",
+    "ACCIONES SOLIDARIAS",
+    "COLABORACIÓN CON ENTIDADES"
+  ];
 
   return (
     <>
@@ -46,16 +51,21 @@ export default async function RscPage() {
             </div>
           </Reveal>
 
-          <Reveal>
-            <StatsStrip
-              stats={[
-                { label: text.activePrograms, value: "12" },
-                { label: text.annualTrainingHours, value: "2.400" },
-                { label: text.solidarityActions, value: "18" },
-                { label: text.partnerEntities, value: "26" }
-              ]}
-            />
-          </Reveal>
+          <div className="grid gap-6 sm:grid-cols-2">
+            {highlightedMessages.map((message, index) => (
+              <Reveal key={message}>
+                <article
+                  className={`flex min-h-40 items-center justify-center rounded-3xl border px-6 py-10 text-center shadow-soft ${
+                    index % 2 === 0
+                      ? "border-brand-purple/20 bg-white text-base-black"
+                      : "border-brand-purple/20 bg-brand-purple text-white"
+                  }`}
+                >
+                  <p className="max-w-xs text-xl font-bold uppercase tracking-[0.18em] md:text-2xl">{message}</p>
+                </article>
+              </Reveal>
+            ))}
+          </div>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {rscInitiatives.map((item) => (
