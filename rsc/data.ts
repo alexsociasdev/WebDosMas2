@@ -11,28 +11,28 @@ export const rscInitiatives: RscInitiative[] = [
     description:
       "Plan anual de capacitación técnica y preventiva para reforzar la empleabilidad, la seguridad y la excelencia operativa en todas las áreas de trabajo.",
     year: "2026",
-    image: "/images/projects/son-ribotet/02.webp"
+    image: "/images/rsc/programa-de-formacion.jpg"
   },
   {
     title: "Colaboración con entidades de inserción laboral",
     description:
       "Impulso de itinerarios de acceso al empleo para colectivos con dificultades de incorporación al mercado laboral, en coordinación con tejido asociativo local.",
     year: "2025",
-    image: "/images/projects/placa-des-mercat-maria-de-la-salut/01.webp"
+    image: "/images/rsc/colaboracion-entidades.jpg"
   },
   {
     title: "Apoyo a deporte base y eventos comunitarios",
     description:
       "Participación activa en iniciativas deportivas y sociales que fomentan hábitos saludables, cohesión comunitaria y desarrollo local en Baleares.",
     year: "2025",
-    image: "/images/projects/casa-en-son-vida/04.webp"
+    image: "/images/rsc/apoyo-deporte-base.jpg"
   },
   {
     title: "Intervención solidaria en zonas afectadas por la DANA",
     description:
       "Puesta a disposición de maquinaria, camiones y personal técnico para acelerar tareas de limpieza, retirada y recuperación de áreas afectadas.",
     year: "2024",
-    image: "/images/projects/demolicion-en-santa-ponca/03.webp"
+    image: "/images/rsc/dana.jpg"
   },
   {
     title: "Reducción progresiva de impacto ambiental en obra",
@@ -46,6 +46,6 @@ export const rscInitiatives: RscInitiative[] = [
     description:
       "Medidas internas para impulsar diversidad, corresponsabilidad y desarrollo profesional en un entorno laboral seguro y respetuoso.",
     year: "2026",
-    image: "/images/projects/aeropuerto-de-palma/02.webp"
+    image: "/images/rsc/promocion-igualdad.jpg"
   }
 ];

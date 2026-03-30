@@ -14,7 +14,7 @@ export const metadata = pageMetadata(
   "Nuestras Raíces",
   "Álbum fotográfico histórico de DOSMAS GRUP.",
   "/nuestras-raices",
-  { image: "/images/heritage/foto-01.jpg" }
+  { image: "/images/heritage/foto-02.jpg" }
 );
 
 export default async function NuestrasRaicesPage() {
@@ -34,7 +34,7 @@ export default async function NuestrasRaicesPage() {
       <PageHero
         title="NUESTRAS RAÍCES"
         subtitle="Álbum fotográfico histórico de DOSMAS GRUP."
-        image="/images/heritage/foto-01.jpg"
+        image="/images/heritage/foto-02.jpg"
       />
 
       <section className="bg-white py-20">
@@ -45,7 +45,7 @@ export default async function NuestrasRaicesPage() {
           </Reveal>
 
           <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {heritagePhotos.map((photo) => (
+            {heritagePhotos.map((photo, index) => (
               <Reveal key={photo.id}>
                 <a
                   href={photo.image}
@@ -56,7 +56,7 @@ export default async function NuestrasRaicesPage() {
                   <div className="relative aspect-[4/3] overflow-hidden">
                     <Image
                       src={photo.image}
-                      alt={photo.title}
+                      alt={`Nuestras raíces ${index + 1}`}
                       fill
                       sizes="(min-width: 1280px) 28vw, (min-width: 768px) 44vw, 100vw"
                       className="object-cover transition duration-500 group-hover:scale-105"

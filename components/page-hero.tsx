@@ -16,9 +16,9 @@ export function PageHero({ title, subtitle, image = "/images/projects/excavacion
         fill
         priority
         sizes="100vw"
-        className="scale-[1.02] object-cover blur-[2px]"
+        className="scale-[1.01] object-cover"
       />
-      <div className="absolute inset-0 bg-base-black/42" />
+      <div className="absolute inset-0 bg-base-black/38 backdrop-blur-[1.5px]" />
       <Container className="relative py-24 md:py-32">
         <div className="max-w-4xl rounded-[2rem] border border-white/30 bg-base-black/30 p-8 shadow-soft backdrop-blur-sm md:p-10">
           <span className="mb-4 block h-1.5 w-20 rounded-full bg-brand-yellow" />

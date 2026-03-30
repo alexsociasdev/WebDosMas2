@@ -12,12 +12,14 @@ export const rootsLink = {
   href: "/nuestras-raices"
 } as const;
 
-export const heritagePhotos = Array.from({ length: 18 }, (_, index) => {
-  const order = String(index + 1).padStart(2, "0");
+const heritageOrder = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 1];
+
+export const heritagePhotos = heritageOrder.map((photoNumber, index) => {
+  const order = String(photoNumber).padStart(2, "0");
 
   return {
-    id: `heritage-${order}`,
-    title: `FOTO ${index + 1}`,
+    id: `heritage-${index + 1}`,
+    title: `FOTO ${photoNumber}`,
     image: `/images/heritage/foto-${order}.jpg`
   };
 });

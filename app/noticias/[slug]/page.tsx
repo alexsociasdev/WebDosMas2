@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/container";
+import { ImageGallery } from "@/components/image-gallery";
 import { Breadcrumb } from "@/components/marketing/breadcrumb";
 import { RelatedLinks } from "@/components/marketing/related-links";
 import { SectionHeading } from "@/components/marketing/section-heading";
@@ -106,6 +107,7 @@ export default async function NoticiaDetailPage({ params }: NewsDetailPageProps)
               <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-base-mid shadow-soft">
                 <Image src={post.image} alt={post.title} fill className="object-cover" priority sizes="(min-width: 1024px) 45vw, 100vw" />
               </div>
+              {post.gallery?.length ? <ImageGallery images={post.gallery} label={post.title} /> : null}
               <RelatedLinks title={t.common.relatedServices} items={relatedServices} />
               <RelatedLinks title={t.common.relatedProjects} items={relatedProjects} />
             </div>

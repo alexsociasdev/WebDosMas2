@@ -8,11 +8,44 @@ export type PostItem = {
   readingTime: string;
   content: string[];
   image: string;
+  gallery?: string[];
   relatedServices: string[];
   relatedProjects: string[];
 };
 
 export const postsData: PostItem[] = [
+  {
+    slug: "olivos-centenarios-para-jardines",
+    title: "Pon un olivo centenario en tu jardín y transforma tu espacio en un lugar con alma",
+    excerpt:
+      "El olivo es un símbolo de paz, arraigo y belleza atemporal capaz de transformar cualquier jardín en un espacio con carácter y personalidad.",
+    date: "2026-03-30",
+    category: "Tot Natura",
+    author: "Equipo DOSMAS GRUP",
+    readingTime: "4 min",
+    content: [
+      "Hay árboles que decoran. Y hay árboles que transmiten algo mucho más profundo. El olivo pertenece a esa segunda categoría: es un símbolo de paz, de arraigo, de serenidad y de belleza atemporal. Su sola presencia tiene la capacidad de transformar un jardín en un espacio con carácter, armonía y personalidad.",
+      "En Dosmas Grup sabemos que un entorno exterior bien pensado no solo se construye con materiales o diseño, sino también con elementos vivos que aportan identidad y emoción. Por eso, disponer de un olivo centenario en un jardín es una elección que va mucho más allá de lo ornamental. Es incorporar una pieza natural con historia, con fuerza visual y con una majestuosidad innata que nunca pasa desapercibida.",
+      "El olivo irradia calma, ofrece una imagen acogedora y evoca abundancia. Su silueta noble, su tronco lleno de matices y su carácter mediterráneo lo convierten en una opción especialmente apreciada para quienes desean crear un espacio exterior elegante, equilibrado y con una estética que conecta con la tierra y con el paso del tiempo. Cuando además se trata de un ejemplar centenario, su valor emocional y visual se multiplica. Tradicionalmente, incluso se considera que aporta buena fortuna allí donde se planta, convirtiéndose en un símbolo de permanencia, bienestar y prosperidad.",
+      "Otra de sus grandes virtudes es su extraordinaria capacidad de adaptación. El olivo es un árbol resistente, agradecido y de mantenimiento sencillo, capaz de adaptarse a diferentes temperaturas y tipos de terreno. Esa combinación entre belleza, simbolismo y practicidad hace de él una de las mejores elecciones para realzar cualquier jardín, ya sea en una vivienda particular, en una finca o en un espacio exterior de grandes dimensiones.",
+      "En Dosmas Grup contamos con una amplia variedad de olivos, de distintos tamaños, edades y precios, para adaptarnos a las necesidades y preferencias de cada cliente. Y además, ofrecemos un servicio integral para que la experiencia sea completa: si lo deseas, transportamos y plantamos los olivos en cualquier punto de Mallorca, Menorca e Ibiza.",
+      "Porque a veces un jardín no necesita mucho más para elevar su presencia que un árbol con historia, belleza y esencia mediterránea.",
+      "En Dosmas Grup te ayudamos a encontrar el olivo ideal para dar a tu jardín un toque único, sereno y lleno de personalidad."
+    ],
+    image: "/images/posts/olivos/DSC00921.JPG",
+    gallery: [
+      "/images/posts/olivos/DSC00643.JPG",
+      "/images/posts/olivos/DSC00735.JPG",
+      "/images/posts/olivos/DSC00760.JPG",
+      "/images/posts/olivos/DSC00918.JPG",
+      "/images/posts/olivos/DSC00921.JPG",
+      "/images/posts/olivos/DSC00943.JPG",
+      "/images/posts/olivos/DSC00953.JPG",
+      "/images/posts/olivos/IMG_7054.JPG"
+    ],
+    relatedServices: ["desbroces-y-trabajos-agricolas"],
+    relatedProjects: []
+  },
   {
     slug: "gestion-de-plazos-en-obra-civil",
     title: "Gestión de plazos en obra civil: cómo garantizar entregas sin desviaciones",

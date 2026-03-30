@@ -15,7 +15,130 @@ const defaultGallery = [
   "/images/projects/aeropuerto-de-palma/08.webp"
 ];
 
+const explicitServiceGalleries: Partial<Record<string, string[]>> = {
+  construccion: [
+    "/images/work-areas/construccion/01.JPG",
+    "/images/work-areas/construccion/02.JPG",
+    "/images/work-areas/construccion/03.JPG",
+    "/images/work-areas/construccion/04.jpeg"
+  ],
+  excavaciones: [
+    "/images/work-areas/excavaciones/01.JPG",
+    "/images/work-areas/excavaciones/02.JPG",
+    "/images/work-areas/excavaciones/03.JPG",
+    "/images/work-areas/excavaciones/04.JPG"
+  ],
+  "derribos-y-demoliciones": [
+    "/images/work-areas/derribos-y-demoliciones/01.jpg",
+    "/images/work-areas/derribos-y-demoliciones/03.jpg",
+    "/images/work-areas/derribos-y-demoliciones/04.jpeg",
+    "/images/work-areas/derribos-y-demoliciones/02.png"
+  ],
+  desmontes: [
+    "/images/work-areas/desmontes/02.jpg",
+    "/images/work-areas/desmontes/03.jpeg",
+    "/images/work-areas/desmontes/04.jpeg",
+    "/images/work-areas/desmontes/01.png"
+  ],
+  cimentaciones: [
+    "/images/work-areas/cimentaciones/01.jpg",
+    "/images/work-areas/cimentaciones/02.jpg",
+    "/images/work-areas/cimentaciones/03.jpg",
+    "/images/work-areas/cimentaciones/04.jpg"
+  ],
+  "piedra-y-machaca": [
+    "/images/work-areas/piedra-y-machaca/01.jpg",
+    "/images/work-areas/piedra-y-machaca/02.JPG",
+    "/images/work-areas/piedra-y-machaca/03.JPG",
+    "/images/work-areas/piedra-y-machaca/04.jpg"
+  ],
+  "transporte-de-maquinaria": [
+    "/images/work-areas/transporte-de-maquinaria/01.JPG",
+    "/images/work-areas/transporte-de-maquinaria/02.JPG",
+    "/images/work-areas/transporte-de-maquinaria/03.jpg",
+    "/images/work-areas/transporte-de-maquinaria/04.JPG"
+  ],
+  "transporte-de-tierras": [
+    "/images/work-areas/transporte-de-tierras/01.jpg",
+    "/images/work-areas/transporte-de-tierras/02.jpg",
+    "/images/work-areas/transporte-de-tierras/03.JPG",
+    "/images/work-areas/transporte-de-tierras/04.jpg"
+  ],
+  "suministro-de-agua-en-mallorca": [
+    "/images/work-areas/suministro-de-agua-en-mallorca/01.jpg",
+    "/images/work-areas/suministro-de-agua-en-mallorca/02.jpg",
+    "/images/work-areas/suministro-de-agua-en-mallorca/03.jpg",
+    "/images/work-areas/suministro-de-agua-en-mallorca/04.jpg"
+  ],
+  "machacas-cribado-zahorras-y-aridos": [
+    "/images/work-areas/machacas-cribado-zahorras-y-aridos/01.jpeg",
+    "/images/work-areas/machacas-cribado-zahorras-y-aridos/02.jpeg",
+    "/images/work-areas/machacas-cribado-zahorras-y-aridos/03.jpeg",
+    "/images/work-areas/machacas-cribado-zahorras-y-aridos/04.jpeg"
+  ],
+  "desbroces-y-trabajos-agricolas": [
+    "/images/work-areas/desbroces-y-trabajos-agricolas/01.JPG",
+    "/images/work-areas/desbroces-y-trabajos-agricolas/02.JPG",
+    "/images/work-areas/desbroces-y-trabajos-agricolas/03.JPG",
+    "/images/work-areas/desbroces-y-trabajos-agricolas/04.jpeg"
+  ],
+  "zanjas-y-cimientos": [
+    "/images/work-areas/zanjas-y-cimientos/02.JPG",
+    "/images/work-areas/zanjas-y-cimientos/03.jpg",
+    "/images/work-areas/zanjas-y-cimientos/04.jpg",
+    "/images/work-areas/zanjas-y-cimientos/01.png"
+  ],
+  explanaciones: [
+    "/images/work-areas/explanaciones/01.JPG",
+    "/images/work-areas/explanaciones/02.JPG",
+    "/images/work-areas/explanaciones/03.JPG",
+    "/images/work-areas/explanaciones/04.JPG"
+  ],
+  "arreglo-y-acondicionamiento-de-caminos-y-carreteras": [
+    "/images/work-areas/arreglo-y-acondicionamiento-de-caminos-y-carreteras/01.JPG",
+    "/images/work-areas/arreglo-y-acondicionamiento-de-caminos-y-carreteras/02.JPG",
+    "/images/work-areas/arreglo-y-acondicionamiento-de-caminos-y-carreteras/03.JPG",
+    "/images/work-areas/arreglo-y-acondicionamiento-de-caminos-y-carreteras/04.JPG"
+  ],
+  "cimentaciones-en-edificios": [
+    "/images/work-areas/cimentaciones-en-edificios/01.JPG",
+    "/images/work-areas/cimentaciones-en-edificios/02.JPG",
+    "/images/work-areas/cimentaciones-en-edificios/03.JPG",
+    "/images/work-areas/cimentaciones-en-edificios/04.JPG"
+  ],
+  "obras-hidraulicas": [
+    "/images/work-areas/obras-hidraulicas/01.jpeg",
+    "/images/work-areas/obras-hidraulicas/02.jpeg",
+    "/images/work-areas/obras-hidraulicas/03.jpeg",
+    "/images/work-areas/obras-hidraulicas/04.jpeg"
+  ],
+  escolleras: [
+    "/images/work-areas/escolleras/01.jpg",
+    "/images/work-areas/escolleras/02.jpg",
+    "/images/work-areas/escolleras/03.jpg",
+    "/images/work-areas/escolleras/04.jpg"
+  ]
+};
+
 const baseServicesData: ServiceItem[] = [
+  {
+    slug: "construccion",
+    title: "Construcción",
+    paragraphs: [
+      "En DOSMAS GRUP abordamos todo tipo de proyectos de construcción, tanto en el ámbito público como privado, ofreciendo un servicio integral que abarca desde la excavación inicial hasta el acabado final de la obra, con la garantía que aportan más de 70 años de experiencia en el sector.",
+      "Nuestro equipo técnico y humano, junto a una sólida capacidad operativa y una amplia dotación de maquinaria, nos permite ejecutar con solvencia desde las actuaciones más sencillas hasta las construcciones más complejas, adaptándonos siempre a las necesidades de cada cliente y a las exigencias de cada proyecto.",
+      "Desarrollamos obras de nueva planta, ampliaciones, rehabilitaciones y reformas en todo tipo de inmuebles y espacios: chalets, viviendas, pisos, edificios residenciales, hoteles, naves, equipamientos y edificios públicos, cuidando cada fase del proceso con rigor, coordinación y compromiso con la calidad.",
+      "Llevamos a cabo desde proyectos a medida hasta obras de gran envergadura, siempre con una gestión integral.",
+      "En DOSMAS GRUP no solo levantamos construcciones: hacemos realidad espacios sólidos, funcionales y pensados para perdurar."
+    ],
+    bullets: [
+      "Estudio técnico y planificación de la obra.",
+      "Coordinación integral de todos los trabajos.",
+      "Ejecución completa, desde la cimentación hasta los acabados.",
+      "Reformas, rehabilitaciones y adecuación de espacios."
+    ],
+    gallery: defaultGallery
+  },
   {
     slug: "excavaciones",
     title: "Excavaciones",
@@ -108,7 +231,7 @@ const baseServicesData: ServiceItem[] = [
   },
   {
     slug: "suministro-de-agua-en-mallorca",
-    title: "𝐒𝐮𝐦𝐢𝐧𝐢𝐬𝐭𝐫𝐨 𝐝𝐞 𝐚𝐠𝐮𝐚 𝐞𝐧 𝐌𝐚𝐥𝐥𝐨𝐫𝐜𝐚",
+    title: "Suministro de agua en Mallorca",
     paragraphs: [
       "En DOSMAS GRUP ofrecemos un servicio especializado de suministro de agua potable en toda la isla de Mallorca, garantizando calidad, rapidez y total seguridad. Atendemos las necesidades de viviendas particulares, comunidades de vecinos, hoteles, villas, piscinas y todo tipo de empresas.",
       "Nuestra flota de camiones cisterna de hasta 25.000 litros, equipada con sistemas de autobombas y equipos de impulsión capaces de abastecer incluso a terceros pisos, asegura una distribución eficiente y sin demoras.",
@@ -212,15 +335,6 @@ const baseServicesData: ServiceItem[] = [
       "Hoy en día estamos plenamente preparados para acometer proyectos de escolleras de contención de cualquier tamaño, garantizando la máxima seguridad, el cumplimiento de la normativa vigente y la protección del medio ambiente. Todo ello con la seriedad y compromiso que distinguen a DOSMAS GRUP, asegurando a nuestros clientes solidez, confianza y cumplimiento de plazos."
     ],
     gallery: defaultGallery
-  },
-  {
-    slug: "otros-servicios",
-    title: "Otros servicios",
-    paragraphs: [
-      "En DOSMAS GRUP también nos encargamos de la construcción de embalses adaptados a diferentes necesidades: desde el riego agrícola, hasta el abastecimiento doméstico, industrial o ganadero.",
-      "Cada proyecto se ejecuta con la tecnología adecuada, materiales de máxima calidad y un equipo experto, garantizando infraestructuras seguras, eficientes y preparadas para perdurar en el tiempo."
-    ],
-    gallery: defaultGallery
   }
 ];
 
@@ -231,6 +345,11 @@ export type ServiceMeta = {
 };
 
 export const serviceMetaBySlug: Record<string, ServiceMeta> = {
+  construccion: {
+    category: "Edificación y obra",
+    ctaLabel: "Solicitar propuesta de construcción",
+    relatedProjects: ["construccion-casa-en-son-vida", "costa-de-los-pinos"]
+  },
   excavaciones: {
     category: "Movimiento de tierras",
     ctaLabel: "Solicitar estudio de excavación",
@@ -315,15 +434,16 @@ export const serviceMetaBySlug: Record<string, ServiceMeta> = {
     category: "Contención y drenaje",
     ctaLabel: "Solicitar ejecución de escollera",
     relatedProjects: ["demolicion-en-santa-ponca", "preparacion-terreno-son-ribotet"]
-  },
-  "otros-servicios": {
-    category: "Servicios especiales",
-    ctaLabel: "Solicitar asesoramiento",
-    relatedProjects: ["preparacion-terreno-son-ribotet", "excavacion-en-son-vida"]
   }
 };
 
-function buildServiceGallery(relatedProjects: string[]): string[] {
+function buildServiceGallery(slug: string, relatedProjects: string[]): string[] {
+  const explicitGallery = explicitServiceGalleries[slug];
+
+  if (explicitGallery?.length) {
+    return explicitGallery;
+  }
+
   const uniqueImages = Array.from(
     new Set(
       relatedProjects.flatMap((projectSlug) => {
@@ -356,7 +476,7 @@ function buildServiceGallery(relatedProjects: string[]): string[] {
 
 export const servicesData: ServiceItem[] = baseServicesData.map((service) => ({
   ...service,
-  gallery: buildServiceGallery(serviceMetaBySlug[service.slug]?.relatedProjects ?? [])
+  gallery: buildServiceGallery(service.slug, serviceMetaBySlug[service.slug]?.relatedProjects ?? [])
 }));
 
 export const servicesBySlug = Object.fromEntries(

@@ -44,6 +44,13 @@ const brandLogoItems = [
   { name: "Pintura 3V", src: "/images/brand/captura-02.webp" }
 ];
 
+const brandPhotoByName: Record<string, string> = {
+  "Dosmas Obras y Proyectos": "/images/brands/dosmas-obras-y-proyectos.jpg",
+  "Coexma Obres i Serveis": "/images/brands/coexma-obres-i-serveis.jpg",
+  "Tot Natura": "/images/brands/tot-natura.jpg",
+  "Pintura 3V": "/images/brands/pintura-3v.jpg"
+};
+
 const valueIcons = [
   <svg key="clock" viewBox="0 0 24 24" fill="none" className="h-6 w-6" aria-hidden="true">
     <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.8" />
@@ -79,7 +86,7 @@ export default async function HomePage() {
       description: t.home.slide1.description,
       ctaHref: "/nosotros",
       ctaLabel: t.home.slide1.cta,
-      image: "/images/fondo.webp",
+      image: "/images/projects/son-ribotet/08.jpg",
       metrics: [
         { label: t.home.slide1.metric1, value: t.home.slide1.value1 },
         { label: t.home.slide1.metric2, value: t.home.slide1.value2 },
@@ -93,7 +100,7 @@ export default async function HomePage() {
       description: t.home.slide2.description,
       ctaHref: "/proyectos",
       ctaLabel: t.home.slide2.cta,
-      image: "/images/projects/aeropuerto-de-palma/08.webp",
+      image: "/images/projects/excavacion-son-vida-2024/21.jpg",
       metrics: [
         { label: t.home.slide2.metric1, value: t.home.slide2.value1 },
         { label: t.home.slide2.metric2, value: t.home.slide2.value2 },
@@ -107,7 +114,7 @@ export default async function HomePage() {
       description: t.home.slide3.description,
       ctaHref: "/areas-de-trabajo",
       ctaLabel: t.home.slide3.cta,
-      image: "/images/projects/son-ribotet/12.webp",
+      image: "/images/projects/son-ribotet-nueva-vina/04.jpg",
       metrics: [
         { label: t.home.slide3.metric1, value: t.home.slide3.value1 },
         { label: t.home.slide3.metric2, value: t.home.slide3.value2 },
@@ -260,7 +267,7 @@ export default async function HomePage() {
                   <div className="mb-5 overflow-hidden rounded-xl border border-base-mid">
                     <div className="relative aspect-[16/9]">
                       <Image
-                        src="/images/fondo.webp"
+                        src={brandPhotoByName[brand.name] ?? "/images/fondo.webp"}
                         alt={brand.name}
                         fill
                         sizes="(min-width: 768px) 45vw, 100vw"
@@ -269,8 +276,8 @@ export default async function HomePage() {
                       />
                     </div>
                   </div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-base-dark">{brand.name}</p>
-                  <h3 className="mt-2 text-xl font-semibold text-base-black">{brand.title}</h3>
+                  <h3 className="text-2xl font-semibold text-base-black md:text-3xl">{brand.name}</h3>
+                  <p className="mt-2 text-sm font-semibold uppercase tracking-[0.18em] text-base-dark">{brand.title}</p>
                   <div className="mt-4 space-y-4 text-base leading-7 text-base-dark">
                     {brand.paragraphs.map((paragraph) => (
                       <p key={paragraph}>{paragraph}</p>
@@ -403,6 +410,17 @@ export default async function HomePage() {
                     />
                   </div>
                 </article>
+              </div>
+              <div className="mt-4 rounded-2xl bg-white p-4">
+                <div className="relative mx-auto aspect-[726/327] w-full max-w-[30rem]">
+                  <Image
+                    src="/images/brand/we-always-comply.png"
+                    alt="We always comply"
+                    fill
+                    sizes="(min-width: 1024px) 28vw, 70vw"
+                    className="object-contain"
+                  />
+                </div>
               </div>
             </div>
           </Reveal>
