@@ -12,7 +12,7 @@ import { projectsData } from "@/projects/data";
 
 export const metadata = pageMetadata(
   "Proyectos",
-  "Proyectos ejecutados por DOSMAS GRUP en Baleares.",
+  "Descubra una selección de proyectos ejecutados por DOSMAS GRUP, con información técnica, desarrollo visual de la obra y soluciones adaptadas a cada intervención en Baleares.",
   "/proyectos",
   { image: projectsData[0].image, keywords: ["proyectos", "obra civil", "Mallorca"] }
 );
@@ -50,9 +50,7 @@ export default async function ProyectosPage() {
           </Reveal>
 
           <div className="mt-10">
-            <Reveal>
-              <ProjectsFilterGrid projects={projectsData} locale={locale} />
-            </Reveal>
+            <ProjectsFilterGrid projects={projectsData} locale={locale} />
           </div>
         </Container>
       </section>

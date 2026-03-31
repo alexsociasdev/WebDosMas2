@@ -18,12 +18,24 @@ export function PageHero({ title, subtitle, image = "/images/projects/excavacion
         sizes="100vw"
         className="scale-[1.01] object-cover"
       />
-      <div className="absolute inset-0 bg-base-black/38 backdrop-blur-[1.5px]" />
-      <Container className="relative py-24 md:py-32">
-        <div className="max-w-4xl rounded-[2rem] border border-white/30 bg-base-black/30 p-8 shadow-soft backdrop-blur-sm md:p-10">
-          <span className="mb-4 block h-1.5 w-20 rounded-full bg-brand-yellow" />
-          <h1 className="max-w-4xl text-5xl font-bold tracking-tight text-white md:text-6xl xl:text-7xl">{title}</h1>
-          {subtitle ? <p className="mt-5 max-w-3xl text-xl leading-8 text-white md:text-2xl">{subtitle}</p> : null}
+      <div className="absolute inset-0 bg-base-black/46 backdrop-blur-[1.25px]" />
+      <div className="absolute inset-0 bg-[linear-gradient(110deg,rgba(136,94,128,0.42)_0%,rgba(17,17,17,0.2)_35%,rgba(17,17,17,0.54)_100%)]" />
+      <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-base-black/35 to-transparent" />
+      <Container className="relative py-20 md:py-28 xl:py-32">
+        <div className="max-w-4xl">
+          <div className="inline-flex items-center gap-3 rounded-full border border-white/25 bg-white/10 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-white shadow-soft backdrop-blur-md">
+            <span className="h-2.5 w-2.5 rounded-full bg-brand-yellow" />
+            DOSMAS GRUP
+          </div>
+          <h1 className="mt-6 max-w-4xl text-4xl font-bold leading-[0.92] tracking-tight text-white sm:text-5xl md:text-6xl xl:text-7xl">
+            {title}
+          </h1>
+          {subtitle ? (
+            <div className="mt-6 max-w-3xl rounded-[1.75rem] border border-white/20 bg-white/12 px-5 py-4 shadow-soft backdrop-blur-md md:px-6 md:py-5">
+              <div className="mb-4 h-1.5 w-20 rounded-full bg-brand-yellow" />
+              <p className="text-base leading-7 text-white/95 md:text-xl md:leading-8">{subtitle}</p>
+            </div>
+          ) : null}
         </div>
       </Container>
     </section>

@@ -11,10 +11,15 @@ import { pageMetadata } from "@/lib/metadata";
 import { breadcrumbSchema } from "@/lib/seo-schema";
 import { rscInitiatives } from "@/rsc/data";
 
-export const metadata = pageMetadata("RSC", "Responsabilidad Social Corporativa", "/rsc", {
-  image: "/images/team/foto-grupo-puente.jpg",
-  keywords: ["RSC", "sostenibilidad", "responsabilidad social", "DOSMAS GRUP"]
-});
+export const metadata = pageMetadata(
+  "RSC",
+  "Conozca el compromiso social, formativo y medioambiental de DOSMAS GRUP a través de iniciativas reales que generan valor para las personas, el territorio y nuestro entorno.",
+  "/rsc",
+  {
+    image: "/images/team/foto-grupo-puente.jpg",
+    keywords: ["RSC", "sostenibilidad", "responsabilidad social", "DOSMAS GRUP"]
+  }
+);
 
 export default async function RscPage() {
   const locale = await getServerLocale();

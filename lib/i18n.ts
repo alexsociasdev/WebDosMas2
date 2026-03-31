@@ -444,7 +444,8 @@ const dictionaries: Record<Locale, Dictionary> = {
     pages: {
       contact: {
         pageTitle: "Contacto",
-        pageSubtitle: "CONTACTA.",
+        pageSubtitle:
+          "Contacta con DOSMAS GRUP para resolver una consulta, solicitar información o coordinar una reunión con nuestro equipo.",
         heading: "CONTACTA",
         scheduleTitle: "Horario de atención",
         scheduleBody: "De lunes a jueves, de 7 a 18 horas.\nViernes de 7 a 16 horas.",
@@ -479,7 +480,8 @@ const dictionaries: Record<Locale, Dictionary> = {
       },
       projects: {
         pageTitle: "Proyectos",
-        pageSubtitle: "Obras ejecutadas por DOSMAS GRUP.",
+        pageSubtitle:
+          "Descubra una selección de proyectos ejecutados por DOSMAS GRUP, con información técnica, desarrollo visual de la obra y soluciones adaptadas a cada intervención en Baleares.",
         eyebrow: "Proyectos",
         heading: "Casos de estudio y obras ejecutadas",
         description: "Selección de proyectos con información técnica y visual de ejecución.",
@@ -507,14 +509,17 @@ const dictionaries: Record<Locale, Dictionary> = {
       },
       workAreas: {
         pageTitle: "Áreas de trabajo",
-        pageSubtitle: "Áreas de trabajo",
+        pageSubtitle:
+          "Descubra nuestras áreas de trabajo y el alcance de los servicios que desarrollamos en construcción, excavaciones, obra civil y logística.",
         heading: "Áreas de trabajo",
-        description: "Áreas de trabajo",
+        description:
+          "Descubra nuestras áreas de trabajo y el alcance de los servicios que desarrollamos en construcción, excavaciones, obra civil y logística.",
         budget: "Presupuesto"
       },
       rsc: {
         pageTitle: "RSC",
-        pageSubtitle: "Responsabilidad Social Corporativa",
+        pageSubtitle:
+          "Conozca el compromiso social, formativo y medioambiental de DOSMAS GRUP a través de iniciativas reales que generan valor para las personas, el territorio y nuestro entorno.",
         eyebrow: "Compromiso",
         activePrograms: "Programas activos",
         annualTrainingHours: "Horas de formación anual",
@@ -708,7 +713,8 @@ const dictionaries: Record<Locale, Dictionary> = {
     pages: {
       contact: {
         pageTitle: "Contacte",
-        pageSubtitle: "CONTACTA.",
+        pageSubtitle:
+          "Contacta amb DOSMAS GRUP per resoldre una consulta, sol·licitar informació o coordinar una reunió amb el nostre equip.",
         heading: "CONTACTA",
         scheduleTitle: "Horari d'atenció",
         scheduleBody: "De dilluns a dijous, de 7 a 18 hores.\nDivendres de 7 a 16 hores.",
@@ -743,7 +749,8 @@ const dictionaries: Record<Locale, Dictionary> = {
       },
       projects: {
         pageTitle: "Projectes",
-        pageSubtitle: "Obres executades per DOSMAS GRUP.",
+        pageSubtitle:
+          "Descobreixi una selecció de projectes executats per DOSMAS GRUP, amb informació tècnica, desenvolupament visual de l'obra i solucions adaptades a cada intervenció a les Balears.",
         eyebrow: "Projectes",
         heading: "Casos d'estudi i obres executades",
         description: "Selecció de projectes amb informació tècnica i visual d'execució.",
@@ -771,14 +778,17 @@ const dictionaries: Record<Locale, Dictionary> = {
       },
       workAreas: {
         pageTitle: "Àrees de treball",
-        pageSubtitle: "Àrees de treball",
+        pageSubtitle:
+          "Descobreixi les nostres àrees de treball i l'abast dels serveis que desenvolupem en construcció, excavacions, obra civil i logística.",
         heading: "Àrees de treball",
-        description: "Àrees de treball",
+        description:
+          "Descobreixi les nostres àrees de treball i l'abast dels serveis que desenvolupem en construcció, excavacions, obra civil i logística.",
         budget: "Pressupost"
       },
       rsc: {
         pageTitle: "RSC",
-        pageSubtitle: "Responsabilitat Social Corporativa",
+        pageSubtitle:
+          "Conegui el compromís social, formatiu i mediambiental de DOSMAS GRUP a través d'iniciatives reals que generen valor per a les persones, el territori i el nostre entorn.",
         eyebrow: "Compromís",
         activePrograms: "Programes actius",
         annualTrainingHours: "Hores de formació anual",
@@ -972,7 +982,8 @@ const dictionaries: Record<Locale, Dictionary> = {
     pages: {
       contact: {
         pageTitle: "Contact",
-        pageSubtitle: "CONTACT US.",
+        pageSubtitle:
+          "Contact DOSMAS GRUP to discuss an enquiry, request information or arrange a meeting with our team.",
         heading: "CONTACT",
         scheduleTitle: "Business hours",
         scheduleBody: "Monday to Thursday, from 7:00 to 18:00.\nFriday from 7:00 to 16:00.",
@@ -1007,7 +1018,8 @@ const dictionaries: Record<Locale, Dictionary> = {
       },
       projects: {
         pageTitle: "Projects",
-        pageSubtitle: "Works delivered by DOSMAS GRUP.",
+        pageSubtitle:
+          "Discover a selection of projects delivered by DOSMAS GRUP, with technical information, visual development of the works and tailored solutions for each intervention in the Balearic Islands.",
         eyebrow: "Projects",
         heading: "Case studies and delivered works",
         description: "Selected projects with technical and visual execution information.",
@@ -1035,14 +1047,17 @@ const dictionaries: Record<Locale, Dictionary> = {
       },
       workAreas: {
         pageTitle: "Work areas",
-        pageSubtitle: "Work areas",
+        pageSubtitle:
+          "Discover our work areas and the full scope of the services we deliver in construction, excavation, civil works and logistics.",
         heading: "Work areas",
-        description: "Work areas",
+        description:
+          "Discover our work areas and the full scope of the services we deliver in construction, excavation, civil works and logistics.",
         budget: "Quote"
       },
       rsc: {
         pageTitle: "CSR",
-        pageSubtitle: "Corporate Social Responsibility",
+        pageSubtitle:
+          "Discover DOSMAS GRUP's social, training and environmental commitment through real initiatives that create value for people, the territory and our surrounding environment.",
         eyebrow: "Commitment",
         activePrograms: "Active programs",
         annualTrainingHours: "Annual training hours",

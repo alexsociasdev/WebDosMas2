@@ -13,7 +13,7 @@ import { serviceMetaBySlug, servicesData } from "@/services/data";
 
 export const metadata = pageMetadata(
   "Áreas de trabajo",
-  "Áreas de trabajo",
+  "Descubra nuestras áreas de trabajo y el alcance de los servicios que desarrollamos en construcción, excavaciones, obra civil y logística.",
   "/areas-de-trabajo",
   { image: "/images/projects/demolicion-en-santa-ponca/03.webp" }
 );

@@ -10,9 +10,14 @@ import { getDictionary, getServerLocale } from "@/lib/i18n-server";
 import { pageMetadata } from "@/lib/metadata";
 import { breadcrumbSchema } from "@/lib/seo-schema";
 
-export const metadata = pageMetadata("Contacto", "CONTACTA.", "/contacto", {
+export const metadata = pageMetadata(
+  "Contacto",
+  "Contacta con DOSMAS GRUP para resolver una consulta, solicitar información o coordinar una reunión con nuestro equipo.",
+  "/contacto",
+  {
   image: "/images/team/foto-grupo-puente.jpg"
-});
+  }
+);
 
 export default async function ContactoPage() {
   const locale = await getServerLocale();
