@@ -15,7 +15,7 @@ export const metadata = pageMetadata(
   "Noticias",
   "Noticias de DOSMAS GRUP.",
   "/noticias",
-  { image: "/images/projects/casa-en-son-vida/08.webp", keywords: ["blog", "noticias", "obra civil"] }
+  { image: "/images/projects/cas-concos/12.jpg", keywords: ["blog", "noticias", "obra civil"] }
 );
 
 export default async function NoticiasPage() {
@@ -37,7 +37,7 @@ export default async function NoticiasPage() {
       <PageHero
         title={text.pageTitle}
         subtitle={text.pageSubtitle}
-        image="/images/projects/casa-en-son-vida/08.webp"
+        image="/images/projects/cas-concos/12.jpg"
       />
 
       <section className="bg-brand-yellow py-20">

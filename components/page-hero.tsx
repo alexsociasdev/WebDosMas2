@@ -18,9 +18,9 @@ export function PageHero({ title, subtitle, image = "/images/projects/excavacion
         sizes="100vw"
         className="scale-[1.01] object-cover"
       />
-      <div className="absolute inset-0 bg-base-black/46 backdrop-blur-[1.25px]" />
-      <div className="absolute inset-0 bg-[linear-gradient(110deg,rgba(136,94,128,0.42)_0%,rgba(17,17,17,0.2)_35%,rgba(17,17,17,0.54)_100%)]" />
-      <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-base-black/35 to-transparent" />
+      <div className="absolute inset-0 bg-base-black/40 backdrop-blur-[0.75px]" />
+      <div className="absolute inset-0 bg-[linear-gradient(110deg,rgba(136,94,128,0.34)_0%,rgba(17,17,17,0.14)_35%,rgba(17,17,17,0.48)_100%)]" />
+      <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-base-black/28 to-transparent" />
       <Container className="relative py-20 md:py-28 xl:py-32">
         <div className="max-w-4xl">
           <div className="inline-flex items-center gap-3 rounded-full border border-white/25 bg-white/10 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-white shadow-soft backdrop-blur-md">

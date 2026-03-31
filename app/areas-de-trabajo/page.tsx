@@ -15,7 +15,7 @@ export const metadata = pageMetadata(
   "Áreas de trabajo",
   "Descubra nuestras áreas de trabajo y el alcance de los servicios que desarrollamos en construcción, excavaciones, obra civil y logística.",
   "/areas-de-trabajo",
-  { image: "/images/projects/demolicion-en-santa-ponca/03.webp" }
+  { image: "/images/projects/aeropuerto-palma-reciclaje/01.jpg" }
 );
 
 export default async function AreasTrabajoPage() {
@@ -33,7 +33,7 @@ export default async function AreasTrabajoPage() {
         ])}
       />
 
-      <PageHero title={text.pageTitle} subtitle={text.pageSubtitle} image="/images/projects/demolicion-en-santa-ponca/03.webp" />
+      <PageHero title={text.pageTitle} subtitle={text.pageSubtitle} image="/images/projects/aeropuerto-palma-reciclaje/01.jpg" />
 
       <section className="bg-brand-yellow py-20">
         <Container>

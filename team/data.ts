@@ -50,7 +50,7 @@ export const teamMembers: TeamMember[] = [
     email: "joan@dosmasgrup.com",
     phone: "663 080 914",
     image: "/images/team/people/joan-quetglas.jpg",
-    imagePosition: "center 18%"
+    imagePosition: "center 34%"
   },
   {
     name: "Manel Pascual",
@@ -66,7 +66,7 @@ export const teamMembers: TeamMember[] = [
     email: "elisagonzalez@dosmasgrup.com",
     phone: "607 622 387",
     image: "/images/team/people/elisa-gonzalez.jpg",
-    imagePosition: "center 15%"
+    imagePosition: "center 28%"
   },
   {
     name: "Magali Perez",

@@ -16,7 +16,7 @@ export const metadata = pageMetadata(
   "Conozca el compromiso social, formativo y medioambiental de DOSMAS GRUP a través de iniciativas reales que generan valor para las personas, el territorio y nuestro entorno.",
   "/rsc",
   {
-    image: "/images/team/foto-grupo-puente.jpg",
+    image: "/images/projects/portocolom/09.jpg",
     keywords: ["RSC", "sostenibilidad", "responsabilidad social", "DOSMAS GRUP"]
   }
 );
@@ -42,7 +42,7 @@ export default async function RscPage() {
         ])}
       />
 
-      <PageHero title={text.pageTitle} subtitle={text.pageSubtitle} image="/images/team/foto-grupo-puente.jpg" />
+      <PageHero title={text.pageTitle} subtitle={text.pageSubtitle} image="/images/projects/portocolom/09.jpg" />
 
       <section className="bg-brand-yellow py-20">
         <Container className="space-y-10">

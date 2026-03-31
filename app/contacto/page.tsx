@@ -15,7 +15,7 @@ export const metadata = pageMetadata(
   "Contacta con DOSMAS GRUP para resolver una consulta, solicitar información o coordinar una reunión con nuestro equipo.",
   "/contacto",
   {
-  image: "/images/team/foto-grupo-puente.jpg"
+  image: "/images/projects/son-ribotet-nueva-vina/06.jpg"
   }
 );
 
@@ -34,7 +34,7 @@ export default async function ContactoPage() {
         ])}
       />
 
-      <PageHero title={text.pageTitle} subtitle={text.pageSubtitle} image="/images/team/foto-grupo-puente.jpg" />
+      <PageHero title={text.pageTitle} subtitle={text.pageSubtitle} image="/images/projects/son-ribotet-nueva-vina/06.jpg" />
 
       <section className="bg-white py-20">
         <Container className="grid gap-10 xl:grid-cols-[1.05fr_0.95fr]">
