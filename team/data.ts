@@ -46,7 +46,7 @@ export const teamMembers: TeamMember[] = [
   },
   {
     name: "Joan Quetglas",
-    role: "Administración y compras",
+    role: "Director Financiero",
     email: "joan@dosmasgrup.com",
     phone: "663 080 914",
     image: "/images/team/people/joan-quetglas.jpg",
@@ -79,7 +79,9 @@ export const teamMembers: TeamMember[] = [
   },
   {
     name: "Toni Santandreu",
-    role: "Operaciones",
+    role: "Director de Operaciones",
+    email: "antonisantandreu@dosmasgrup.com",
+    phone: "663 83 68 75",
     image: "/images/team/people/toni-santandreu.jpg",
     imagePosition: "center 16%"
   },
