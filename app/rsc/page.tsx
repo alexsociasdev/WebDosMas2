@@ -5,31 +5,34 @@ import { SectionHeading } from "@/components/marketing/section-heading";
 import { PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/reveal";
 import { JsonLd } from "@/components/seo/json-ld";
-import { rscContent } from "@/content/site-content";
+import { getSiteContent } from "@/content/site-content";
 import { getDictionary, getServerLocale } from "@/lib/i18n-server";
 import { pageMetadata } from "@/lib/metadata";
 import { breadcrumbSchema } from "@/lib/seo-schema";
-import { rscInitiatives } from "@/rsc/data";
+import { getRscInitiatives } from "@/rsc/data";
 
-export const metadata = pageMetadata(
-  "RSC",
-  "Conozca el compromiso social, formativo y medioambiental de DOSMAS GRUP a través de iniciativas reales que generan valor para las personas, el territorio y nuestro entorno.",
-  "/rsc",
-  {
+export async function generateMetadata() {
+  const locale = await getServerLocale();
+  const t = getDictionary(locale);
+  const text = t.pages.rsc;
+
+  return pageMetadata(text.pageTitle, text.pageSubtitle, "/rsc", {
     image: "/images/projects/portocolom/09.jpg",
     keywords: ["RSC", "sostenibilidad", "responsabilidad social", "DOSMAS GRUP"]
-  }
-);
+  });
+}
 
 export default async function RscPage() {
   const locale = await getServerLocale();
   const t = getDictionary(locale);
   const text = t.pages.rsc;
+  const { rscContent } = getSiteContent(locale);
+  const rscInitiatives = getRscInitiatives(locale);
   const highlightedMessages = [
-    "PROGRAMAS ACTIVOS",
-    "FORMACIÓN AL PERSONAL",
-    "ACCIONES SOLIDARIAS",
-    "COLABORACIÓN CON ENTIDADES"
+    t.pages.rsc.activePrograms,
+    t.pages.rsc.annualTrainingHours,
+    t.pages.rsc.solidarityActions,
+    t.pages.rsc.partnerEntities
   ];
 
   return (

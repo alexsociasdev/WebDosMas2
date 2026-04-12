@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { footerCorporateData } from "@/content/site-content";
+import { getFooterCorporateData } from "@/content/site-content";
 import { Container } from "@/components/container";
 import { getDictionary, type Locale } from "@/lib/i18n";
 
@@ -10,6 +10,7 @@ type SiteFooterProps = {
 
 export function SiteFooter({ locale }: SiteFooterProps) {
   const t = getDictionary(locale);
+  const footerCorporateData = getFooterCorporateData(locale);
   const legalLinks = [
     { href: "/legal/datos-legales", label: t.footer.legalData },
     { href: "/legal/politica-privacidad", label: t.footer.privacyPolicy },

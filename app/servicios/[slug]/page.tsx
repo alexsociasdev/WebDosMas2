@@ -12,8 +12,8 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { getDictionary, getServerLocale } from "@/lib/i18n-server";
 import { pageMetadata } from "@/lib/metadata";
 import { breadcrumbSchema, serviceSchema } from "@/lib/seo-schema";
-import { projectsBySlug } from "@/projects/data";
-import { serviceMetaBySlug, servicesBySlug, servicesData } from "@/services/data";
+import { getProjectsBySlug } from "@/projects/data";
+import { getServiceMetaBySlug, getServicesBySlug, getServicesData, servicesData } from "@/services/data";
 
 type ServiceDetailPageProps = {
   params: Promise<{ slug: string }>;
@@ -25,10 +25,12 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: ServiceDetailPageProps) {
   const { slug } = await params;
-  const service = servicesBySlug[slug];
+  const locale = await getServerLocale();
+  const t = getDictionary(locale);
+  const service = getServicesBySlug(locale)[slug];
 
   if (!service) {
-    return pageMetadata("Servicio", "Servicio de DOSMAS GRUP.", `/servicios/${slug}`);
+    return pageMetadata(t.common.services, `${t.common.services} | DOSMAS GRUP`, `/servicios/${slug}`);
   }
 
   return pageMetadata(service.title, service.paragraphs[0], `/servicios/${service.slug}`, {
@@ -39,17 +41,21 @@ export async function generateMetadata({ params }: ServiceDetailPageProps) {
 
 export default async function ServiceDetailPage({ params }: ServiceDetailPageProps) {
   const { slug } = await params;
-  const service = servicesBySlug[slug];
   const locale = await getServerLocale();
   const t = getDictionary(locale);
+  const servicesDataLocalized = getServicesData(locale);
+  const servicesBySlug = getServicesBySlug(locale);
+  const serviceMetaBySlug = getServiceMetaBySlug(locale);
+  const projectsBySlug = getProjectsBySlug(locale);
+  const service = servicesBySlug[slug];
 
   if (!service) {
     notFound();
   }
 
-  const serviceIndex = servicesData.findIndex((item) => item.slug === slug);
-  const prev = serviceIndex > 0 ? servicesData[serviceIndex - 1] : servicesData[servicesData.length - 1];
-  const next = serviceIndex < servicesData.length - 1 ? servicesData[serviceIndex + 1] : servicesData[0];
+  const serviceIndex = servicesDataLocalized.findIndex((item) => item.slug === slug);
+  const prev = serviceIndex > 0 ? servicesDataLocalized[serviceIndex - 1] : servicesDataLocalized[servicesDataLocalized.length - 1];
+  const next = serviceIndex < servicesDataLocalized.length - 1 ? servicesDataLocalized[serviceIndex + 1] : servicesDataLocalized[0];
 
   const meta = serviceMetaBySlug[slug];
 

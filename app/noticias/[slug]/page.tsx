@@ -11,9 +11,9 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { getDictionary, getServerLocale } from "@/lib/i18n-server";
 import { pageMetadata } from "@/lib/metadata";
 import { articleSchema, breadcrumbSchema } from "@/lib/seo-schema";
-import { postsBySlug, postsData } from "@/posts/data";
-import { projectsBySlug } from "@/projects/data";
-import { servicesBySlug } from "@/services/data";
+import { getPostsBySlug, postsData } from "@/posts/data";
+import { getProjectsBySlug } from "@/projects/data";
+import { getServicesBySlug } from "@/services/data";
 
 type NewsDetailPageProps = {
   params: Promise<{ slug: string }>;
@@ -25,10 +25,12 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: NewsDetailPageProps) {
   const { slug } = await params;
-  const post = postsBySlug[slug];
+  const locale = await getServerLocale();
+  const t = getDictionary(locale);
+  const post = getPostsBySlug(locale)[slug];
 
   if (!post) {
-    return pageMetadata("Noticia", "Noticia de DOSMAS GRUP.", `/noticias/${slug}`);
+    return pageMetadata(t.pages.news.pageTitle, `${t.pages.news.pageTitle} | DOSMAS GRUP`, `/noticias/${slug}`);
   }
 
   return pageMetadata(post.title, post.excerpt, `/noticias/${post.slug}`, {
@@ -39,9 +41,12 @@ export async function generateMetadata({ params }: NewsDetailPageProps) {
 
 export default async function NoticiaDetailPage({ params }: NewsDetailPageProps) {
   const { slug } = await params;
-  const post = postsBySlug[slug];
   const locale = await getServerLocale();
   const t = getDictionary(locale);
+  const postsBySlug = getPostsBySlug(locale);
+  const projectsBySlug = getProjectsBySlug(locale);
+  const servicesBySlug = getServicesBySlug(locale);
+  const post = postsBySlug[slug];
 
   if (!post) {
     notFound();

@@ -9,19 +9,25 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { getDictionary, getServerLocale } from "@/lib/i18n-server";
 import { pageMetadata } from "@/lib/metadata";
 import { breadcrumbSchema } from "@/lib/seo-schema";
-import { serviceMetaBySlug, servicesData } from "@/services/data";
+import { getServiceMetaBySlug, getServicesData } from "@/services/data";
 
-export const metadata = pageMetadata(
-  "Servicios",
-  "Servicios de DOSMAS GRUP.",
-  "/servicios",
-  { image: "/images/projects/excavacion-en-son-vida/01.webp", keywords: ["excavaciones", "demoliciones", "obra civil", "Mallorca"] }
-);
+export async function generateMetadata() {
+  const locale = await getServerLocale();
+  const t = getDictionary(locale);
+  const text = t.pages.services;
+
+  return pageMetadata(text.pageTitle, text.pageSubtitle, "/servicios", {
+    image: "/images/projects/excavacion-en-son-vida/01.webp",
+    keywords: ["excavaciones", "demoliciones", "obra civil", "Mallorca"]
+  });
+}
 
 export default async function ServiciosPage() {
   const locale = await getServerLocale();
   const t = getDictionary(locale);
   const text = t.pages.services;
+  const servicesData = getServicesData(locale);
+  const serviceMetaBySlug = getServiceMetaBySlug(locale);
 
   return (
     <>

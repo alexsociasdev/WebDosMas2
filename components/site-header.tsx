@@ -6,11 +6,12 @@ import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { Container } from "@/components/container";
-import { officeLocations } from "@/content/site-content";
+import { getOfficeLocations } from "@/content/site-content";
 import { getDictionary, type Locale, locales } from "@/lib/i18n";
 
 const languageLinks = {
   ca: { code: "CA", label: "Català", flag: "/images/flags/catalonia.svg" },
+  de: { code: "DE", label: "Deutsch", flag: "/images/flags/germany.svg" },
   es: { code: "ES", label: "Castellano", flag: "/images/flags/spain.png" },
   en: { code: "EN", label: "English", flag: "/images/flags/uk.svg" }
 } as const;
@@ -25,6 +26,30 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const t = getDictionary(locale);
+  const officeLocations = getOfficeLocations(locale);
+  const ariaByLocale = {
+    es: {
+      home: "Ir a la página de inicio",
+      mainMenu: "Menú principal",
+      mobileMainMenu: "Menú principal móvil"
+    },
+    ca: {
+      home: "Anar a la pàgina d'inici",
+      mainMenu: "Menú principal",
+      mobileMainMenu: "Menú principal mòbil"
+    },
+    en: {
+      home: "Go to home page",
+      mainMenu: "Main menu",
+      mobileMainMenu: "Mobile main menu"
+    },
+    de: {
+      home: "Zur Startseite",
+      mainMenu: "Hauptmenü",
+      mobileMainMenu: "Mobiles Hauptmenü"
+    }
+  } as const;
+  const aria = ariaByLocale[locale];
 
   const redirectPath = `${pathname}${searchParams.toString() ? `?${searchParams.toString()}` : ""}`;
   const navigationLinks = [
@@ -113,7 +138,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
       <Container className="flex min-h-20 items-center justify-between gap-6">
         <Link
           href="/"
-          aria-label="Ir a la página de inicio"
+          aria-label={aria.home}
           className="group flex items-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
         >
           <span className="inline-flex h-14 w-14 items-center justify-center overflow-hidden rounded-full border border-brand-gray/40 bg-white p-1 shadow-soft">
@@ -135,7 +160,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
           {t.nav.menu}
         </button>
 
-        <nav className="hidden lg:block" aria-label="Menú principal">
+        <nav className="hidden lg:block" aria-label={aria.mainMenu}>
           <ul className="flex items-center gap-6 text-sm font-semibold uppercase tracking-[0.08em] text-base-dark">
             {navigationLinks.map((item) => (
               <li key={item.href}>
@@ -161,7 +186,7 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
 
       <nav
         id="mobile-main-menu"
-        aria-label="Menú principal móvil"
+        aria-label={aria.mobileMainMenu}
         className={cn(
           "overflow-hidden border-t border-brand-gray/30 bg-white transition-all duration-300 lg:hidden",
           menuOpen ? "max-h-screen" : "max-h-0"

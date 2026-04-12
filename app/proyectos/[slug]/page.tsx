@@ -12,9 +12,9 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { getDictionary, getServerLocale } from "@/lib/i18n-server";
 import { pageMetadata } from "@/lib/metadata";
 import { articleSchema, breadcrumbSchema, projectSchema } from "@/lib/seo-schema";
-import { postsData } from "@/posts/data";
-import { projectsBySlug, projectsData } from "@/projects/data";
-import { servicesBySlug } from "@/services/data";
+import { getPostsData } from "@/posts/data";
+import { getProjectsBySlug, projectsData } from "@/projects/data";
+import { getServicesBySlug } from "@/services/data";
 
 type ProjectDetailPageProps = {
   params: Promise<{ slug: string }>;
@@ -26,10 +26,12 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: ProjectDetailPageProps) {
   const { slug } = await params;
-  const project = projectsBySlug[slug];
+  const locale = await getServerLocale();
+  const t = getDictionary(locale);
+  const project = getProjectsBySlug(locale)[slug];
 
   if (!project) {
-    return pageMetadata("Proyecto", "Proyecto de DOSMAS GRUP.", `/proyectos/${slug}`);
+    return pageMetadata(t.common.projects, `${t.common.projects} | DOSMAS GRUP`, `/proyectos/${slug}`);
   }
 
   return pageMetadata(project.title, project.summary, `/proyectos/${project.slug}`, {
@@ -40,9 +42,12 @@ export async function generateMetadata({ params }: ProjectDetailPageProps) {
 
 export default async function ProyectoDetailPage({ params }: ProjectDetailPageProps) {
   const { slug } = await params;
-  const project = projectsBySlug[slug];
   const locale = await getServerLocale();
   const t = getDictionary(locale);
+  const projectsBySlug = getProjectsBySlug(locale);
+  const servicesBySlug = getServicesBySlug(locale);
+  const project = projectsBySlug[slug];
+  const postsData = getPostsData(locale);
 
   if (!project) {
     notFound();
@@ -183,7 +188,22 @@ export default async function ProyectoDetailPage({ params }: ProjectDetailPagePr
       <section className="border-y border-brand-gray/35 bg-brand-yellow py-20">
         <Container>
           <Reveal>
-            <ProjectGallerySlider images={project.gallery} label={project.title} />
+            <ProjectGallerySlider
+              images={project.gallery}
+              label={project.title}
+              labels={{
+                previousImage: locale === "es" ? "Imagen anterior" : locale === "ca" ? "Imatge anterior" : locale === "en" ? "Previous image" : "Vorheriges Bild",
+                nextImage: locale === "es" ? "Siguiente imagen" : locale === "ca" ? "Imatge següent" : locale === "en" ? "Next image" : "Nächstes Bild",
+                showImage: (index) =>
+                  locale === "es"
+                    ? `Mostrar imagen ${index}`
+                    : locale === "ca"
+                      ? `Mostrar imatge ${index}`
+                      : locale === "en"
+                        ? `Show image ${index}`
+                        : `Bild ${index} anzeigen`
+              }}
+            />
           </Reveal>
         </Container>
       </section>

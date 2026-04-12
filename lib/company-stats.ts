@@ -1,0 +1,5 @@
+export const COMPANY_START_YEAR = 1954;
+export const COMPANY_TRAJECTORY_YEARS = 70;
+export const COMPANY_PROFESSIONALS = 200;
+export const COMPANY_VEHICLES = 150;
+export const COMPANY_MACHINES = 150;

@@ -8,19 +8,24 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { getDictionary, getServerLocale } from "@/lib/i18n-server";
 import { pageMetadata } from "@/lib/metadata";
 import { breadcrumbSchema } from "@/lib/seo-schema";
-import { projectsData } from "@/projects/data";
+import { getProjectsData, projectsData } from "@/projects/data";
 
-export const metadata = pageMetadata(
-  "Proyectos",
-  "Descubra una selección de proyectos ejecutados por DOSMAS GRUP, con información técnica, desarrollo visual de la obra y soluciones adaptadas a cada intervención en Baleares.",
-  "/proyectos",
-  { image: projectsData[0].image, keywords: ["proyectos", "obra civil", "Mallorca"] }
-);
+export async function generateMetadata() {
+  const locale = await getServerLocale();
+  const t = getDictionary(locale);
+  const text = t.pages.projects;
+
+  return pageMetadata(text.pageTitle, text.pageSubtitle, "/proyectos", {
+    image: projectsData[0].image,
+    keywords: ["proyectos", "obra civil", "Mallorca"]
+  });
+}
 
 export default async function ProyectosPage() {
   const locale = await getServerLocale();
   const t = getDictionary(locale);
   const text = t.pages.projects;
+  const localizedProjects = getProjectsData(locale);
 
   return (
     <>
@@ -50,7 +55,7 @@ export default async function ProyectosPage() {
           </Reveal>
 
           <div className="mt-10">
-            <ProjectsFilterGrid projects={projectsData} locale={locale} />
+            <ProjectsFilterGrid projects={localizedProjects} locale={locale} />
           </div>
         </Container>
       </section>

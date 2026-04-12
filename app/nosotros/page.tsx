@@ -9,18 +9,27 @@ import { PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/reveal";
 import { JsonLd } from "@/components/seo/json-ld";
 import { TeamOrganigram } from "@/components/team/team-organigram";
-import { aboutUsContent, editorialSection, rootsLink, teamSection, valuesSection } from "@/content/site-content";
+import { getSiteContent } from "@/content/site-content";
+import {
+  COMPANY_MACHINES,
+  COMPANY_PROFESSIONALS,
+  COMPANY_TRAJECTORY_YEARS,
+  COMPANY_VEHICLES
+} from "@/lib/company-stats";
 import { getDictionary, getServerLocale } from "@/lib/i18n-server";
-import { pageMetadata } from "@/lib/metadata";
 import { breadcrumbSchema } from "@/lib/seo-schema";
-import { teamMembers } from "@/team/data";
+import { getTeamMembers } from "@/team/data";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata = pageMetadata(
-  "Nosotros",
-  "DOSMAS GRUP es un grupo de empresas especializado en excavaciones, movimientos de tierra y obras integrales, con sede en Mallorca.",
-  "/nosotros",
-  { image: "/images/team/foto-grupo-puente.jpg" }
-);
+export async function generateMetadata() {
+  const locale = await getServerLocale();
+  const { aboutUsContent } = getSiteContent(locale);
+  const t = getDictionary(locale);
+
+  return pageMetadata(t.nav.about, aboutUsContent.paragraphs[0], "/nosotros", {
+    image: "/images/team/foto-grupo-puente.jpg"
+  });
+}
 
 const icons = [
   <svg key="1" viewBox="0 0 24 24" fill="none" className="h-6 w-6" aria-hidden="true"><path d="M5 12h14M12 5v14" stroke="currentColor" strokeWidth="1.8" /></svg>,
@@ -32,6 +41,8 @@ const icons = [
 export default async function NosotrosPage() {
   const locale = await getServerLocale();
   const t = getDictionary(locale);
+  const { aboutUsContent, editorialSection, rootsLink, teamSection, valuesSection } = getSiteContent(locale);
+  const teamMembers = getTeamMembers(locale);
 
   return (
     <>
@@ -45,7 +56,7 @@ export default async function NosotrosPage() {
 
       <PageHero
         title={t.nav.about}
-        subtitle="DOSMAS GRUP es un grupo de empresas especializado en excavaciones, movimientos de tierra y obras integrales, con sede en Mallorca."
+        subtitle={aboutUsContent.paragraphs[0]}
         image="/images/team/foto-grupo-puente.jpg"
       />
 
@@ -74,10 +85,10 @@ export default async function NosotrosPage() {
 
           <Reveal>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              <article className="rounded-2xl border border-base-mid bg-white p-5"><p className="text-sm text-base-dark">{t.home.statsTrajectory}</p><p className="mt-2 text-3xl font-bold text-base-black"><CountUp to={70} suffix="+" /></p></article>
-              <article className="rounded-2xl border border-base-mid bg-white p-5"><p className="text-sm text-base-dark">{t.home.statsProfessionals}</p><p className="mt-2 text-3xl font-bold text-base-black"><CountUp to={200} suffix="+" /></p></article>
-              <article className="rounded-2xl border border-base-mid bg-white p-5"><p className="text-sm text-base-dark">{t.home.statsMachines}</p><p className="mt-2 text-3xl font-bold text-base-black"><CountUp to={250} suffix="+" /></p></article>
-              <article className="rounded-2xl border border-base-mid bg-white p-5"><p className="text-sm text-base-dark">{t.home.statsVehicles}</p><p className="mt-2 text-3xl font-bold text-base-black"><CountUp to={50} suffix="+" /></p></article>
+              <article className="rounded-2xl border border-base-mid bg-white p-5"><p className="text-sm text-base-dark">{t.home.statsTrajectory}</p><p className="mt-2 text-3xl font-bold text-base-black"><CountUp to={COMPANY_TRAJECTORY_YEARS} suffix="+" /></p></article>
+              <article className="rounded-2xl border border-base-mid bg-white p-5"><p className="text-sm text-base-dark">{t.home.statsProfessionals}</p><p className="mt-2 text-3xl font-bold text-base-black"><CountUp to={COMPANY_PROFESSIONALS} suffix="+" /></p></article>
+              <article className="rounded-2xl border border-base-mid bg-white p-5"><p className="text-sm text-base-dark">{t.home.statsMachines}</p><p className="mt-2 text-3xl font-bold text-base-black"><CountUp to={COMPANY_MACHINES} suffix="+" /></p></article>
+              <article className="rounded-2xl border border-base-mid bg-white p-5"><p className="text-sm text-base-dark">{t.home.statsVehicles}</p><p className="mt-2 text-3xl font-bold text-base-black"><CountUp to={COMPANY_VEHICLES} suffix="+" /></p></article>
             </div>
           </Reveal>
         </Container>

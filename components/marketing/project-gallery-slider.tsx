@@ -7,9 +7,14 @@ import { cn } from "@/lib/utils";
 type ProjectGallerySliderProps = {
   images: string[];
   label: string;
+  labels: {
+    previousImage: string;
+    nextImage: string;
+    showImage: (index: number) => string;
+  };
 };
 
-export function ProjectGallerySlider({ images, label }: ProjectGallerySliderProps) {
+export function ProjectGallerySlider({ images, label, labels }: ProjectGallerySliderProps) {
   const [activeIndex, setActiveIndex] = useState(0);
 
   if (images.length === 0) {
@@ -41,7 +46,7 @@ export function ProjectGallerySlider({ images, label }: ProjectGallerySliderProp
           <button
             type="button"
             onClick={() => goTo(activeIndex - 1)}
-            aria-label="Imagen anterior"
+            aria-label={labels.previousImage}
             className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/40 bg-brand-purple text-white transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
           >
             <span aria-hidden="true">←</span>
@@ -54,7 +59,7 @@ export function ProjectGallerySlider({ images, label }: ProjectGallerySliderProp
           <button
             type="button"
             onClick={() => goTo(activeIndex + 1)}
-            aria-label="Siguiente imagen"
+            aria-label={labels.nextImage}
             className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/40 bg-brand-yellow text-base-black transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
           >
             <span aria-hidden="true">→</span>
@@ -72,7 +77,7 @@ export function ProjectGallerySlider({ images, label }: ProjectGallerySliderProp
               "relative overflow-hidden rounded-2xl border transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow",
               index === activeIndex ? "border-brand-purple shadow-soft" : "border-brand-gray/30"
             )}
-            aria-label={`Mostrar imagen ${index + 1}`}
+            aria-label={labels.showImage(index + 1)}
           >
             <div className="relative aspect-[4/3]">
               <Image

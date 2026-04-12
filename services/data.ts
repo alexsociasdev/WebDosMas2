@@ -1,3 +1,5 @@
+import { type Locale } from "@/lib/i18n";
+import { translateStaticContent } from "@/lib/static-content-translator";
 import { projectsBySlug } from "@/projects/data";
 
 export type ServiceItem = {
@@ -482,3 +484,15 @@ export const servicesData: ServiceItem[] = baseServicesData.map((service) => ({
 export const servicesBySlug = Object.fromEntries(
   servicesData.map((service) => [service.slug, service])
 ) as Record<string, ServiceItem>;
+
+export function getServiceMetaBySlug(locale: Locale): Record<string, ServiceMeta> {
+  return translateStaticContent(serviceMetaBySlug, locale);
+}
+
+export function getServicesData(locale: Locale): ServiceItem[] {
+  return translateStaticContent(servicesData, locale);
+}
+
+export function getServicesBySlug(locale: Locale): Record<string, ServiceItem> {
+  return Object.fromEntries(getServicesData(locale).map((service) => [service.slug, service])) as Record<string, ServiceItem>;
+}

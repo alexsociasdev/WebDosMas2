@@ -10,16 +10,46 @@ import { getDictionary, getServerLocale } from "@/lib/i18n-server";
 import { pageMetadata } from "@/lib/metadata";
 import { breadcrumbSchema } from "@/lib/seo-schema";
 
-export const metadata = pageMetadata(
-  "Nuestras Raíces",
-  "Álbum fotográfico histórico de DOSMAS GRUP.",
-  "/nuestras-raices",
-  { image: "/images/heritage/foto-02.jpg" }
-);
+const rootsCopyByLocale = {
+  es: {
+    title: "NUESTRAS RAÍCES",
+    breadcrumb: "Nuestras Raíces",
+    subtitle: "Álbum fotográfico histórico de DOSMAS GRUP.",
+    altPrefix: "Nuestras raíces"
+  },
+  ca: {
+    title: "LES NOSTRES ARRELS",
+    breadcrumb: "Les nostres arrels",
+    subtitle: "Àlbum fotogràfic històric de DOSMAS GRUP.",
+    altPrefix: "Les nostres arrels"
+  },
+  en: {
+    title: "OUR ROOTS",
+    breadcrumb: "Our roots",
+    subtitle: "Historical photographic archive of DOSMAS GRUP.",
+    altPrefix: "Our roots"
+  },
+  de: {
+    title: "UNSERE WURZELN",
+    breadcrumb: "Unsere Wurzeln",
+    subtitle: "Historisches Fotoarchiv von DOSMAS GRUP.",
+    altPrefix: "Unsere Wurzeln"
+  }
+} as const;
+
+export async function generateMetadata() {
+  const locale = await getServerLocale();
+  const copy = rootsCopyByLocale[locale];
+
+  return pageMetadata(copy.breadcrumb, copy.subtitle, "/nuestras-raices", {
+    image: "/images/heritage/foto-02.jpg"
+  });
+}
 
 export default async function NuestrasRaicesPage() {
   const locale = await getServerLocale();
   const t = getDictionary(locale);
+  const copy = rootsCopyByLocale[locale];
 
   return (
     <>
@@ -27,21 +57,21 @@ export default async function NuestrasRaicesPage() {
         id="breadcrumb-nuestras-raices"
         data={breadcrumbSchema([
           { name: t.common.home, path: "/" },
-          { name: "Nuestras Raíces", path: "/nuestras-raices" }
+          { name: copy.breadcrumb, path: "/nuestras-raices" }
         ])}
       />
 
       <PageHero
-        title="NUESTRAS RAÍCES"
-        subtitle="Álbum fotográfico histórico de DOSMAS GRUP."
+        title={copy.title}
+        subtitle={copy.subtitle}
         image="/images/heritage/foto-02.jpg"
       />
 
       <section className="bg-white py-20">
         <Container>
           <Reveal>
-            <Breadcrumb items={[{ label: t.common.home, href: "/" }, { label: "Nuestras Raíces" }]} />
-            <SectionHeading title="NUESTRAS RAÍCES" />
+            <Breadcrumb items={[{ label: t.common.home, href: "/" }, { label: copy.breadcrumb }]} />
+            <SectionHeading title={copy.title} />
           </Reveal>
 
           <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
@@ -56,7 +86,7 @@ export default async function NuestrasRaicesPage() {
                   <div className="relative aspect-[4/3] overflow-hidden">
                     <Image
                       src={photo.image}
-                      alt={`Nuestras raíces ${index + 1}`}
+                      alt={`${copy.altPrefix} ${index + 1}`}
                       fill
                       sizes="(min-width: 1280px) 28vw, (min-width: 768px) 44vw, 100vw"
                       className="object-cover transition duration-500 group-hover:scale-105"

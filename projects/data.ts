@@ -1,3 +1,5 @@
+import { type Locale } from "@/lib/i18n";
+import { translateStaticContent } from "@/lib/static-content-translator";
 import { projectDescriptions } from "@/projects/project-descriptions";
 
 export type CaseStudy = {
@@ -394,3 +396,11 @@ export const projectsData: ProjectItem[] = [
 export const projectsBySlug = Object.fromEntries(
   projectsData.map((project) => [project.slug, project])
 ) as Record<string, ProjectItem>;
+
+export function getProjectsData(locale: Locale): ProjectItem[] {
+  return translateStaticContent(projectsData, locale);
+}
+
+export function getProjectsBySlug(locale: Locale): Record<string, ProjectItem> {
+  return Object.fromEntries(getProjectsData(locale).map((project) => [project.slug, project])) as Record<string, ProjectItem>;
+}

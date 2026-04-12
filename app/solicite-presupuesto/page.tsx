@@ -9,12 +9,15 @@ import { getDictionary, getServerLocale } from "@/lib/i18n-server";
 import { pageMetadata } from "@/lib/metadata";
 import { breadcrumbSchema } from "@/lib/seo-schema";
 
-export const metadata = pageMetadata(
-  "Solicite presupuesto",
-  "SOLICITE PRESUPUESTO.",
-  "/solicite-presupuesto",
-  { image: "/images/projects/excavacion-en-son-vida/04.webp" }
-);
+export async function generateMetadata() {
+  const locale = await getServerLocale();
+  const t = getDictionary(locale);
+  const text = t.pages.quote;
+
+  return pageMetadata(text.pageTitle, text.pageSubtitle, "/solicite-presupuesto", {
+    image: "/images/projects/excavacion-en-son-vida/04.webp"
+  });
+}
 
 export default async function SolicitePresupuestoPage() {
   const locale = await getServerLocale();

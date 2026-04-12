@@ -4,18 +4,24 @@ import { SectionHeading } from "@/components/marketing/section-heading";
 import { PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/reveal";
 import { JsonLd } from "@/components/seo/json-ld";
-import { legalDataContent } from "@/content/site-content";
+import { getSiteContent } from "@/content/site-content";
 import { getDictionary, getServerLocale } from "@/lib/i18n-server";
 import { pageMetadata } from "@/lib/metadata";
 import { breadcrumbSchema } from "@/lib/seo-schema";
 
-export const metadata = pageMetadata("Datos legales", "DATOS LEGALES", "/legal/datos-legales", {
-  image: "/images/brand/portada.webp"
-});
+export async function generateMetadata() {
+  const locale = await getServerLocale();
+  const { legalDataContent } = getSiteContent(locale);
+
+  return pageMetadata(legalDataContent.title, legalDataContent.title, "/legal/datos-legales", {
+    image: "/images/brand/portada.webp"
+  });
+}
 
 export default async function DatosLegalesPage() {
   const locale = await getServerLocale();
   const t = getDictionary(locale);
+  const { legalDataContent } = getSiteContent(locale);
 
   return (
     <>
@@ -27,7 +33,7 @@ export default async function DatosLegalesPage() {
         ])}
       />
 
-      <PageHero title="DATOS LEGALES" image="/images/brand/portada.webp" />
+      <PageHero title={legalDataContent.title} image="/images/brand/portada.webp" />
       <section className="bg-brand-gray py-20">
         <Container>
           <Reveal>

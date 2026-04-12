@@ -4,21 +4,24 @@ import { SectionHeading } from "@/components/marketing/section-heading";
 import { PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/reveal";
 import { JsonLd } from "@/components/seo/json-ld";
-import { cookiePolicyContent } from "@/content/site-content";
+import { getSiteContent } from "@/content/site-content";
 import { getDictionary, getServerLocale } from "@/lib/i18n-server";
 import { pageMetadata } from "@/lib/metadata";
 import { breadcrumbSchema } from "@/lib/seo-schema";
 
-export const metadata = pageMetadata(
-  "Política cookies",
-  "POLÍTICA DE COOKIES",
-  "/legal/politica-cookies",
-  { image: "/images/brand/portada.webp" }
-);
+export async function generateMetadata() {
+  const locale = await getServerLocale();
+  const { cookiePolicyContent } = getSiteContent(locale);
+
+  return pageMetadata(cookiePolicyContent.title, cookiePolicyContent.title, "/legal/politica-cookies", {
+    image: "/images/brand/portada.webp"
+  });
+}
 
 export default async function PoliticaCookiesPage() {
   const locale = await getServerLocale();
   const t = getDictionary(locale);
+  const { cookiePolicyContent } = getSiteContent(locale);
 
   return (
     <>
@@ -30,7 +33,7 @@ export default async function PoliticaCookiesPage() {
         ])}
       />
 
-      <PageHero title="POLÍTICA DE COOKIES" image="/images/brand/portada.webp" />
+      <PageHero title={cookiePolicyContent.title} image="/images/brand/portada.webp" />
       <section className="bg-brand-gray py-20">
         <Container className="space-y-10">
           <Reveal>

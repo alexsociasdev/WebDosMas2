@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import type { ServiceItem } from "@/services/data";
-import { serviceMetaBySlug } from "@/services/data";
+import { getServiceMetaBySlug } from "@/services/data";
 import { getDictionary, type Locale } from "@/lib/i18n";
 
 type ServiceIndexProps = {
@@ -12,9 +12,10 @@ type ServiceIndexProps = {
 
 export function ServiceIndex({ services, locale }: ServiceIndexProps) {
   const t = getDictionary(locale);
+  const serviceMetaBySlug = getServiceMetaBySlug(locale);
   const categories = useMemo(
     () => [t.common.all, ...Array.from(new Set(services.map((service) => serviceMetaBySlug[service.slug]?.category || "General")))],
-    [services, t.common.all]
+    [serviceMetaBySlug, services, t.common.all]
   );
 
   const [selectedCategory, setSelectedCategory] = useState(t.common.all);
@@ -27,7 +28,7 @@ export function ServiceIndex({ services, locale }: ServiceIndexProps) {
 
       return (serviceMetaBySlug[service.slug]?.category || "General") === selectedCategory;
     });
-  }, [services, selectedCategory, t.common.all]);
+  }, [serviceMetaBySlug, services, selectedCategory, t.common.all]);
 
   return (
     <div className="space-y-5">

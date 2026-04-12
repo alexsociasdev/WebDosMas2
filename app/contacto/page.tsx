@@ -5,24 +5,26 @@ import { SectionHeading } from "@/components/marketing/section-heading";
 import { PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/reveal";
 import { JsonLd } from "@/components/seo/json-ld";
-import { officeLocations } from "@/content/site-content";
+import { getOfficeLocations } from "@/content/site-content";
 import { getDictionary, getServerLocale } from "@/lib/i18n-server";
 import { pageMetadata } from "@/lib/metadata";
 import { breadcrumbSchema } from "@/lib/seo-schema";
 
-export const metadata = pageMetadata(
-  "Contacto",
-  "Contacta con DOSMAS GRUP para resolver una consulta, solicitar información o coordinar una reunión con nuestro equipo.",
-  "/contacto",
-  {
-  image: "/images/projects/son-ribotet-nueva-vina/06.jpg"
-  }
-);
+export async function generateMetadata() {
+  const locale = await getServerLocale();
+  const t = getDictionary(locale);
+  const text = t.pages.contact;
+
+  return pageMetadata(text.pageTitle, text.pageSubtitle, "/contacto", {
+    image: "/images/projects/son-ribotet-nueva-vina/06.jpg"
+  });
+}
 
 export default async function ContactoPage() {
   const locale = await getServerLocale();
   const t = getDictionary(locale);
   const text = t.pages.contact;
+  const officeLocations = getOfficeLocations(locale);
 
   return (
     <>

@@ -9,19 +9,24 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { getDictionary, getServerLocale } from "@/lib/i18n-server";
 import { pageMetadata } from "@/lib/metadata";
 import { breadcrumbSchema } from "@/lib/seo-schema";
-import { serviceMetaBySlug, servicesData } from "@/services/data";
+import { getServiceMetaBySlug, getServicesData } from "@/services/data";
 
-export const metadata = pageMetadata(
-  "Áreas de trabajo",
-  "Descubra nuestras áreas de trabajo y el alcance de los servicios que desarrollamos en construcción, excavaciones, obra civil y logística.",
-  "/areas-de-trabajo",
-  { image: "/images/projects/aeropuerto-palma-reciclaje/01.jpg" }
-);
+export async function generateMetadata() {
+  const locale = await getServerLocale();
+  const t = getDictionary(locale);
+  const text = t.pages.workAreas;
+
+  return pageMetadata(text.pageTitle, text.pageSubtitle, "/areas-de-trabajo", {
+    image: "/images/projects/aeropuerto-palma-reciclaje/01.jpg"
+  });
+}
 
 export default async function AreasTrabajoPage() {
   const locale = await getServerLocale();
   const t = getDictionary(locale);
   const text = t.pages.workAreas;
+  const servicesData = getServicesData(locale);
+  const serviceMetaBySlug = getServiceMetaBySlug(locale);
 
   return (
     <>

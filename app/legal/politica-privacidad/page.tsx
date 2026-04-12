@@ -7,18 +7,21 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { getDictionary, getServerLocale } from "@/lib/i18n-server";
 import { pageMetadata } from "@/lib/metadata";
 import { breadcrumbSchema } from "@/lib/seo-schema";
-import { privacyPolicyContent } from "@/content/site-content";
+import { getSiteContent } from "@/content/site-content";
 
-export const metadata = pageMetadata(
-  "Política privacidad",
-  "POLÍTICA DE PRIVACIDAD",
-  "/legal/politica-privacidad",
-  { image: "/images/brand/portada.webp" }
-);
+export async function generateMetadata() {
+  const locale = await getServerLocale();
+  const { privacyPolicyContent } = getSiteContent(locale);
+
+  return pageMetadata(privacyPolicyContent.title, privacyPolicyContent.title, "/legal/politica-privacidad", {
+    image: "/images/brand/portada.webp"
+  });
+}
 
 export default async function PoliticaPrivacidadPage() {
   const locale = await getServerLocale();
   const t = getDictionary(locale);
+  const { privacyPolicyContent } = getSiteContent(locale);
 
   return (
     <>
@@ -30,7 +33,7 @@ export default async function PoliticaPrivacidadPage() {
         ])}
       />
 
-      <PageHero title="POLÍTICA DE PRIVACIDAD" image="/images/brand/portada.webp" />
+      <PageHero title={privacyPolicyContent.title} image="/images/brand/portada.webp" />
       <section className="bg-brand-gray py-20">
         <Container>
           <Reveal>

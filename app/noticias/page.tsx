@@ -9,19 +9,24 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { getDictionary, getServerLocale } from "@/lib/i18n-server";
 import { pageMetadata } from "@/lib/metadata";
 import { breadcrumbSchema } from "@/lib/seo-schema";
-import { postsData } from "@/posts/data";
+import { getPostsData } from "@/posts/data";
 
-export const metadata = pageMetadata(
-  "Noticias",
-  "Noticias de DOSMAS GRUP.",
-  "/noticias",
-  { image: "/images/projects/cas-concos/12.jpg", keywords: ["blog", "noticias", "obra civil"] }
-);
+export async function generateMetadata() {
+  const locale = await getServerLocale();
+  const t = getDictionary(locale);
+  const text = t.pages.news;
+
+  return pageMetadata(text.pageTitle, text.pageSubtitle, "/noticias", {
+    image: "/images/projects/cas-concos/12.jpg",
+    keywords: ["blog", "noticias", "obra civil"]
+  });
+}
 
 export default async function NoticiasPage() {
   const locale = await getServerLocale();
   const t = getDictionary(locale);
   const text = t.pages.news;
+  const postsData = getPostsData(locale);
   const [featured, ...rest] = postsData;
 
   return (

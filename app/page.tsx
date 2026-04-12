@@ -9,33 +9,30 @@ import { StatsStrip } from "@/components/marketing/stats-strip";
 import { Reveal } from "@/components/reveal";
 import { TeamOrganigram } from "@/components/team/team-organigram";
 import {
-  aboutUsContent,
-  brandDetails,
-  brandsSection,
-  dossierLink,
-  editorialSection,
-  homeIntroParagraphs,
-  rootsLink,
-  teamSection,
-  trustSection,
-  valuesSection
+  getSiteContent
 } from "@/content/site-content";
+import {
+  COMPANY_MACHINES,
+  COMPANY_PROFESSIONALS,
+  COMPANY_START_YEAR,
+  COMPANY_TRAJECTORY_YEARS,
+  COMPANY_VEHICLES
+} from "@/lib/company-stats";
 import { getDictionary, getServerLocale } from "@/lib/i18n-server";
+import { getTeamMembers } from "@/team/data";
 import { pageMetadata } from "@/lib/metadata";
-import { teamMembers } from "@/team/data";
 
-export const metadata = pageMetadata(
-  "Inicio",
-  "DOSMAS GRUP es un referente en el sector de las excavaciones y obras en Mallorca.",
-  "/",
-  {
-    image: "/images/brand/portada.webp",
-    keywords: ["excavaciones", "obra civil", "movimiento de tierras", "Mallorca"]
-  }
-);
 export const revalidate = 86400;
 
-const startYear = 1954;
+export async function generateMetadata() {
+  const locale = await getServerLocale();
+  const t = getDictionary(locale);
+
+  return pageMetadata(t.common.home, t.home.slide1.description, "/", {
+    image: "/images/brand/portada.webp",
+    keywords: ["excavaciones", "obra civil", "movimiento de tierras", "Mallorca"]
+  });
+}
 
 const brandLogoItems = [
   { name: "Dosmas Obras y Proyectos", src: "/images/brand/marques-02.webp" },
@@ -77,6 +74,62 @@ const valueIcons = [
 export default async function HomePage() {
   const locale = await getServerLocale();
   const t = getDictionary(locale);
+  const uiCopyByLocale = {
+    es: {
+      years: "años",
+      trustEyebrow: "DESCÚBRENOS",
+      sliderSummary: "Resumen destacado de DOSMAS GRUP",
+      previousSlide: "Slide anterior",
+      nextSlide: "Siguiente slide",
+      companyIndicators: "Indicadores de empresa",
+      slideSelector: "Selector de slides",
+      showSlide: "Mostrar slide {n}"
+    },
+    ca: {
+      years: "anys",
+      trustEyebrow: "DESCOBREIX-NOS",
+      sliderSummary: "Resum destacat de DOSMAS GRUP",
+      previousSlide: "Diapositiva anterior",
+      nextSlide: "Diapositiva següent",
+      companyIndicators: "Indicadors d'empresa",
+      slideSelector: "Selector de diapositives",
+      showSlide: "Mostrar diapositiva {n}"
+    },
+    en: {
+      years: "years",
+      trustEyebrow: "DISCOVER US",
+      sliderSummary: "Featured summary of DOSMAS GRUP",
+      previousSlide: "Previous slide",
+      nextSlide: "Next slide",
+      companyIndicators: "Company indicators",
+      slideSelector: "Slide selector",
+      showSlide: "Show slide {n}"
+    },
+    de: {
+      years: "Jahre",
+      trustEyebrow: "ENTDECKEN SIE UNS",
+      sliderSummary: "Hervorgehobene Übersicht von DOSMAS GRUP",
+      previousSlide: "Vorherige Folie",
+      nextSlide: "Nächste Folie",
+      companyIndicators: "Unternehmenskennzahlen",
+      slideSelector: "Folienauswahl",
+      showSlide: "Folie {n} anzeigen"
+    }
+  } as const;
+  const uiCopy = uiCopyByLocale[locale];
+  const {
+    aboutUsContent,
+    brandDetails,
+    brandsSection,
+    dossierLink,
+    editorialSection,
+    homeIntroParagraphs,
+    rootsLink,
+    teamSection,
+    trustSection,
+    valuesSection
+  } = getSiteContent(locale);
+  const teamMembers = getTeamMembers(locale);
   const currentYear = new Date().getFullYear();
   const homeHeroSlides: HeroSlide[] = [
     {
@@ -128,7 +181,17 @@ export default async function HomePage() {
       <section className="border-b border-brand-gray/35 bg-white">
         <Container className="space-y-10 py-8 lg:py-12">
           <Reveal>
-            <HomeHeroSlider slides={homeHeroSlides} />
+            <HomeHeroSlider
+              slides={homeHeroSlides}
+              labels={{
+                summary: uiCopy.sliderSummary,
+                previousSlide: uiCopy.previousSlide,
+                nextSlide: uiCopy.nextSlide,
+                companyIndicators: uiCopy.companyIndicators,
+                slideSelector: uiCopy.slideSelector,
+                showSlide: uiCopy.showSlide
+              }}
+            />
           </Reveal>
 
           <Reveal>
@@ -136,7 +199,7 @@ export default async function HomePage() {
               <div>
                 <SectionHeading
                   title="DOSMAS GRUP"
-                  description="Somos un grupo de empresas especializadas en edificación, obra pública, obra privada, excavaciones y movimiento de tierras."
+                  description={t.home.slide1.description}
                 />
                 <div className="mt-7 space-y-5 text-base leading-8 text-base-dark">
                   {homeIntroParagraphs.map((paragraph) => (
@@ -156,9 +219,9 @@ export default async function HomePage() {
                   <p className="px-6 text-center text-base-black">
                     <span className="block text-4xl font-bold leading-none">+</span>
                     <span className="block text-[5.4rem] font-extrabold leading-none">70</span>
-                    <span className="block text-lg font-bold leading-5">años</span>
+                    <span className="block text-lg font-bold leading-5">{uiCopy.years}</span>
                     <span className="mt-2 block text-xs font-semibold uppercase tracking-[0.22em] leading-5">
-                      ({startYear} – {currentYear})
+                      ({COMPANY_START_YEAR} – {currentYear})
                     </span>
                   </p>
                 </article>
@@ -185,10 +248,10 @@ export default async function HomePage() {
           <Reveal>
             <StatsStrip
               stats={[
-                { label: t.home.statsTrajectory, value: "+70 años" },
-                { label: t.home.statsProfessionals, value: "+200" },
-                { label: t.home.statsVehicles, value: "+50" },
-                { label: t.home.statsMachines, value: "+250" }
+                { label: t.home.statsTrajectory, value: `+${COMPANY_TRAJECTORY_YEARS} ${uiCopy.years}` },
+                { label: t.home.statsProfessionals, value: `+${COMPANY_PROFESSIONALS}` },
+                { label: t.home.statsVehicles, value: `+${COMPANY_VEHICLES}` },
+                { label: t.home.statsMachines, value: `+${COMPANY_MACHINES}` }
               ]}
             />
           </Reveal>
@@ -257,7 +320,7 @@ export default async function HomePage() {
           </Reveal>
 
           <Reveal>
-            <LogoCloud title="NUESTRAS MARCA" logos={brandLogoItems} />
+            <LogoCloud title={brandsSection.title.split(":")[0]} logos={brandLogoItems} />
           </Reveal>
 
           <div className="grid gap-6 md:grid-cols-2">
@@ -375,7 +438,7 @@ export default async function HomePage() {
 
           <Reveal>
             <div className="rounded-3xl border border-brand-purple/20 bg-brand-purple p-6 text-white shadow-soft">
-              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-brand-yellow">DESCÚBRENOS</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-brand-yellow">{uiCopy.trustEyebrow}</p>
               <div className="relative mt-4 aspect-video overflow-hidden rounded-2xl border border-white/20 bg-white shadow-soft">
                 <iframe
                   src={trustSection.youtubeUrl}

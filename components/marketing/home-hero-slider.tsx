@@ -21,11 +21,19 @@ export type HeroSlide = {
 
 type HomeHeroSliderProps = {
   slides: HeroSlide[];
+  labels: {
+    summary: string;
+    previousSlide: string;
+    nextSlide: string;
+    companyIndicators: string;
+    slideSelector: string;
+    showSlide: string;
+  };
 };
 
 const AUTOPLAY_INTERVAL_MS = 6500;
 
-export function HomeHeroSlider({ slides }: HomeHeroSliderProps) {
+export function HomeHeroSlider({ slides, labels }: HomeHeroSliderProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const slideCount = slides.length;
 
@@ -53,7 +61,7 @@ export function HomeHeroSlider({ slides }: HomeHeroSliderProps) {
   return (
     <section
       className="relative overflow-hidden rounded-[2rem] border border-brand-gray/40 bg-base-black shadow-soft"
-      aria-label="Resumen destacado de DOSMAS GRUP"
+      aria-label={labels.summary}
       tabIndex={0}
       onKeyDown={(event) => {
         if (event.key === "ArrowRight") {
@@ -105,7 +113,7 @@ export function HomeHeroSlider({ slides }: HomeHeroSliderProps) {
             <button
               type="button"
               onClick={goPrev}
-              aria-label="Slide anterior"
+              aria-label={labels.previousSlide}
               className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/40 bg-brand-gray text-white transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
             >
               <span aria-hidden="true">←</span>
@@ -113,7 +121,7 @@ export function HomeHeroSlider({ slides }: HomeHeroSliderProps) {
             <button
               type="button"
               onClick={goNext}
-              aria-label="Siguiente slide"
+              aria-label={labels.nextSlide}
               className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/40 bg-brand-gray text-white transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow"
             >
               <span aria-hidden="true">→</span>
@@ -121,7 +129,7 @@ export function HomeHeroSlider({ slides }: HomeHeroSliderProps) {
           </div>
         </div>
 
-        <aside className="grid content-end gap-4 sm:grid-cols-2 lg:grid-cols-1" aria-label="Indicadores de empresa">
+        <aside className="grid content-end gap-4 sm:grid-cols-2 lg:grid-cols-1" aria-label={labels.companyIndicators}>
           {activeSlide.metrics.map((metric) => (
             <article
               key={`${activeSlide.id}-${metric.label}`}
@@ -135,14 +143,14 @@ export function HomeHeroSlider({ slides }: HomeHeroSliderProps) {
       </div>
 
       <div className="absolute bottom-6 left-8 right-8 flex items-center justify-between sm:left-10 sm:right-10 lg:left-14 lg:right-14">
-        <div className="flex items-center gap-2" role="tablist" aria-label="Selector de slides">
+        <div className="flex items-center gap-2" role="tablist" aria-label={labels.slideSelector}>
           {slides.map((slide, index) => (
             <button
               key={slide.id}
               type="button"
               role="tab"
               aria-selected={index === activeIndex}
-              aria-label={`Mostrar slide ${index + 1}`}
+              aria-label={labels.showSlide.replace("{n}", String(index + 1))}
               className={cn(
                 "h-2.5 rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow",
                 index === activeIndex ? "w-9 bg-brand-yellow" : "w-2.5 bg-white hover:bg-brand-gray"

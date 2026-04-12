@@ -1,4 +1,4 @@
-export const locales = ["es", "ca", "en"] as const;
+export const locales = ["es", "ca", "en", "de"] as const;
 export type Locale = (typeof locales)[number];
 
 export const DEFAULT_LOCALE: Locale = "es";
@@ -405,7 +405,7 @@ const dictionaries: Record<Locale, Dictionary> = {
         metric3: "Flota",
         value1: "+70 años",
         value2: "+200 profesionales",
-        value3: "+250 máquinas"
+        value3: "+150 máquinas"
       },
       slide2: {
         eyebrow: "PROYECTOS",
@@ -417,7 +417,7 @@ const dictionaries: Record<Locale, Dictionary> = {
         metric2: "Vehículos",
         metric3: "Servicio",
         value1: "Mallorca, Menorca e Ibiza",
-        value2: "+50 vehículos",
+        value2: "+150 vehículos",
         value3: "Gestión integral"
       },
       slide3: {
@@ -674,7 +674,7 @@ const dictionaries: Record<Locale, Dictionary> = {
         metric3: "Flota",
         value1: "+70 anys",
         value2: "+200 professionals",
-        value3: "+250 màquines"
+        value3: "+150 màquines"
       },
       slide2: {
         eyebrow: "PROJECTES",
@@ -686,7 +686,7 @@ const dictionaries: Record<Locale, Dictionary> = {
         metric2: "Vehicles",
         metric3: "Servei",
         value1: "Mallorca, Menorca i Eivissa",
-        value2: "+50 vehicles",
+        value2: "+150 vehicles",
         value3: "Gestió integral"
       },
       slide3: {
@@ -943,7 +943,7 @@ const dictionaries: Record<Locale, Dictionary> = {
         metric3: "Fleet",
         value1: "+70 years",
         value2: "+200 professionals",
-        value3: "+250 machines"
+        value3: "+150 machines"
       },
       slide2: {
         eyebrow: "PROJECTS",
@@ -955,7 +955,7 @@ const dictionaries: Record<Locale, Dictionary> = {
         metric2: "Vehicles",
         metric3: "Service",
         value1: "Mallorca, Menorca and Ibiza",
-        value2: "+50 vehicles",
+        value2: "+150 vehicles",
         value3: "Turnkey management"
       },
       slide3: {
@@ -1077,6 +1077,275 @@ const dictionaries: Record<Locale, Dictionary> = {
         title: "Page not found",
         description: "The requested route does not exist.",
         backHome: "Back to home"
+      }
+    }
+  },
+  de: {
+    lang: "de",
+    skipToContent: "Zum Inhalt springen",
+    nav: {
+      about: "Über uns",
+      projects: "Projekte",
+      workAreas: "Arbeitsbereiche",
+      news: "News",
+      rsc: "CSR",
+      quote: "Angebot anfordern",
+      contact: "Kontakt",
+      budgetShort: "Angebot",
+      menu: "Menü",
+      menuToggle: "Hauptmenü öffnen oder schließen"
+    },
+    common: {
+      home: "Startseite",
+      services: "Leistungen",
+      projects: "Projekte",
+      news: "News",
+      contact: "Kontakt",
+      quote: "Angebot anfordern",
+      category: "Kategorie",
+      year: "Jahr",
+      search: "Suchen",
+      all: "Alle",
+      allMasc: "Alle",
+      viewDetail: "Details ansehen",
+      viewService: "Leistung ansehen",
+      viewProject: "Projekt ansehen",
+      readArticle: "Artikel lesen",
+      readNews: "News lesen",
+      requestQuote: "Angebot anfordern",
+      relatedServices: "Verwandte Leistungen",
+      relatedProjects: "Verwandte Projekte",
+      relatedNews: "Verwandte News",
+      service: "Leistung",
+      previous: "Zurück",
+      next: "Weiter"
+    },
+    header: {
+      languagesAriaPrefix: "Version"
+    },
+    footer: {
+      corporateData: "Unternehmensdaten",
+      legal: "Rechtliches",
+      internalLinks: "Interne Links",
+      channels: "Kanäle",
+      legalData: "Rechtliche Angaben",
+      privacyPolicy: "Datenschutz",
+      cookiePolicy: "Cookie-Richtlinie",
+      about: "Über uns",
+      services: "Leistungen",
+      projects: "Projekte",
+      news: "News",
+      rsc: "CSR",
+      contact: "Kontakt"
+    },
+    floatingCta: {
+      callNow: "Jetzt anrufen",
+      requestQuote: "Angebot anfordern",
+      workWithUs: "Arbeiten Sie mit uns"
+    },
+    cookieBanner: {
+      ariaLabel: "Cookie-Einwilligung",
+      title: "Cookie-Richtlinie",
+      description: "Wir verwenden notwendige und optionale Cookies. Google Analytics wird nur mit Ihrer Zustimmung aktiviert.",
+      necessaryCookies: "Notwendige Cookies",
+      analytics: "Analytics",
+      preferences: "Präferenzen",
+      necessaryAria: "Notwendige Cookies aktiviert",
+      analyticsAria: "Analytics aktivieren",
+      preferencesAria: "Präferenz-Cookies aktivieren",
+      rejectOptional: "Optionale ablehnen",
+      savePreferences: "Präferenzen speichern",
+      acceptAll: "Alle akzeptieren"
+    },
+    forms: {
+      contact: {
+        fullName: "Vor- und Nachname",
+        phone: "Telefon",
+        email: "E-Mail",
+        message: "Nachricht",
+        privacyAcceptance: "Ich akzeptiere die Verarbeitung personenbezogener Daten gemäß der Datenschutzerklärung.",
+        honeypot: "Nicht ausfüllen",
+        sending: "Wird gesendet...",
+        submit: "Senden",
+        success: "Formular erfolgreich gesendet.",
+        error: "Das Formular konnte nicht gesendet werden."
+      },
+      quote: {
+        fullName: "Vor- und Nachname",
+        company: "Unternehmen",
+        email: "E-Mail",
+        phone: "Telefon",
+        requestedService: "Angeforderte Leistung",
+        projectLocation: "Standort des Projekts",
+        projectDetails: "Projektdetails",
+        privacyAcceptance: "Ich akzeptiere die Verarbeitung personenbezogener Daten gemäß der Datenschutzerklärung.",
+        honeypot: "Nicht ausfüllen",
+        sending: "Wird gesendet...",
+        submit: "Angebot anfordern",
+        success: "Anfrage erfolgreich gesendet.",
+        error: "Die Anfrage konnte nicht gesendet werden."
+      },
+      jobs: {
+        fullName: "Vor- und Nachname",
+        phone: "Telefon",
+        email: "E-Mail",
+        message: "Vorstellung",
+        cv: "Lebenslauf hochladen",
+        cvHelp: "Zugelassene Formate: PDF, DOC oder DOCX. Empfohlene maximale Größe: 5 MB.",
+        privacyAcceptance: "Ich akzeptiere die Verarbeitung personenbezogener Daten gemäß der Datenschutzerklärung.",
+        honeypot: "Nicht ausfüllen",
+        sending: "Wird gesendet...",
+        submit: "Bewerbung senden",
+        success: "Bewerbung erfolgreich gesendet.",
+        error: "Die Bewerbung konnte nicht gesendet werden."
+      }
+    },
+    home: {
+      slide1: {
+        eyebrow: "DOSMAS GRUP",
+        title: "Mehr als 70 Jahre Vertrauen auf den Balearen aufbauen",
+        description:
+          "Wir sind eine Unternehmensgruppe, spezialisiert auf Hochbau, öffentliche und private Bauvorhaben, Aushubarbeiten und Erdbewegungen.",
+        cta: "MEHR ÜBER UNS ENTDECKEN",
+        metric1: "Erfahrung",
+        metric2: "Team",
+        metric3: "Flotte",
+        value1: "+70 Jahre",
+        value2: "+200 Fachkräfte",
+        value3: "+150 Maschinen"
+      },
+      slide2: {
+        eyebrow: "PROJEKTE",
+        title: "Technische Ausführung im Tiefbau sowie in öffentlichen und privaten Bauvorhaben",
+        description:
+          "Kapazität für punktuelle Eingriffe ebenso wie für Großprojekte mit Termin-, Sicherheits- und Qualitätskontrolle.",
+        cta: "PROJEKTE ANSEHEN",
+        metric1: "Einsatzgebiet",
+        metric2: "Fahrzeuge",
+        metric3: "Service",
+        value1: "Mallorca, Menorca und Ibiza",
+        value2: "+150 Fahrzeuge",
+        value3: "Ganzheitliche Steuerung"
+      },
+      slide3: {
+        eyebrow: "ARBEITSBEREICHE",
+        title: "Unsere spezialisierten Marken, eine starke Struktur",
+        description:
+          "Dosmas Obras y Proyectos, Coexma Obres i Serveis, Tot Natura und Pintura 3V decken jede Projektphase ab.",
+        cta: "ARBEITSBEREICHE ANSEHEN",
+        metric1: "Stärke",
+        metric2: "Abdeckung",
+        metric3: "Verpflichtung",
+        value1: "in jedem Bereich",
+        value2: "Balearen",
+        value3: "Qualität und Sicherheit"
+      },
+      discoverMore: "MEHR ÜBER UNS ENTDECKEN",
+      worker: "Mitarbeiter",
+      statsTrajectory: "Erfahrung",
+      statsProfessionals: "Fachkräfte",
+      statsVehicles: "Fahrzeuge",
+      statsMachines: "Maschinen",
+      dossierButton: "ZUM UNTERNEHMENSDOSSIER"
+    },
+    pages: {
+      contact: {
+        pageTitle: "Kontakt",
+        pageSubtitle:
+          "Kontaktieren Sie DOSMAS GRUP, um eine Anfrage zu klären, Informationen anzufordern oder ein Treffen mit unserem Team zu vereinbaren.",
+        heading: "KONTAKT",
+        scheduleTitle: "Öffnungszeiten",
+        scheduleBody: "Montag bis Donnerstag von 7:00 bis 18:00 Uhr.\nFreitag von 7:00 bis 16:00 Uhr.",
+        mapTitle: "Standort von DOSMAS GRUP in Google Maps",
+        breadcrumb: "Kontakt",
+        phoneLabel: "Telefon",
+        emailLabel: "E-Mail"
+      },
+      quote: {
+        pageTitle: "Angebot anfordern",
+        pageSubtitle: "ANGEBOT ANFORDERN.",
+        heading: "Angebot anfordern",
+        intro1: "Teilen Sie uns den Umfang Ihres Projekts mit und wir erstellen ein technisches und wirtschaftliches Angebot, das auf Ihren Bedarf zugeschnitten ist.",
+        intro2: "Je mehr Informationen Sie angeben, desto genauer wird die erste Einschätzung.",
+        commitmentTitle: "Antwortzusage",
+        commitmentBody: "Sofortige Empfangsbestätigung und erste technische Bewertung innerhalb von 24-48 Arbeitsstunden.",
+        breadcrumb: "Angebot anfordern"
+      },
+      services: {
+        pageTitle: "Leistungen",
+        pageSubtitle: "Spezialisten für Bau und integrierte Leistungen.",
+        eyebrow: "Leistungen",
+        heading: "Spezialisten für Bau und integrierte Leistungen",
+        description: "Entdecken Sie unsere Fachbereiche in Tiefbau, Aushub und Bauausführung.",
+        requestQuote: "Angebot anfordern",
+        indexAria: "Leistungsindex",
+        filterTitle: "Leistungen filtern",
+        detailSubtitle: "Spezialisierte Leistung von DOSMAS GRUP.",
+        ctaDescription: "Unser technisches Team kann Ihren Bedarf prüfen und die passendste Lösung für Ihr Bauvorhaben vorschlagen.",
+        contactNow: "Jetzt kontaktieren",
+        projectsRelated: "Verwandte Projekte"
+      },
+      projects: {
+        pageTitle: "Projekte",
+        pageSubtitle:
+          "Entdecken Sie eine Auswahl von Projekten von DOSMAS GRUP mit technischen Informationen, visueller Entwicklung der Arbeiten und maßgeschneiderten Lösungen für jeden Eingriff auf den Balearen.",
+        eyebrow: "Projekte",
+        heading: "Fallstudien und realisierte Bauvorhaben",
+        description: "Ausgewählte Projekte mit technischen und visuellen Ausführungsinformationen.",
+        filterTitle: "Projekte filtern",
+        filterCategory: "Kategorie",
+        filterYear: "Jahr",
+        filterSearch: "Suchen",
+        searchPlaceholder: "Titel oder Standort",
+        caseStudy: "Fallstudie",
+        challenge: "Herausforderung",
+        solution: "Lösung",
+        execution: "Ausführung",
+        result: "Ergebnis",
+        needSimilarProject: "Benötigen Sie ein ähnliches Projekt?"
+      },
+      news: {
+        pageTitle: "News",
+        pageSubtitle:
+          "Ein Bereich, in dem wir unsere Bauvorhaben, Projekte, Neuigkeiten und Fortschritte teilen und die ständige Entwicklung von DOSMAS GRUP zeigen.",
+        eyebrow: "News",
+        heading: "News",
+        description:
+          "Ein Bereich, in dem wir unsere Bauvorhaben, Projekte, Neuigkeiten und Fortschritte teilen und die ständige Entwicklung von DOSMAS GRUP zeigen.",
+        detailSubtitle: "News"
+      },
+      workAreas: {
+        pageTitle: "Arbeitsbereiche",
+        pageSubtitle:
+          "Entdecken Sie unsere Arbeitsbereiche und den Umfang der Leistungen, die wir in Bau, Aushub, Tiefbau und Logistik erbringen.",
+        heading: "Arbeitsbereiche",
+        description:
+          "Entdecken Sie unsere Arbeitsbereiche und den Umfang der Leistungen, die wir in Bau, Aushub, Tiefbau und Logistik erbringen.",
+        budget: "Angebot"
+      },
+      rsc: {
+        pageTitle: "CSR",
+        pageSubtitle:
+          "Lernen Sie das soziale, ausbildungsbezogene und ökologische Engagement von DOSMAS GRUP durch echte Initiativen kennen, die Mehrwert für Menschen, Gebiet und Umwelt schaffen.",
+        eyebrow: "Engagement",
+        activePrograms: "Aktive Programme",
+        annualTrainingHours: "Jährliche Schulungsstunden",
+        solidarityActions: "Solidaritätsaktionen",
+        partnerEntities: "Partnerorganisationen",
+        collaborateTitle: "Möchten Sie mit unserer CSR-Strategie zusammenarbeiten?",
+        collaborateBody: "Bei DOSMAS GRUP pflegen wir eine offene Agenda für die Zusammenarbeit mit sozialen, Bildungs- und Sporteinrichtungen.",
+        collaborateCta: "CSR kontaktieren"
+      },
+      legal: {
+        legalData: "Rechtliche Angaben",
+        privacyPolicy: "Datenschutz",
+        cookiePolicy: "Cookie-Richtlinie",
+        integratedPolicy: "Integrierte Managementpolitik"
+      },
+      notFound: {
+        title: "Seite nicht gefunden",
+        description: "Die angeforderte Route existiert nicht.",
+        backHome: "Zur Startseite"
       }
     }
   }
