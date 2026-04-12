@@ -25,7 +25,7 @@ const baseTeamMembers: TeamMemberBase[] = [
       de: "CEO"
     },
     email: "guillem@dosmasgrup.com",
-    phone: "635 562 393",
+    phone: "",
     image: "/images/team/people/guillem-mas.jpg",
     imagePosition: "center 20%",
     featured: true
