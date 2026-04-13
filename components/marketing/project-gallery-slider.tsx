@@ -10,7 +10,7 @@ type ProjectGallerySliderProps = {
   labels: {
     previousImage: string;
     nextImage: string;
-    showImage: (index: number) => string;
+    showImage: string;
   };
 };
 
@@ -77,7 +77,7 @@ export function ProjectGallerySlider({ images, label, labels }: ProjectGallerySl
               "relative overflow-hidden rounded-2xl border transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow",
               index === activeIndex ? "border-brand-purple shadow-soft" : "border-brand-gray/30"
             )}
-            aria-label={labels.showImage(index + 1)}
+            aria-label={labels.showImage.replace("{n}", String(index + 1))}
           >
             <div className="relative aspect-[4/3]">
               <Image

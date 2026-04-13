@@ -194,14 +194,13 @@ export default async function ProyectoDetailPage({ params }: ProjectDetailPagePr
               labels={{
                 previousImage: locale === "es" ? "Imagen anterior" : locale === "ca" ? "Imatge anterior" : locale === "en" ? "Previous image" : "Vorheriges Bild",
                 nextImage: locale === "es" ? "Siguiente imagen" : locale === "ca" ? "Imatge següent" : locale === "en" ? "Next image" : "Nächstes Bild",
-                showImage: (index) =>
-                  locale === "es"
-                    ? `Mostrar imagen ${index}`
-                    : locale === "ca"
-                      ? `Mostrar imatge ${index}`
-                      : locale === "en"
-                        ? `Show image ${index}`
-                        : `Bild ${index} anzeigen`
+                showImage: locale === "es"
+                  ? "Mostrar imagen {n}"
+                  : locale === "ca"
+                    ? "Mostrar imatge {n}"
+                    : locale === "en"
+                      ? "Show image {n}"
+                      : "Bild {n} anzeigen"
               }}
             />
           </Reveal>
