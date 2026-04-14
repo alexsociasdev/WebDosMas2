@@ -117,6 +117,22 @@ export default async function HomePage() {
     }
   } as const;
   const uiCopy = uiCopyByLocale[locale];
+  const organigramButtonLabel =
+    locale === "es"
+      ? "VER ORGANIGRAMA GENERAL"
+      : locale === "ca"
+        ? "VEURE ORGANIGRAMA GENERAL"
+        : locale === "en"
+          ? "VIEW GENERAL ORGANIGRAM"
+          : "GESAMTES ORGANIGRAMM ANSEHEN";
+  const organigramEyebrow =
+    locale === "es"
+      ? "ORGANIGRAMA GENERAL"
+      : locale === "ca"
+        ? "ORGANIGRAMA GENERAL"
+        : locale === "en"
+          ? "GENERAL ORGANIGRAM"
+          : "ALLGEMEINES ORGANIGRAMM";
   const {
     aboutUsContent,
     brandDetails,
@@ -400,7 +416,15 @@ export default async function HomePage() {
             </Reveal>
           </div>
 
-          <TeamOrganigram members={teamMembers} phoneLabel={t.pages.contact.phoneLabel} />
+          <TeamOrganigram
+            members={teamMembers}
+            phoneLabel={t.pages.contact.phoneLabel}
+            organigramLink={{
+              href: "/docs/organigrama-general-marzo-2026.pdf",
+              label: organigramButtonLabel,
+              eyebrow: organigramEyebrow
+            }}
+          />
         </Container>
       </section>
 

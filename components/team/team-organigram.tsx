@@ -15,6 +15,11 @@ export type TeamOrganigramMember = {
 type TeamOrganigramProps = {
   members: TeamOrganigramMember[];
   phoneLabel: string;
+  organigramLink?: {
+    href: string;
+    label: string;
+    eyebrow?: string;
+  };
 };
 
 function TeamCard({
@@ -56,7 +61,7 @@ function TeamCard({
   );
 }
 
-export function TeamOrganigram({ members, phoneLabel }: TeamOrganigramProps) {
+export function TeamOrganigram({ members, phoneLabel, organigramLink }: TeamOrganigramProps) {
   const featuredMembers = members.filter((member) => member.featured);
   const gridMembers = members.filter((member) => !member.featured);
 
@@ -77,6 +82,26 @@ export function TeamOrganigram({ members, phoneLabel }: TeamOrganigramProps) {
           </Reveal>
         ))}
       </div>
+
+      {organigramLink ? (
+        <Reveal>
+          <article className="mt-8 rounded-[2rem] bg-brand-purple px-6 py-7 shadow-soft sm:px-8 sm:py-9">
+            {organigramLink.eyebrow ? (
+              <p className="text-xs font-semibold uppercase tracking-[0.34em] text-brand-yellow sm:text-sm">
+                {organigramLink.eyebrow}
+              </p>
+            ) : null}
+            <a
+              href={organigramLink.href}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-5 inline-flex rounded-full bg-brand-yellow px-6 py-3 text-sm font-semibold uppercase tracking-[0.08em] text-base-black transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white sm:px-8 sm:py-4 sm:text-base"
+            >
+              {organigramLink.label}
+            </a>
+          </article>
+        </Reveal>
+      ) : null}
     </>
   );
 }

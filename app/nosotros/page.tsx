@@ -43,6 +43,22 @@ export default async function NosotrosPage() {
   const t = getDictionary(locale);
   const { aboutUsContent, editorialSection, rootsLink, teamSection, valuesSection } = getSiteContent(locale);
   const teamMembers = getTeamMembers(locale);
+  const organigramButtonLabel =
+    locale === "es"
+      ? "VER ORGANIGRAMA GENERAL"
+      : locale === "ca"
+        ? "VEURE ORGANIGRAMA GENERAL"
+        : locale === "en"
+          ? "VIEW GENERAL ORGANIGRAM"
+          : "GESAMTES ORGANIGRAMM ANSEHEN";
+  const organigramEyebrow =
+    locale === "es"
+      ? "ORGANIGRAMA GENERAL"
+      : locale === "ca"
+        ? "ORGANIGRAMA GENERAL"
+        : locale === "en"
+          ? "GENERAL ORGANIGRAM"
+          : "ALLGEMEINES ORGANIGRAMM";
 
   return (
     <>
@@ -157,7 +173,15 @@ export default async function NosotrosPage() {
             </Reveal>
           </div>
 
-          <TeamOrganigram members={teamMembers} phoneLabel={t.pages.contact.phoneLabel} />
+          <TeamOrganigram
+            members={teamMembers}
+            phoneLabel={t.pages.contact.phoneLabel}
+            organigramLink={{
+              href: "/docs/organigrama-general-marzo-2026.pdf",
+              label: organigramButtonLabel,
+              eyebrow: organigramEyebrow
+            }}
+          />
 
           <div className="mt-10">
             <Reveal>

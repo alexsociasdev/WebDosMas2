@@ -61,10 +61,10 @@ const baseTeamMembers: TeamMemberBase[] = [
   {
     name: "Felip Bibiloni",
     roles: {
-      es: "Director Financiero Interino",
-      ca: "Director Financer Interí",
-      en: "Interim Finance Director",
-      de: "Interimistischer Finanzdirektor"
+      es: "Asesor Interino",
+      ca: "Assessor Interí",
+      en: "Interim Advisor",
+      de: "Interimistischer Berater"
     },
     email: "finanzas@dosmasgrup.com",
     image: "/images/team/people/felip-bibiloni.jpeg",
@@ -110,39 +110,39 @@ const baseTeamMembers: TeamMemberBase[] = [
     imagePosition: "center 28%"
   },
   {
-    name: "Magali Perez",
+    name: "Magali Pérez",
     roles: {
-      es: "Proveedores y control de costes",
-      ca: "Proveïdors i control de costos",
-      en: "Suppliers and Cost Control",
-      de: "Lieferanten und Kostenkontrolle"
+      es: "Directora de Compras",
+      ca: "Directora de Compres",
+      en: "Purchasing Director",
+      de: "Einkaufsleiterin"
     },
     email: "magali@dosmasgrup.com",
     phone: "611 073 040",
     image: "/images/team/people/magali-perez.jpg",
-    imagePosition: "center 52%",
+    imagePosition: "center 18%",
     imageFit: "contain"
   },
   {
-    name: "Toni Santandreu",
+    name: "Antoni Santandreu",
     roles: {
-      es: "Director de Operaciones",
-      ca: "Director d'Operacions",
-      en: "Operations Director",
-      de: "Betriebsdirektor"
+      es: "Subdirector de Operaciones",
+      ca: "Subdirector d'Operacions",
+      en: "Deputy Operations Director",
+      de: "Stellvertretender Betriebsdirektor"
     },
     email: "antonisantandreu@dosmasgrup.com",
-    phone: "663 83 68 75",
+    phone: "663 836 875",
     image: "/images/team/people/toni-santandreu.jpg",
     imagePosition: "center 16%"
   },
   {
-    name: "Isaias Sanchez",
+    name: "Isaias Sánchez",
     roles: {
-      es: "Encargado General · Subdirector de Operaciones",
-      ca: "Encarregat General · Sotsdirector d'Operacions",
-      en: "General Foreman · Deputy Operations Director",
-      de: "Generalbauleiter · Stellvertretender Betriebsdirektor"
+      es: "Encargado General de Obras",
+      ca: "Encarregat General d'Obres",
+      en: "General Works Manager",
+      de: "Gesamtbauleiter"
     },
     email: "isaiassanchez@dosmasgrup.com",
     phone: "607 336 878",
@@ -152,10 +152,10 @@ const baseTeamMembers: TeamMemberBase[] = [
   {
     name: "Toni Llabrés",
     roles: {
-      es: "Adjunto Encargado General · Adjunto subdirección de Operaciones",
-      ca: "Adjunt a l'Encarregat General · Adjunt a la sotsdirecció d'Operacions",
-      en: "Deputy General Foreman · Deputy to Operations Management",
-      de: "Stellvertretender Generalbauleiter · Assistent der Betriebsleitung"
+      es: "Encargado Logística",
+      ca: "Encarregat de Logística",
+      en: "Logistics Manager",
+      de: "Logistikleiter"
     },
     email: "tonillabres@dosmasgrup.com",
     phone: "607 336 886",
