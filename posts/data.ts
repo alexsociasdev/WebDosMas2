@@ -18,6 +18,41 @@ export type PostItem = {
 const postsByLocale: Record<Locale, PostItem[]> = {
   es: [
     {
+      slug: "dosmas-grupo-nuevos-lagartos-cat-740",
+      title: "DOSMAS GRUP incorpora dos nuevos Lagartos CAT 740 para reforzar su capacidad en movimiento de tierras",
+      excerpt:
+        "La incorporación de dos dúmperes articulados CAT 740 refuerza la flota de DOSMAS GRUP con maquinaria de gran capacidad para trabajos exigentes en canteras y movimiento de tierras.",
+      date: "2026-05-13",
+      category: "Equipamiento",
+      author: "Equipo DOSMAS GRUP",
+      readingTime: "6 min",
+      content: [
+        "En DOSMAS GRUP sigue avanzando en su apuesta por la modernización, la eficiencia y la excelencia técnica con la incorporación de dos nuevos dúmperes articulados de tres ejes CAT 740, unas máquinas de gran capacidad conocidas popularmente en el argot de la construcción y del movimiento de tierras como Lagartos.",
+        "Estos vehículos no son una maquinaria más dentro de una obra. Son auténticos gigantes diseñados para trabajar en entornos exigentes, donde la potencia, la tracción, la estabilidad y la fiabilidad son factores decisivos. Actualmente, los dos nuevos Lagartos de DOSMAS GRUP ya trabajan intensamente en una cantera de arcilla en Mallorca, participando en labores de transporte de tierra con un rendimiento extraordinario.",
+        "En cada viaje, estos CAT 740 trasladan aproximadamente 45 toneladas de tierra, lo que refleja la magnitud de los trabajos en los que intervienen y la capacidad operativa que aportan a la empresa. En una cantera, donde el ritmo de producción, la seguridad y la coordinación son esenciales, disponer de maquinaria de este nivel supone una clara ventaja competitiva.",
+        "Los dúmperes articulados CAT 740 pertenecen a una familia de máquinas concebidas para el transporte pesado en terrenos complejos. El modelo 740 EJ equipa un motor Cat C18 y alcanza una potencia neta de 496 hp / 370 kW, además de disponer de una caja con capacidad colmada de 23 m³. Su diseño articulado permite trabajar con gran solvencia en terrenos irregulares, blandos o de difícil acceso, una característica especialmente valiosa en canteras, excavaciones, grandes desmontes y movimientos de tierra de gran volumen.",
+        "Caterpillar destaca en este modelo sistemas orientados a mejorar la comodidad del operador, la facilidad de manejo, el control de tracción automático avanzado, la asistencia a la estabilidad y el modo ECO de ahorro de combustible. La llegada de estos dos nuevos Lagartos refuerza la capacidad de DOSMAS GRUP para afrontar obras de gran envergadura con mayor rapidez, precisión y seguridad.",
+        "En el trabajo diario dentro de la cantera de arcilla, estos dúmperes permiten mantener un flujo constante de transporte de material, reduciendo tiempos, optimizando ciclos de carga y descarga, y garantizando una respuesta eficaz en un entorno donde cada movimiento cuenta. No se trata únicamente de adquirir maquinaria potente. Se trata de invertir en herramientas que permiten trabajar mejor, con mayor control y con una visión clara de futuro.",
+        "La incorporación de estos CAT 740 responde a una filosofía que DOSMAS GRUP mantiene desde hace años: estar siempre a la vanguardia del sector, actualizar su parque de maquinaria y apostar por equipos capaces de responder a los retos actuales de la construcción, la excavación y el movimiento de tierras en Mallorca. La calidad de la maquinaria es una parte esencial del trabajo, pero no la única. Detrás de cada máquina hay planificación, mantenimiento, experiencia y conocimiento técnico. Cada vehículo que se incorpora a la flota de DOSMAS GRUP forma parte de una estrategia global orientada a mejorar el servicio, aumentar la eficiencia y ofrecer garantías en cada proyecto.",
+        "Por grandes, potentes y avanzadas que sean estas máquinas, su verdadero rendimiento depende de las personas que las manejan. Al mando de estos Lagartos se encuentra personal altamente cualificado, profesionales acostumbrados a trabajar con precisión en escenarios exigentes, capaces de controlar vehículos de enormes dimensiones con seguridad, responsabilidad y plena conciencia del entorno. La experiencia del operador es fundamental para sacar el máximo partido a una máquina de estas características. Conducir un dúmper articulado de este tamaño en una cantera requiere concentración, dominio técnico, conocimiento del terreno y una coordinación constante con el resto del equipo.",
+        "Por eso, en DOSMAS GRUP la modernización de la maquinaria va siempre acompañada de algo igual de importante: la profesionalidad de las personas que hacen posible cada jornada de trabajo. Con estos dos nuevos CAT 740, DOSMAS GRUP continúa consolidando una flota moderna, robusta y preparada para intervenir en obras de alta exigencia. Esta incorporación reafirma el compromiso de la empresa con la innovación, la productividad y la calidad en cada fase del trabajo.",
+        "Desde la excavación hasta el transporte de grandes volúmenes de material, DOSMAS GRUP sigue demostrando que la combinación de maquinaria de primer nivel, equipo humano especializado y experiencia acumulada es la mejor garantía para afrontar los retos del presente y del futuro. Los nuevos Lagartos ya están en marcha, y con ellos, DOSMAS GRUP vuelve a dejar claro que la fuerza de una empresa no solo se mide por el tamaño de sus máquinas, sino por la visión, la responsabilidad y el talento con que las pone a trabajar."
+      ],
+      image: "/images/posts/lagartos-cat-740/01.jpg",
+      gallery: [
+        "/images/posts/lagartos-cat-740/01.jpg",
+        "/images/posts/lagartos-cat-740/02.jpg",
+        "/images/posts/lagartos-cat-740/03.jpg",
+        "/images/posts/lagartos-cat-740/04.jpg",
+        "/images/posts/lagartos-cat-740/05.jpg",
+        "/images/posts/lagartos-cat-740/06.jpg",
+        "/images/posts/lagartos-cat-740/07.jpg",
+        "/images/posts/lagartos-cat-740/08.jpg"
+      ],
+      relatedServices: ["excavaciones", "transporte-de-tierras", "movimiento-de-tierras"],
+      relatedProjects: []
+    },
+    {
       slug: "olivos-centenarios-para-jardines",
       title: "Pon un olivo centenario en tu jardín y transforma tu espacio en un lugar con alma",
       excerpt:
