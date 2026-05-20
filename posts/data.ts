@@ -38,7 +38,7 @@ const postsByLocale: Record<Locale, PostItem[]> = {
         "Por eso, en DOSMAS GRUP la modernización de la maquinaria va siempre acompañada de algo igual de importante: la profesionalidad de las personas que hacen posible cada jornada de trabajo. Con estos dos nuevos CAT 740, DOSMAS GRUP continúa consolidando una flota moderna, robusta y preparada para intervenir en obras de alta exigencia. Esta incorporación reafirma el compromiso de la empresa con la innovación, la productividad y la calidad en cada fase del trabajo.",
         "Desde la excavación hasta el transporte de grandes volúmenes de material, DOSMAS GRUP sigue demostrando que la combinación de maquinaria de primer nivel, equipo humano especializado y experiencia acumulada es la mejor garantía para afrontar los retos del presente y del futuro. Los nuevos Lagartos ya están en marcha, y con ellos, DOSMAS GRUP vuelve a dejar claro que la fuerza de una empresa no solo se mide por el tamaño de sus máquinas, sino por la visión, la responsabilidad y el talento con que las pone a trabajar."
       ],
-      image: "/images/posts/lagartos-cat-740/01.jpg",
+      image: "/images/posts/lagartos-cat-740/05.jpg",
       gallery: [
         "/images/posts/lagartos-cat-740/01.jpg",
         "/images/posts/lagartos-cat-740/02.jpg",
@@ -47,7 +47,15 @@ const postsByLocale: Record<Locale, PostItem[]> = {
         "/images/posts/lagartos-cat-740/05.jpg",
         "/images/posts/lagartos-cat-740/06.jpg",
         "/images/posts/lagartos-cat-740/07.jpg",
-        "/images/posts/lagartos-cat-740/08.jpg"
+        "/images/posts/lagartos-cat-740/08.jpg",
+        "/images/posts/lagartos-cat-740/09.jpg",
+        "/images/posts/lagartos-cat-740/10.jpg",
+        "/images/posts/lagartos-cat-740/11.jpg",
+        "/images/posts/lagartos-cat-740/12.jpg",
+        "/images/posts/lagartos-cat-740/13.jpg",
+        "/images/posts/lagartos-cat-740/14.jpg",
+        "/images/posts/lagartos-cat-740/15.jpg",
+        "/images/posts/lagartos-cat-740/16.jpg"
       ],
       relatedServices: ["excavaciones", "transporte-de-tierras", "movimiento-de-tierras"],
       relatedProjects: []
