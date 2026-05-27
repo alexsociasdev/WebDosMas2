@@ -531,6 +531,117 @@ export default async function HomePage() {
           </Reveal>
         </Container>
       </section>
+
+      <section className="bg-white py-20">
+        <Container>
+          <Reveal>
+            <article className="space-y-12">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-purple">Plan de Recuperación</p>
+                <h2 className="mt-2 text-4xl font-bold text-base-black lg:text-5xl">
+                  Instalación Fotovoltaica a Cubierta de 50 kW
+                </h2>
+              </div>
+
+              <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
+                <div className="space-y-6">
+                  <div className="space-y-4 text-base leading-8 text-base-dark">
+                    <p>
+                      En DOSMAS GRUP apostamos por la energía solar. Nuestra sede de Petra es mucho más que un punto de partida de nuestra actividad diaria: es el reflejo de una forma responsable de entender la construcción.
+                    </p>
+                    <p>
+                      Por ello, hemos instalado placas solares en nuestras instalaciones, avanzando hacia un modelo de mayor eficiencia energética, autosuficiencia y respeto por el entorno.
+                    </p>
+                    <ul className="space-y-3 pl-6 text-base">
+                      <li className="flex gap-3">
+                        <span className="text-brand-yellow">✓</span>
+                        <span>Apostamos por energías limpias.</span>
+                      </li>
+                      <li className="flex gap-3">
+                        <span className="text-brand-yellow">✓</span>
+                        <span>Reducimos nuestra huella ambiental.</span>
+                      </li>
+                      <li className="flex gap-3">
+                        <span className="text-brand-yellow">✓</span>
+                        <span>Construimos un futuro más sostenible.</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div className="pt-4">
+                    <p className="text-sm leading-7 text-base-dark">
+                      Los valores de Dosmas Grup (experiencia, compromiso, innovación y sostenibilidad) no solo se aplican en nuestras obras, también en nuestras instalaciones.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex flex-col justify-center items-center space-y-6">
+                  <div className="relative aspect-square w-full max-w-xs">
+                    <Image
+                      src="/images/brand/plan-recuperacion-logo.png"
+                      alt="Plan de Recuperación, Transformación y Resiliencia"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                  <div className="text-center">
+                    <p className="text-sm font-semibold text-base-dark">
+                      Plan de Recuperación,<br />Transformación y Resiliencia
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-8 rounded-2xl border border-brand-gray/20 bg-brand-gray/5 p-8">
+                <div className="space-y-6">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-purple">Detalles del Proyecto</p>
+                    <h3 className="mt-3 text-2xl font-bold text-base-black">Instal·lació Fotovoltaica a Coberta de 50 kW</h3>
+                  </div>
+
+                  <div className="grid gap-6 md:grid-cols-2">
+                    <div className="space-y-2">
+                      <p className="text-xs font-semibold uppercase tracking-[0.15em] text-brand-purple">Beneficiario</p>
+                      <p className="text-lg font-semibold text-base-black">DOSMAS OBRAS Y PROYECTOS, S.L.</p>
+                    </div>
+                    <div className="space-y-2">
+                      <p className="text-xs font-semibold uppercase tracking-[0.15em] text-brand-purple">Ubicación</p>
+                      <p className="text-lg font-semibold text-base-black">Petra, Illes Balears</p>
+                    </div>
+                    <div className="space-y-2">
+                      <p className="text-xs font-semibold uppercase tracking-[0.15em] text-brand-purple">Inversión Total</p>
+                      <p className="text-2xl font-bold text-brand-yellow">32.065,00 €</p>
+                    </div>
+                    <div className="space-y-2">
+                      <p className="text-xs font-semibold uppercase tracking-[0.15em] text-brand-purple">Importe de la Ayuda</p>
+                      <p className="text-2xl font-bold text-brand-yellow">22.500 €</p>
+                    </div>
+                  </div>
+
+                  <div className="border-t border-brand-gray/20 pt-6">
+                    <div className="space-y-2">
+                      <p className="text-xs font-semibold uppercase tracking-[0.15em] text-brand-purple">Componente / Inversión</p>
+                      <p className="text-sm text-base-dark">Componente 7, Inversión 2 (C7, I2) - Plan de Recuperación, Transformación y Resiliencia</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center justify-center gap-4 border-t border-brand-gray/20 pt-6">
+                    <div className="text-center">
+                      <p className="text-xs font-semibold text-base-dark">Financiado por:</p>
+                      <p className="text-xs font-bold text-base-black">NextGenerationEU</p>
+                    </div>
+                    <div className="h-8 w-px bg-brand-gray/20"></div>
+                    <div className="text-center">
+                      <p className="text-xs font-semibold text-base-dark">A través de:</p>
+                      <p className="text-xs font-bold text-base-black">Unión Europea</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </Reveal>
+        </Container>
+      </section>
     </>
   );
 }

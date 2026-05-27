@@ -1,0 +1,37 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Black background -->
+  <rect width="800" height="600" fill="#000000"/>
+
+  <!-- EU Stars -->
+  <g id="eu-stars">
+    <!-- Star 1 -->
+    <polygon points="300,140 310,170 342,170 318,192 328,222 300,199 272,222 282,192 258,170 290,170" fill="#FFD700"/>
+    <!-- Star 2 -->
+    <polygon points="300,220 310,250 342,250 318,272 328,302 300,279 272,302 282,272 258,250 290,250" fill="#FFD700"/>
+    <!-- Star 3 -->
+    <polygon points="300,300 310,330 342,330 318,352 328,382 300,359 272,382 282,352 258,330 290,330" fill="#FFD700"/>
+    <!-- Star 4 -->
+    <polygon points="300,380 310,410 342,410 318,432 328,462 300,439 272,462 282,432 258,410 290,410" fill="#FFD700"/>
+  </g>
+
+  <!-- TR Logo -->
+  <g id="tr-logo">
+    <!-- T - Red -->
+    <rect x="380" y="100" width="120" height="40" fill="#C94444"/>
+    <rect x="430" y="100" width="40" height="280" fill="#C94444"/>
+
+    <!-- R - Red and Yellow -->
+    <path d="M 500 100 L 560 100 Q 580 100 580 130 Q 580 160 560 160 L 540 160 M 540 160 L 580 380 L 540 380 L 500 220 Q 480 220 480 380 L 440 380 L 440 100 L 500 100" fill="#C94444"/>
+
+    <!-- P - Yellow -->
+    <path d="M 620 100 L 680 100 Q 700 100 700 140 Q 700 180 680 180 L 660 180 L 660 380 L 620 380 L 620 100" fill="#FFD700"/>
+  </g>
+
+  <!-- Text below -->
+  <text x="400" y="480" font-size="48" font-family="Arial, sans-serif" font-weight="bold" text-anchor="middle" fill="#666666">
+    Plan de Recuperación,
+  </text>
+  <text x="400" y="540" font-size="48" font-family="Arial, sans-serif" font-weight="bold" text-anchor="middle" fill="#666666">
+    Transformación y Resiliencia
+  </text>
+</svg>
