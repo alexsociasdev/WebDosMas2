@@ -592,50 +592,25 @@ export default async function HomePage() {
                 </div>
               </div>
 
-              <div className="mt-8 rounded-2xl border border-brand-gray/20 bg-brand-gray/5 p-8">
-                <div className="space-y-6">
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-purple">Detalles del Proyecto</p>
-                    <h3 className="mt-3 text-2xl font-bold text-base-black">Instal·lació Fotovoltaica a Coberta de 50 kW</h3>
-                  </div>
+              <div className="mt-8 space-y-8">
+                <div className="relative w-full overflow-hidden rounded-2xl border border-brand-gray/20">
+                  <Image
+                    src="/images/brand/cartell-illes-balears-1.png"
+                    alt="Projecte acollit al programa de Concessió directa d'ajuts per a les Illes Balears"
+                    width={1200}
+                    height={800}
+                    className="h-auto w-full object-cover"
+                  />
+                </div>
 
-                  <div className="grid gap-6 md:grid-cols-2">
-                    <div className="space-y-2">
-                      <p className="text-xs font-semibold uppercase tracking-[0.15em] text-brand-purple">Beneficiario</p>
-                      <p className="text-lg font-semibold text-base-black">DOSMAS OBRAS Y PROYECTOS, S.L.</p>
-                    </div>
-                    <div className="space-y-2">
-                      <p className="text-xs font-semibold uppercase tracking-[0.15em] text-brand-purple">Ubicación</p>
-                      <p className="text-lg font-semibold text-base-black">Petra, Illes Balears</p>
-                    </div>
-                    <div className="space-y-2">
-                      <p className="text-xs font-semibold uppercase tracking-[0.15em] text-brand-purple">Inversión Total</p>
-                      <p className="text-2xl font-bold text-brand-yellow">32.065,00 €</p>
-                    </div>
-                    <div className="space-y-2">
-                      <p className="text-xs font-semibold uppercase tracking-[0.15em] text-brand-purple">Importe de la Ayuda</p>
-                      <p className="text-2xl font-bold text-brand-yellow">22.500 €</p>
-                    </div>
-                  </div>
-
-                  <div className="border-t border-brand-gray/20 pt-6">
-                    <div className="space-y-2">
-                      <p className="text-xs font-semibold uppercase tracking-[0.15em] text-brand-purple">Componente / Inversión</p>
-                      <p className="text-sm text-base-dark">Componente 7, Inversión 2 (C7, I2) - Plan de Recuperación, Transformación y Resiliencia</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center justify-center gap-4 border-t border-brand-gray/20 pt-6">
-                    <div className="text-center">
-                      <p className="text-xs font-semibold text-base-dark">Financiado por:</p>
-                      <p className="text-xs font-bold text-base-black">NextGenerationEU</p>
-                    </div>
-                    <div className="h-8 w-px bg-brand-gray/20"></div>
-                    <div className="text-center">
-                      <p className="text-xs font-semibold text-base-dark">A través de:</p>
-                      <p className="text-xs font-bold text-base-black">Unión Europea</p>
-                    </div>
-                  </div>
+                <div className="relative w-full overflow-hidden rounded-2xl border border-brand-gray/20">
+                  <Image
+                    src="/images/brand/kit-digital-header.png"
+                    alt="Programa KIT DIGITAL cofinanciado por los Fondos Next Generation EU"
+                    width={1600}
+                    height={200}
+                    className="h-auto w-full object-cover"
+                  />
                 </div>
               </div>
             </article>
