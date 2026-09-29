@@ -54,7 +54,7 @@ const baseTeamMembers: TeamMemberBase[] = [
     },
     email: "pilar@dosmasgrup.com",
     phone: "673 417 692",
-    image: "/images/team/people/pilar-rossello.jpg",
+    image: "/images/team/people/pilar-rossello.jpeg",
     imagePosition: "center 52%",
     imageFit: "contain"
   },
