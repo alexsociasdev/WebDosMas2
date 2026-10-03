@@ -120,7 +120,7 @@ export const heritagePhotos: HeritagePhoto[] = heritageOrder.map((photoNumber, i
 });
 
 const sharedTrustYoutubeUrl = "https://www.youtube.com/embed/J6mzhScLlzY?start=8";
-const sharedDossierHref = "https://qrco.de/bcQVeg";
+const sharedDossierHref = "https://www.nuestrocatalogo.es/DOSMAS/MailView";
 const sharedPetraPhone = "971 09 60 12";
 const sharedPetraEmail = "info@dosmasgrup.com";
 
